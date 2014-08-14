@@ -1,0 +1,307 @@
+# Este arquivo viminfo foi gerado pelo Vim 7.4.
+# Você pode editá-lo se for cuidadoso!
+
+# Valor de 'encoding' quando este arquivo foi escrito
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Último padrão de busca :
+~MSle0~/wq
+
+# Histórico de Linha de comando (mais recente primeiro):
+:q!
+:wq
+:w
+
+# Histórico de Expressões de busca (mais recente primeiro):
+??wq
+
+# Histórico de Expressão (mais recente primeiro):
+
+# Histórico de Linhas de entrada (mais recente primeiro):
+
+# Histórico de Linhas de entrada (mais recente primeiro):
+
+# Registradores:
+""-	CHAR	0
+	A
+
+# Marcas nos arquivos:
+'0  22  0  ~/Documents/workspace/dotfiles/bashrc
+'1  1  0  ~/.bashrc
+'2  12  41  ~/.bashrc
+'3  7  0  ~/Documents/Dropbox/TABALHO_WEB_PSII
+'4  102  0  ~/Documents/Dropbox/Faculdade/7 Semestre/web/aulas.txt
+'5  102  0  ~/Documents/tmp/web/aulas.txt
+'6  5  3  ~/Documents/tmp/web/aulas.txt
+'7  41  0  ~/.config/nautilus/accels
+'8  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+'9  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+
+# Lista de saltos (mais recente primeiro):
+-'  22  0  ~/Documents/workspace/dotfiles/bashrc
+-'  1  0  ~/Documents/workspace/dotfiles/bashrc
+-'  1  0  ~/.bashrc
+-'  12  41  ~/.bashrc
+-'  7  0  ~/Documents/Dropbox/TABALHO_WEB_PSII
+-'  1  0  ~/Documents/Dropbox/TABALHO_WEB_PSII
+-'  102  0  ~/Documents/Dropbox/Faculdade/7 Semestre/web/aulas.txt
+-'  2  0  ~/Documents/Dropbox/Faculdade/7 Semestre/web/aulas.txt
+-'  1  0  ~/Documents/Dropbox/Faculdade/7 Semestre/web/aulas.txt
+-'  102  0  ~/Documents/tmp/web/aulas.txt
+-'  1  0  ~/Documents/tmp/web/aulas.txt
+-'  5  3  ~/Documents/tmp/web/aulas.txt
+-'  41  0  ~/.config/nautilus/accels
+-'  1  0  ~/.config/nautilus/accels
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  41  0  ~/.config/nautilus/accels
+-'  1  0  ~/.config/nautilus/accels
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+-'  41  0  ~/.config/nautilus/accels
+-'  1  0  ~/.config/nautilus/accels
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+-'  2  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+-'  1  0  /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+
+# Histórico de marcas nos arquivos (mais recente primeiro):
+
+> ~/Documents/workspace/dotfiles/bashrc
+	"	22	0
+	.	38	0
+	+	38	0
+
+> ~/.bashrc
+	"	22	0
+	^	12	42
+	.	12	41
+	+	20	19
+	+	14	37
+	+	15	38
+	+	13	43
+	+	12	41
+
+> ~/Documents/Dropbox/TABALHO_WEB_PSII
+	"	7	0
+	^	7	0
+	.	11	0
+	+	1	31
+	+	11	0
+
+> ~/Documents/Dropbox/Faculdade/7 Semestre/web/aulas.txt
+	"	102	0
+	^	78	10
+	.	78	9
+	+	67	11
+	+	70	0
+	+	69	11
+	+	70	9
+	+	78	9
+
+> ~/Documents/tmp/eventos-master/eventos/web/index.html
+	"	1	0
+
+> ~/.vimrc
+	"	4	59
+	^	4	60
+	.	4	60
+	+	1	0
+	+	1	0
+	+	3	24
+	+	5	0
+	+	4	60
+
+> ~/Documents/tmp/web/aulas.txt
+	"	102	0
+	^	102	0
+	.	101	0
+	+	3	35
+	+	4	3
+	+	3	43
+	+	5	3
+	+	4	69
+	+	64	48
+	+	65	0
+	+	71	86
+	+	72	145
+	+	73	2
+	+	72	150
+	+	73	32
+	+	72	33
+	+	72	125
+	+	75	166
+	+	76	0
+	+	100	108
+	+	97	195
+	+	77	0
+	+	84	2
+	+	88	2
+	+	83	2
+	+	80	1
+	+	88	2
+	+	80	2
+	+	83	1
+	+	86	1
+	+	87	2
+	+	89	2
+	+	90	2
+	+	92	2
+	+	96	2
+	+	92	2
+	+	96	1
+	+	92	1
+	+	90	1
+	+	89	1
+	+	88	1
+	+	87	1
+	+	86	1
+	+	83	1
+	+	80	1
+	+	99	2
+	+	98	1
+	+	97	1
+	+	96	1
+	+	95	1
+	+	94	1
+	+	93	1
+	+	91	1
+	+	85	1
+	+	82	1
+	+	81	1
+	+	96	1
+	+	100	1
+	+	86	1
+	+	82	0
+	+	80	1
+	+	82	1
+	+	88	1
+	+	86	1
+	+	83	1
+	+	86	1
+	+	82	1
+	+	80	1
+	+	88	1
+	+	87	1
+	+	88	1
+	+	85	1
+	+	82	1
+	+	80	1
+	+	82	1
+	+	80	1
+	+	88	1
+	+	87	1
+	+	89	2
+	+	90	2
+	+	96	2
+	+	92	2
+	+	93	2
+	+	97	25
+	+	81	2
+	+	98	2
+	+	95	1
+	+	91	2
+	+	95	2
+	+	100	2
+	+	94	2
+	+	99	1
+	+	88	1
+	+	87	1
+	+	86	1
+	+	85	1
+	+	84	1
+	+	83	1
+	+	82	1
+	+	80	1
+	+	101	0
+
+> ~/.config/nautilus/accels
+	"	41	0
+
+> /tmp/yaourt-tmp-aheggert/aur-numix-icon-theme-git/numix-icon-theme.install
+	"	1	0
+
+> /tmp/yaourt-tmp-aheggert/aur-numix-circle-icon-theme-git/numix-circle-icon-theme.install
+	"	1	0
+
+> /tmp/yaourt-tmp-aheggert/aur-google-chrome/google-chrome.install
+	"	2	0
+
+> /tmp/yaourt-tmp-aheggert/aur-google-chrome/PKGBUILD
+	"	1	0
