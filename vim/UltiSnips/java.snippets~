@@ -1,0 +1,7 @@
+snippet co "constant" b
+public static final ${1:String} ${2:var} = $3;$0
+endsnippet
+
+snippet lget: "lombook getter"
+@Getter
+endsnippet

@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -lai'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -16,10 +16,16 @@ alias web='vim /home/aheggert/Documents/Dropbox/Faculdade/7\ Semestre/web/aulas.
 alias services='service --status-all'
 alias workspace='cd /home/aheggert/Documents/workspace'
 alias wildfly='cd /opt/wildfly'
+alias wildfly-start='/opt/wildfly/bin/standalone.sh'
 alias mysql='mysql -u root -p'
+alias mysql-start='sudo systemctl start mysqld'
 alias lsmnt='lsblk'
 alias dotfiles='cd /home/aheggert/Documents/workspace/dotfiles'
 alias tmp='cd /home/aheggert/Documents/tmp'
 alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 alias mysql-start='sudo systemctl start mysqld'
-PS1='[\u@\h \W]\$ '
+alias vim='gvim'
+alias vim-workspace='cd /home/aheggert/Documents/workspace && gvim'
+alias mysql-openshift="mysql -u adminKuGWHyh -p$1 -h 127.0.0.1 -P 3307"
+alias php="/opt/lampp/bin/php"
+alias htdocs="cd /opt/lampp/htdocs/"
