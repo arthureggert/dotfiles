@@ -64,5 +64,7 @@ set number
 "Eclim Configuration
 let g:EclimCompletionMethod = 'omnifunc'
 
+"Omnifunc autocomplete
+set omnifunc=syntaxcomplete#Complete
 "TagBar Configuration
 nmap <F8> :TagbarToggle<CR>
