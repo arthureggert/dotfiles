@@ -25,3 +25,16 @@ alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//-
 alias mysql-start='sudo systemctl start mysqld'
 alias php="/opt/lampp/bin/php"
 alias htdocs="cd /opt/lampp/htdocs/"
+# alias para push
+alias gps='git push origin master'
+ # alias para pull
+alias gpl='git pull origin master'
+# alias para add e commit. neste caso para utilizar este tipo de alias vc deverá chamado o alias mais a mensagem do commite
+# por exemplo: gac 'minha mensagem de commit'
+alias gac='git add .
+git commit -m'
+# este é o mesmo caso do alias 'gac' porém utilzando o parametro -A juntamento com o comando 'add'
+alias gAc='git add -A .
+git commit -m'
+# alias para 'git status'
+alias gst='git status'
