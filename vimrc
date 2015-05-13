@@ -56,15 +56,13 @@ let g:ycm_key_list_previous_completion=[]
 "Solarized Configuration
 syntax enable
 set background=dark
-colorscheme solarized
 
 "VIM Line Numbers
 set number
 
-"Eclim Configuration
-let g:EclimCompletionMethod = 'omnifunc'
 
 "Omnifunc autocomplete
 set omnifunc=syntaxcomplete#Complete
+
 "TagBar Configuration
 nmap <F8> :TagbarToggle<CR>
