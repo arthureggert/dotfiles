@@ -16,3 +16,6 @@ alias l='ls -CF'
 alias services='service --status-all'
 alias lsmnt='lsblk'
 alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
+alias mysql-start='sudo systemctl start mysqld'
+alias php="/opt/lampp/bin/php"
+alias htdocs="cd /opt/lampp/htdocs/"
