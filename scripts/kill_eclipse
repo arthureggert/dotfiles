@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kill -9 $(ps -ax | grep java | grep eclipse | awk '{print $1}')
