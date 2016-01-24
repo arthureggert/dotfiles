@@ -31,3 +31,5 @@ alias l='ls -CF'
 alias services='service --status-all'
 alias lsmnt='lsblk'
 alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
+alias update_system='sudo pacman -Syyu'
+alias update_aur='yaourt -Syu --aur'
