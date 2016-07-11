@@ -6,8 +6,24 @@
 [[ $- != *i* ]] && return
 
 #SHELL COLORS#
-PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
-#OLDER -> PS1='\u@\h [\W]\$ '
+BLACK="\[\033[0;30m\]"
+BLACKBOLD="\[\033[1;30m\]"
+RED="\[\033[0;31m\]"
+REDBOLD="\[\033[1;31m\]"
+GREEN="\[\033[0;32m\]"
+GREENBOLD="\[\033[1;32m\]"
+YELLOW="\[\033[0;33m\]"
+YELLOWBOLD="\[\033[1;33m\]"
+BLUE="\[\033[0;34m\]"
+BLUEBOLD="\[\033[1;34m\]"
+PURPLE="\[\033[0;35m\]"
+PURPLEBOLD="\[\033[1;35m\]"
+CYAN="\[\033[0;36m\]"
+CYANBOLD="\[\033[1;36m\]"
+WHITE="\[\033[0;37m\]"
+WHITEBOLD="\[\033[1;37m\]"
+RESET="\[\017\]"
+NORMAL="\[\033[0m\]"
 
 #SHELL OPTIONS#
 shopt -s autocd
@@ -33,3 +49,33 @@ alias lsmnt='lsblk'
 alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 alias update_system='sudo pacman -Syyu'
 alias update_aur='yaourt -Syu --aur'
+alias apm="/c/Users/aheggert/AppData/Local/atom/bin/apm"
+alias npp="/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
+
+#FUNCTIONS#
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+git_color() {
+	if git rev-parse --git-dir >/dev/null 2>&1; then
+        # check for uncommitted changes in the index
+        if ! git diff-index --quiet --cached HEAD --ignore-submodules -- >&2; then
+            echo $RED
+        # check for unstaged changes
+        elif ! git diff-files --quiet --ignore-submodules -- >&2; then
+            echo $YELLOW
+        else
+            echo $GREEN
+        fi
+    fi
+}
+
+set_bash_prompt(){
+	PS1="${GREEN}\u${GREENBOLD}@\h:${REDBOLD}[${RED}\W$(git_color)$(parse_git_branch)${REDBOLD}]${CYAN}\$ ${YELLOW}~> ${NORMAL}"
+}
+
+#PS1#
+PROMPT_COMMAND=set_bash_prompt
+#PS1_LINUX='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+#PS1_ORIGINAL -> PS1='\u@\h [\W]\$ '
