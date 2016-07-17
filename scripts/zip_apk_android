@@ -1,0 +1,4 @@
+#!/bin/bash
+#$1 => Nome do seu APK
+#$2 => Nome do novo APK zipado
+/usr/local/Cellar/android-sdk/24.4/build-tools/23.0.2/zipalign -f -v 4 $1 $2

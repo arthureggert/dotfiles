@@ -1,0 +1,5 @@
+#!/bin/bash
+#$1 => Caminho para o arquivo de keystore
+#$2 => Nome do seu APK para assinar
+#$3 => Alias do Keysore
+jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore $1 $2 $3

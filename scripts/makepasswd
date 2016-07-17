@@ -1,0 +1,2 @@
+tr -dc A-Za-z0-9@#$-_?= < /dev/urandom | fold -w ${1:-10}  | head -c ${1:-8} | xargs
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+HOST=''
+USER=''
+PASS=''
+TARGETFOLDER='/'
+SOURCEFOLDER='/'
+
+lftp -e "
+open $HOST
+user $USER $PASS
+lcd $SOURCEFOLDER
+mirror --reverse --delete --verbose $SOURCEFOLDER $TARGETFOLDER
+bye
+"
