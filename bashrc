@@ -51,6 +51,7 @@ alias update_system='sudo pacman -Syyu'
 alias update_aur='yaourt -Syu --aur'
 alias apm="/c/Users/aheggert/AppData/Local/atom/bin/apm"
 alias npp="/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
+alias protractor="/c/Users/aheggert/AppData/Roaming/npm/protractor"
 
 #FUNCTIONS#
 parse_git_branch() {
