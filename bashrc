@@ -79,3 +79,5 @@ set_bash_prompt(){
 PROMPT_COMMAND=set_bash_prompt
 #PS1_LINUX='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 #PS1_ORIGINAL -> PS1='\u@\h [\W]\$ '
+
+source ~/.profile
