@@ -73,7 +73,29 @@ git_color() {
 }
 
 set_bash_prompt(){
-	PS1="${GREEN}\u${GREENBOLD}@\h:${REDBOLD}[${RED}\W$(git_color)$(parse_git_branch)${REDBOLD}]${CYAN}\$ ${YELLOW}~> ${NORMAL}"
+	PS1="${GREEN}\u${GREENBOLD}@\h:${REDBOLD}[${RED}\W$(git_color)$(parse_git_branch)${REDBOLD}]${CYAN}\$ ${YELLOW}~> ${WHITE}"
+}
+
+git_update() {
+	branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+	remote=$(git remote)
+	git pull "$remote" "$branch"
+}
+
+git_update_all(){
+	currentdir=`pwd`
+	cd $1 > /dev/null
+	for file in */ ; do 
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		if [ -d "$file/.git" ]; then
+			cd $file > /dev/null
+			echo `pwd`
+			git_update()
+			cd ..  > /dev/null
+		fi
+	  fi 
+	done
+	cd $currentdir > /dev/null
 }
 
 #PS1#
