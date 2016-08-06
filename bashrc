@@ -90,7 +90,7 @@ git_update_all(){
 		if [ -d "$file/.git" ]; then
 			cd $file > /dev/null
 			echo `pwd`
-			git_update()
+			git_update
 			cd ..  > /dev/null
 		fi
 	  fi 
