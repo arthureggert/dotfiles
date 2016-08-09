@@ -97,6 +97,19 @@ git_update_all(){
 	done
 	cd $currentdir > /dev/null
 }
+function git_branch_name(){
+	git branch | sed -n -e 's/^\* \(.*\)/\1/p'
+}
+
+function git_remote_name(){
+	git remote
+}
+
+function git_discard_local() {
+	branch=$(git_branch_name)
+	remote=$(git_remote_name)
+	git reset --hard "$remote"/"$branch"
+}
 
 #PS1#
 PROMPT_COMMAND=set_bash_prompt
