@@ -49,9 +49,6 @@ alias lsmnt='lsblk'
 alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 alias update_system='sudo pacman -Syyu'
 alias update_aur='yaourt -Syu --aur'
-alias apm="/c/Users/aheggert/AppData/Local/atom/bin/apm"
-alias npp="/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
-alias protractor="/c/Users/aheggert/AppData/Roaming/npm/protractor"
 
 #FUNCTIONS#
 parse_git_branch() {
@@ -73,7 +70,7 @@ git_color() {
 }
 
 set_bash_prompt(){
-	PS1="${GREEN}\u${GREENBOLD}@\h:${REDBOLD}[${RED}\W$(git_color)$(parse_git_branch)${REDBOLD}]${CYAN}\$ ${YELLOW}~> ${WHITE}"
+	PS1="${GREEN}\u${GREENBOLD}@$\h:${REDBOLD}[${RED}\W$(git_color)$(parse_git_branch)${REDBOLD}]${CYAN}\$ ${YELLOW}~> ${WHITE}"
 }
 
 git_update() {
@@ -89,7 +86,7 @@ git_update_all(){
 	  if [[ -d "$file" && ! -L "$file" ]]; then
 		if [ -d "$file/.git" ]; then
 			cd $file > /dev/null
-			echo `pwd`
+			echo -e "\033[0;32m" `pwd` "\033[0;37m"
 			git_update
 			cd ..  > /dev/null
 		fi
@@ -97,18 +94,43 @@ git_update_all(){
 	done
 	cd $currentdir > /dev/null
 }
-function git_branch_name(){
+
+git_branch_name(){
 	git branch | sed -n -e 's/^\* \(.*\)/\1/p'
 }
 
-function git_remote_name(){
+git_remote_name(){
 	git remote
 }
 
-function git_discard_local() {
+git_discard_local() {
 	branch=$(git_branch_name)
 	remote=$(git_remote_name)
 	git reset --hard "$remote"/"$branch"
+}
+
+assignProxy(){
+   PROXY_ENV="http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY"
+   for envar in $PROXY_ENV
+   do
+     export $envar=$1
+   done
+   for envar in "no_proxy NO_PROXY"
+   do
+      export $envar=$2
+   done
+}
+
+clrProxy(){
+   assignProxy "" # This is what 'unset' does.
+}
+
+myProxy(){
+   user=aheggert
+   read -p "Password: " -s pass &&  echo -e " "
+   proxy_value="http://$user:$pass@192.168.254.254:3128"
+   no_proxy_value="localhost,127.0.0.1,LocalAddress,LocalDomain.com"
+   assignProxy $proxy_value $no_proxy_value
 }
 
 #PS1#
