@@ -49,6 +49,7 @@ alias lsmnt='lsblk'
 alias tree='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 alias update_system='sudo pacman -Syyu'
 alias update_aur='yaourt -Syu --aur'
+alias pacman="sudo pacman "
 alias apm="/c/Users/aheggert/AppData/Local/atom/bin/apm"
 alias npp="/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
 alias protractor="/c/Users/aheggert/AppData/Roaming/npm/protractor"
