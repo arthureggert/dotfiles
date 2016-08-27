@@ -6,6 +6,11 @@ ln -s ~/Documentos/workspace/dotfiles/bash-it/bash_profile ~/.bash_profile
 ln -s ~/Documentos/workspace/dotfiles/bash-it/aliases/custom.aliases.bash  ~/Documentos/workspace/bash-it/aliases/custom.aliases.bash
 ln -s ~/Documentos/workspace/dotfiles/bash-it/plugins/custom.plugins.bash ~/Documentos/workspace/bash-it/plugins/custom.plugins.bash
 ln -s ~/Documentos/workspace/dotfiles/bash-it/themes ~/Documentos/workspace/bash-it/custom/themes
+
+#tmux
+ln -s ~/Documentos/workspace/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/Documentos/workspace/dotfiles/tmux/tmux.conf.local ~/.tmux.conf.local
+
 #NPM
 ln -s ~/Documentos/workspace/dotfiles/npm/npmrc ~/.npmrc
 #GIT
