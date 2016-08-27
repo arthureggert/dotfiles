@@ -5,4 +5,4 @@ alias systemupdate='sudo pacman -Syyu && yaourt -Syu --aur --noconfirm'
 alias pacman='sudo pacman'
 
 #GIT
-alias greset='git reset --hard origin\dev'
+alias greset='git reset --hard $1/$2'

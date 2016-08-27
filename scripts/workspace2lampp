@@ -1,4 +1,0 @@
-#!/bin/bash
-mount --bind $1 /opt/lampp/htdocs
-chmod 755 -R /opt/lampp/htdocs
-lampp start

@@ -1,7 +1,0 @@
-#!/bin/bash
-#$1 GIT_URL
-#$2 OPENSHIFT_GIT_URL
-
-git clone $1
-git remote add openshift -f $2
-git push openshift HEAD

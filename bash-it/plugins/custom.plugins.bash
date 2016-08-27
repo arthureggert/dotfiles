@@ -53,6 +53,18 @@ git_discard_local() {
 	git reset --hard "$remote"/"$branch"
 }
 
+#IDEA
+function reset_idea(){
+	echo "removeing evaluation key"
+	rm ~/.IntelliJIdea15/config/eval/idea15.evaluation.key
+
+	echo "resetting evalsprt in options.xml"
+	sed -i '/evlsprt/d' ~/.IntelliJIdea15/config/options/options.xml
+
+	echo "resetting evalsprt in prefs.xml"
+	sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
+}
+
 
 #PROXY
 assignProxy(){
@@ -78,3 +90,17 @@ myProxy(){
    no_proxy_value="localhost,127.0.0.1,LocalAddress,LocalDomain.com"
    assignProxy $proxy_value $no_proxy_value
 }
+
+#ENV
+kill_grep() {
+	kill -9 $(ps -ax | grep $1 | awk '{print $1}')
+}
+
+makepasswd() {
+	tr -dc A-Za-z0-9@#$-_?= < /dev/urandom | fold -w ${1:-10}  | head -c ${1:-8} | xargs
+}
+
+rm_all(){
+	rm -rf ..?* .[!.]* *
+}
+

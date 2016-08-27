@@ -1,3 +1,0 @@
-#!/bin/bash
-
-kill -9 $(ps -ax | grep java | grep  wildfly| awk '{print $1}')
