@@ -25,6 +25,7 @@ git_update() {
 
 git_update_all(){
 	currentdir=`pwd`
+	echo $currentdir
 	cd $1 > /dev/null
 	for file in */ ; do 
 	  if [[ -d "$file" && ! -L "$file" ]]; then
@@ -52,55 +53,3 @@ git_discard_local() {
 	remote=$(git_remote_name)
 	git reset --hard "$remote"/"$branch"
 }
-
-#IDEA
-function reset_idea(){
-	echo "removeing evaluation key"
-	rm ~/.IntelliJIdea15/config/eval/idea15.evaluation.key
-
-	echo "resetting evalsprt in options.xml"
-	sed -i '/evlsprt/d' ~/.IntelliJIdea15/config/options/options.xml
-
-	echo "resetting evalsprt in prefs.xml"
-	sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
-}
-
-
-#PROXY
-assignProxy(){
-   PROXY_ENV="http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY"
-   for envar in $PROXY_ENV
-   do
-     export $envar=$1
-   done
-   for envar in "no_proxy NO_PROXY"
-   do
-      export $envar=$2
-   done
-}
-
-clrProxy(){
-   assignProxy "" # This is what 'unset' does.
-}
-
-myProxy(){
-   user=aheggert
-   read -p "Password: " -s pass &&  echo -e " "
-   proxy_value="http://$user:$pass@192.168.254.254:3128"
-   no_proxy_value="localhost,127.0.0.1,LocalAddress,LocalDomain.com"
-   assignProxy $proxy_value $no_proxy_value
-}
-
-#ENV
-kill_grep() {
-	kill -9 $(ps -ax | grep $1 | awk '{print $1}')
-}
-
-makepasswd() {
-	tr -dc A-Za-z0-9@#$-_?= < /dev/urandom | fold -w ${1:-10}  | head -c ${1:-8} | xargs
-}
-
-rm_all(){
-	rm -rf ..?* .[!.]* *
-}
-
