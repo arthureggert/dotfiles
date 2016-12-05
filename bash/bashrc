@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 #EXPORT
-unset MANPATH
+if [[ "$HOSTNAME" == 'deathstar' ]]; then
+  #HOME PC
+  export WORKSPACE=/c/Users/ArthurH/Documents/Workspace
+else
+  #WORK PC
+  export WORKSPACE=/c/Users/aheggert/Documents/workspace
+fi
 
-export WORKSPACE=/c/Users/aheggert/Documents/workspace
-export NPM_PACKAGES=/home/aheggert/.npm-packages
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-export PATH=$PATH:$NPM_PACKAGES/bin
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
-source $WORKSPACE/dotfiles/bash/plugins/custom.plugins.bash
-source $WORKSPACE/dotfiles/bash/aliases/custom.aliases.bash
+source $WORKSPACE/dotfiles/bash/lib/helper.bash
+_load_bash_files $WORKSPACE/dotfiles/bash/plugins/
+_load_bash_files $WORKSPACE/dotfiles/bash/aliases/
+# _load_bash_files $WORKSPACE/dotfiles/bash/completion/

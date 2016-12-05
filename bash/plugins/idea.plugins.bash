@@ -1,4 +1,3 @@
-#IDEA
 function reset_idea(){
 	echo "removeing evaluation key"
 	rm ~/.IntelliJIdea15/config/eval/idea15.evaluation.key
