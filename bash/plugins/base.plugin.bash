@@ -66,3 +66,12 @@ function quiet ()
     # group 'base'
     $* &> /dev/null &
 }
+
+function command_exists ()
+{
+    #about 'checks for existence of a command'
+    #param '1: command to check'
+    #example '$ command_exists ls && echo exists'
+    #group 'base'
+    type "$1" &> /dev/null ;
+}

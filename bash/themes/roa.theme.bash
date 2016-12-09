@@ -403,19 +403,6 @@ function battery_char {
     fi
 }
 
-if [ ! -e $BASH_IT/plugins/enabled/battery.plugin.bash ]; then
-    # if user has installed battery plugin, skip this...
-    function battery_charge (){
-	# no op
-	echo -n
-    }
-
-    function battery_char (){
-	# no op
-	echo -n
-    }
-fi
-
 function aws_profile {
   if [[ $AWS_DEFAULT_PROFILE ]]; then
     echo -e "${AWS_DEFAULT_PROFILE}"
