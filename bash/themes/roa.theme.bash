@@ -473,9 +473,9 @@ my_ve(){
 
 prompt() {
 
-    my_ps_host="${green}\h${normal} ${bold_purple}with${normal} $(battery_char)${normal}";
+    my_ps_host="${green}\h${normal}";# ${bold_purple}with${normal}#$(battery_char)${normal}";
     # yes, these are the the same for now ...
-    my_ps_host_root="${green}\h${normal} ${bold_purple}with${normal} $(battery_char)${normal}";
+    my_ps_host_root="${green}\h${normal}";# ${bold_purple}with${normal}";# $(battery_char)${normal}";
 
     my_ps_user="${bold_green}\u${normal}"
     my_ps_root="${bold_red}\u${normal}";
