@@ -1,5 +1,4 @@
 #GIT
-alias greset='git reset --hard $1/$2'
 alias gcl='git clone'
 alias ga='git add'
 alias gap='git add -p'

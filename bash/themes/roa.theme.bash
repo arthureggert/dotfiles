@@ -36,7 +36,7 @@ SCM_THEME_PROMPT_SUFFIX=""
 
 SCM_THEME_PROMPT_DIRTY=" ${bold_red}✗${normal}"
 SCM_THEME_PROMPT_CLEAN=" ${bold_green}✓${normal}"
-SCM_GIT_CHAR="${bold_green}±${normal}"
+SCM_GIT_CHAR="±"
 
 function scm {
   if [[ "$SCM_CHECK" = false ]]; then SCM=$SCM_NONE
@@ -94,7 +94,7 @@ function modern_scm_prompt {
     if [[ $SCM_CHAR = $SCM_NONE_CHAR ]]; then 
         return
     else 
-        echo "${bold_yellow}on $(scm_char)${normal}$(git_branch_name)"
+        echo "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name)${normal}"
     fi
 } 
 
