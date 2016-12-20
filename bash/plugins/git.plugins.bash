@@ -7,12 +7,12 @@ git_color() {
 	if git rev-parse --git-dir >/dev/null 2>&1; then
         # check for uncommitted changes in the index
         if ! git diff-index --quiet --cached HEAD --ignore-submodules -- >&2; then
-            echo $RED
+            echo $red
         # check for unstaged changes
         elif ! git diff-files --quiet --ignore-submodules -- >&2; then
-            echo $YELLOW
+            echo $yellow
         else
-            echo $GREEN
+            echo $green
         fi
     fi
 }

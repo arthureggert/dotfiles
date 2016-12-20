@@ -1,5 +1,5 @@
 #ENV
-alias sl=ls
+alias sl=lS
 alias la='ls -AF'       # Compact view, show hidden
 alias ll='ls -al'
 alias l='ls -a'
@@ -15,3 +15,4 @@ alias cls='clear'
 alias q='exit'
 alias md='mkdir -p'
 alias rd='rmdir'
+alias workspace='cd $WORKSPACE'

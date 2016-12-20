@@ -58,7 +58,7 @@ battery_percentage(){
         ;;
     esac
   else
-    echo "no"
+    echo "0"
   fi
 }
 
