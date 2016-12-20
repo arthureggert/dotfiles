@@ -7,6 +7,8 @@ ac_adapter_connected(){
   then
     ioreg -n AppleSmartBattery -r | grep -q '"ExternalConnected" = Yes'
     return $?
+  # else 
+	#WMIC Path Win32_Battery Get EstimatedChargeRemaining | tr '\n' ' ' | sed -e 's/[^0-9]/ /g' -e 's/^ *//g' -e 's/ *$//g' | tr -s ' ' | sed 's/ /\n/g'
   fi
 }
 
