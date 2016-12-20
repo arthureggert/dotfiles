@@ -7,8 +7,7 @@ CLOCK_CHAR=''
 THEME_CLOCK_CHECK=true
 THEME_PROMPT_HOST='\H'
 
-SCM_CHECK=${SCM_CHECK:=true}
-
+SCM_CHECK=true
 
 SCM_THEME_BRANCH_PREFIX=''
 SCM_THEME_TAG_PREFIX='tag:'
@@ -34,8 +33,8 @@ SCM_NONE_CHAR='○'
 SCM_THEME_PROMPT_PREFIX=""
 SCM_THEME_PROMPT_SUFFIX=""
 
-SCM_THEME_PROMPT_DIRTY=" ${bold_red}✗${normal}"
-SCM_THEME_PROMPT_CLEAN=" ${bold_green}✓${normal}"
+SCM_THEME_PROMPT_DIRTY="${bold_red}✗${normal}"
+SCM_THEME_PROMPT_CLEAN="${bold_green}✓${normal}"
 SCM_GIT_CHAR="±"
 
 function scm {
@@ -76,7 +75,7 @@ function clock_char {
 
 function battery_char {
     if [[ "${THEME_BATTERY_PERCENTAGE_CHECK}" = true ]]; then
-        echo -e "${bold_red}$(battery_percentage)%"
+        echo -e "${bold_red}$(battery_percentage)%${normal}"
     fi
 }
 
@@ -91,12 +90,17 @@ function safe_append_prompt_command {
 }
 
 function modern_scm_prompt {
-    if [[ $SCM_CHAR = $SCM_NONE_CHAR ]]; then 
+    if [[ $SCM_CHAR = $SCM_NONE_CHAR ]]; then
         return
-    else 
-        echo "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name)${normal}"
+    else
+      if [ $(git_color) = $red -o $(git_color) = $yellow ] ; then
+        echo -e "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name) $SCM_THEME_PROMPT_DIRTY${normal}"
+      else
+        echo -e "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name) $SCM_THEME_PROMPT_CLEAN${normal}"
+      fi
+
     fi
-} 
+}
 
 function prompt {
     scm_prompt_info
