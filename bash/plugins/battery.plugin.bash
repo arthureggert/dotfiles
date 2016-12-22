@@ -58,6 +58,8 @@ battery_percentage(){
         echo $IOREG_OUTPUT | head -c 2
         ;;
     esac
+  elif [[ $(WMIC Path Win32_Battery) = 'No Instance(s) Available.' ]]; then
+    echo no
   else
     local WIN_PERC=$(WMIC Path Win32_Battery Get EstimatedChargeRemaining | tr '\n' ' ' | sed -e 's/[^0-9]/ /g' -e 's/^ *//g' -e 's/ *$//g' | tr -s ' ' | sed 's/ /\n/g')
     echo $WIN_PERC

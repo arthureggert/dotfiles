@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export PATH=$PATH:$WORKSPACE/dotfiles/bash/executables/
 #EXPORT
 if [[ "$HOSTNAME" == 'deathstar' ]]; then
   #HOME PC
@@ -8,6 +9,7 @@ else
   #WORK PC
   export WORKSPACE=/c/Users/aheggert/Documents/workspace
 fi
+
 
 source $WORKSPACE/dotfiles/bash/lib/helper.bash
 _load_bash_files $WORKSPACE/dotfiles/bash/plugins/

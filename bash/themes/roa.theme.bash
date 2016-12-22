@@ -104,7 +104,7 @@ function modern_scm_prompt {
 
 function prompt {
     scm_prompt_info
-    my_ps_host="${green}\h${normal}${bold_purple} with ${normal}$(battery_char)${normal}";
+    my_ps_host="${green}\h${normal}";#${bold_purple} with ${normal}$(battery_char)${normal}
     my_ps_user="${bold_green}\u${normal}"
     PS1="${TITLEBAR}$(clock_char)$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)
 ${bold_orange}→ ${normal}"
