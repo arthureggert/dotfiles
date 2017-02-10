@@ -1,4 +1,13 @@
 #GIT
+
+git_rola() {
+  if "$(is_clean)"; then
+    echo -e '1';
+  else 
+    echo -e '2'; 
+  fi
+}
+
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -20,7 +29,7 @@ git_color() {
 git_update() {
 	branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 	remote=$(git remote)
-	git pull "$remote" "$branch"
+	git pull "$remote" "$branch" -q
 }
 
 git_update_all(){
@@ -31,7 +40,7 @@ git_update_all(){
 	  if [[ -d "$file" && ! -L "$file" ]]; then
 		if [ -d "$file/.git" ]; then
 			cd $file > /dev/null
-			echo -e "\033[0;32m" `pwd` "\033[0;37m"
+			echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
 			git_update
 			cd ..  > /dev/null
 		fi
@@ -89,16 +98,17 @@ function git_revert() {
   git reset --hard
 }
 
+function is_clean() {
+  if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
+    return 0;
+  fi
+  return 1;
+}
+
 function git_rollback() {
   # about 'resets the current HEAD to this commit'
   # group 'git'
 
-  function is_clean() {
-    if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
-      echo "Your branch is dirty, please commit your changes"
-      kill -INT $$
-    fi
-  }
 
   function commit_exists() {
     git rev-list --quiet $1
