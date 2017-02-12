@@ -28,14 +28,14 @@ SCM_GIT_UNSTAGED_CHAR="U:"
 SCM_GIT_STAGED_CHAR="S:"
 
 SCM_NONE='NONE'
-SCM_NONE_CHAR='○'
+SCM_NONE_CHAR=''
 
 SCM_THEME_PROMPT_PREFIX=""
 SCM_THEME_PROMPT_SUFFIX=""
 
-SCM_THEME_PROMPT_DIRTY="${bold_red}✗${normal}"
-SCM_THEME_PROMPT_CLEAN="${bold_green}✓${normal}"
-SCM_GIT_CHAR="±"
+SCM_THEME_PROMPT_DIRTY="${bold_red}dirty${normal}"
+SCM_THEME_PROMPT_CLEAN="${bold_green}clean${normal}"
+SCM_GIT_CHAR="�"
 
 function scm {
   if [[ "$SCM_CHECK" = false ]]; then SCM=$SCM_NONE
@@ -104,14 +104,14 @@ function modern_scm_prompt {
 
 function prompt {
     scm_prompt_info
-    my_ps_host="${green}\h${normal}";#${bold_purple} with ${normal}$(battery_char)${normal}
+    my_ps_host="${green}\h${normal}${bold_purple} with ${normal}$(battery_char)${normal}"
     my_ps_user="${bold_green}\u${normal}"
     PS1="${TITLEBAR}$(clock_char)$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)
-${bold_orange}→ ${normal}"
+${bold_orange}-> ${normal}"
 }
 
 TITLEBAR=""
 PS3=">> "
-PS2="└─> "
+PS2=">>> "
 
 safe_append_prompt_command prompt
