@@ -12,17 +12,17 @@ SCM_CHECK=true
 SCM_THEME_BRANCH_PREFIX=''
 SCM_THEME_TAG_PREFIX='tag:'
 SCM_THEME_DETACHED_PREFIX='detached:'
-SCM_THEME_BRANCH_TRACK_PREFIX=' → '
-SCM_THEME_BRANCH_GONE_PREFIX=' ⇢ '
-SCM_THEME_CURRENT_USER_PREFFIX=' ☺︎ '
+SCM_THEME_BRANCH_TRACK_PREFIX=''
+SCM_THEME_BRANCH_GONE_PREFIX=''   
+SCM_THEME_CURRENT_USER_PREFFIX=''
 SCM_THEME_CURRENT_USER_SUFFIX=''
 
 THEME_BATTERY_PERCENTAGE_CHECK=true
 
-SCM_GIT='git'
-SCM_GIT_DETACHED_CHAR='⌿'
-SCM_GIT_AHEAD_CHAR="↑"
-SCM_GIT_BEHIND_CHAR="↓"
+SCM_GIT='±'
+SCM_GIT_DETACHED_CHAR=''
+SCM_GIT_AHEAD_CHAR='↑'
+SCM_GIT_BEHIND_CHAR='↓'
 SCM_GIT_UNTRACKED_CHAR="?:"
 SCM_GIT_UNSTAGED_CHAR="U:"
 SCM_GIT_STAGED_CHAR="S:"
@@ -33,9 +33,9 @@ SCM_NONE_CHAR=''
 SCM_THEME_PROMPT_PREFIX=""
 SCM_THEME_PROMPT_SUFFIX=""
 
-SCM_THEME_PROMPT_DIRTY="${bold_red}dirty${normal}"
-SCM_THEME_PROMPT_CLEAN="${bold_green}clean${normal}"
-SCM_GIT_CHAR="�"
+SCM_THEME_PROMPT_DIRTY="${bold_red}✘${normal}"
+SCM_THEME_PROMPT_CLEAN="${bold_green}✓${normal}"
+SCM_GIT_CHAR="±"
 
 function scm {
   if [[ "$SCM_CHECK" = false ]]; then SCM=$SCM_NONE
@@ -74,9 +74,14 @@ function clock_char {
 }
 
 function battery_char {
+  if [[ "$HOSTNAME" == 'deathstar' ]]; then
     if [[ "${THEME_BATTERY_PERCENTAGE_CHECK}" = true ]]; then
         echo -e "${bold_red}$(battery_percentage)%${normal}"
     fi
+  else 
+    echo -e "${bold_red}100%${normal}"
+  fi
+    
 }
 
 function safe_append_prompt_command {
@@ -106,8 +111,8 @@ function prompt {
     scm_prompt_info
     my_ps_host="${green}\h${normal}${bold_purple} with ${normal}$(battery_char)${normal}"
     my_ps_user="${bold_green}\u${normal}"
-    PS1="${TITLEBAR}$(clock_char)$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)
-${bold_orange}-> ${normal}"
+    PS1="${TITLEBAR}$(clock_char)$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)${bold_orange} 
+$ ${normal}"
 }
 
 TITLEBAR=""
