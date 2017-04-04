@@ -7,7 +7,7 @@ if [[ "$HOSTNAME" == 'deathstar' ]]; then
   export WORKSPACE=/c/Users/ArthurH/Documents/Workspace
 else
   #WORK PC
-  export WORKSPACE=/c/Users/aheggert/Documents/workspace
+  export WORKSPACE=/c/Users/arthur.eggert/Documents/workspace
 fi
 
 
