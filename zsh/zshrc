@@ -49,10 +49,10 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gulp mvn node npm common-aliases)
+plugins=(git gulp mvn node npm common-aliases zsh-syntax-highlighting)
 
 # User configuration
-
+export ZSH_CUSTOM=/home/arthur/workspace/dotfiles/zsh/custom
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
