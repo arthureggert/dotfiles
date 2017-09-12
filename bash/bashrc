@@ -21,4 +21,4 @@ source $WORKSPACE/dotfiles/bash/lib/helper.bash
 _load_bash_files $WORKSPACE/dotfiles/bash/plugins/
 _load_bash_files $WORKSPACE/dotfiles/bash/aliases/
 _load_bash_files $WORKSPACE/dotfiles/bash/themes/
-# _load_bash_files $WORKSPACE/dotfiles/bash/completion/
+_load_bash_files $WORKSPACE/dotfiles/bash/completion/

@@ -107,12 +107,39 @@ function modern_scm_prompt {
     fi
 }
 
+function get_space {
+  local SPACES=' '
+  local SPACE=' '
+  local LENGTH=59
+  local ACTUAL_PWD=$PWD
+  local PWD_LENGTH=0
+  local GIT_BRANCH_LENGTH=0
+  
+  if [ -d "$ACTUAL_PWD/.git" ]
+    then
+    local NAME=$(git_branch_name)
+    ((GIT_BRANCH_LENGTH=${#NAME} + 6))
+  fi
+  
+  if [ $ACTUAL_PWD != $HOME  ] 
+    then
+      ((PWD_LENGTH=${#ACTUAL_PWD} - 22))
+  fi
+  (( LENGTH = ${COLUMNS} - $LENGTH - ${PWD_LENGTH} - ${GIT_BRANCH_LENGTH}))
+
+  for i in $(seq 1 $LENGTH)
+    do 
+      SPACES="$SPACES "
+    done
+
+  echo "${SPACES}"
+}
+
 function prompt {
     scm_prompt_info
     my_ps_host="${green}\h${normal}${bold_purple} with ${normal}$(battery_char)${normal}"
     my_ps_user="${bold_green}\u${normal}"
-    PS1="${TITLEBAR}$(clock_char)$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)${bold_orange} 
-$ ${normal}"
+    PS1="${TITLEBAR}$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)${bold_orange}$(get_space)$(clock_char)${normal}\n⤷ ${normal}"
 }
 
 TITLEBAR=""

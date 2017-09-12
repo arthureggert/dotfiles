@@ -67,6 +67,7 @@ module.exports = {
 			lightCyan: '#00ffff',
 			lightWhite: '#ffffff'
 		},
+
 		hyperline: {
 			color: 'black',
 			plugins: [
@@ -181,7 +182,8 @@ module.exports = {
 		},
 
 		// set to false for no bell
-		bell: 'SOUND',
+		//bell: 'SOUND',
+		bell: 'false',
 
 		// if true, selected text will automatically be copied to the clipboard
 		copyOnSelect: false
