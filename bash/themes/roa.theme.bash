@@ -99,9 +99,9 @@ function modern_scm_prompt {
         return
     else
       if [ $(git_color) = $red -o $(git_color) = $yellow ] ; then
-        echo -e "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name)${normal} $(status) $SCM_THEME_PROMPT_DIRTY${normal}"
+        echo -e "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name)${normal} $SCM_THEME_PROMPT_DIRTY${normal}"
       else
-        echo -e "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name)${normal} $(status) $SCM_THEME_PROMPT_CLEAN${normal}"
+        echo -e "${bold_yellow}on $(git_color)$(scm_char)$(git_branch_name)${normal} $SCM_THEME_PROMPT_CLEAN${normal}"
       fi
 
     fi
