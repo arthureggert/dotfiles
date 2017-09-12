@@ -70,15 +70,7 @@ function git_remote {
   echo "Running: git remote add origin ${GIT_HOSTING}:$1.git"
   git remote add origin $GIT_HOSTING:$1.git
 }
-
-function git_first_push {
-  # about 'push into origin refs/heads/master'
-  # group 'git'
-
-  echo "Running: git push origin master:refs/heads/master"
-  git push origin master:refs/heads/master
-}
-
+  
 function git_pub() {
   # about 'publishes current branch to remote origin'
   # group 'git'
