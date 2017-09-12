@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2017-08-24 08:39:27" build="161206">
+		<key name=".Vanilla" modified="2017-09-11 14:09:46" build="161206">
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
 			<value name="StartTasksFile" type="string" data=""/>
@@ -294,10 +294,10 @@
 			<value name="JumpListAutoUpdate" type="hex" data="01"/>
 			<value name="SaveCmdHistory" type="hex" data="01"/>
 			<value name="CmdLineHistory" type="multi">
-				<line data="{Shells::PowerShell (Admin)}"/>
-				<line data="{ZSH::Babun}"/>
 				<line data="{Bash::Git bash}"/>
 				<line data="{Bash::bash}"/>
+				<line data="{Shells::PowerShell (Admin)}"/>
+				<line data="{ZSH::Babun}"/>
 				<line data="{Shells::cmd (Admin)}"/>
 				<line data="{Shells::cmd 64/32}"/>
 				<line data="{Shells::cmd}"/>
@@ -350,12 +350,12 @@
 			<value name="AutoSaveSizePos" type="hex" data="01"/>
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
-			<value name="WindowMode" type="dword" data="00000520"/>
-			<value name="ConWnd X" type="long" data="-259"/>
-			<value name="ConWnd Y" type="long" data="243"/>
-			<value name="LastMonitor" type="string" data="0,30,1080,1920"/>
-			<value name="ConWnd Width" type="dword" data="000000a8"/>
-			<value name="ConWnd Height" type="dword" data="00000021"/>
+			<value name="WindowMode" type="dword" data="0000051f"/>
+			<value name="ConWnd X" type="long" data="1916"/>
+			<value name="ConWnd Y" type="long" data="646"/>
+			<value name="LastMonitor" type="string" data="1920,-238,3000,1682"/>
+			<value name="ConWnd Width" type="dword" data="00000085"/>
+			<value name="ConWnd Height" type="dword" data="00000039"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
 			<value name="QuakeAnimation" type="ulong" data="300"/>
