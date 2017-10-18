@@ -26,10 +26,59 @@ git_color() {
     fi
 }
 
+git_color_bash() {
+	if git rev-parse --git-dir >/dev/null 2>&1; then
+        # check for uncommitted changes in the index
+        if ! git diff-index --quiet --cached HEAD --ignore-submodules -- >&2; then
+            #echo "\[\e[0;31m\]"
+            echo "\033[0;31m"
+        # check for unstaged changes
+        elif ! git diff-files --quiet --ignore-submodules -- >&2; then
+            #echo "\[\e[0;33m\]"
+            echo "\033[0;33m"
+        else
+            #echo "\[\e[0;32m\]"
+            echo "\033[0;32m"
+        fi
+    fi
+}
+
 git_update() {
 	branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 	remote=$(git remote)
 	git pull "$remote" "$branch" -q
+}
+
+git_status_all() {
+  currentdir=`pwd`
+	cd $1 > /dev/null
+	for file in */ ; do
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		  if [ -d "$file/.git" ]; then
+			  cd $file > /dev/null
+        echo -e "\033[0;32m" `basename $file` "------------>" "$(git_color_bash)$(git_branch_name)"
+			  cd ..  > /dev/null
+		  fi
+	  fi
+	done
+	cd $currentdir > /dev/null
+}
+
+git_fetch_all() {
+  currentdir=`pwd`
+	echo $currentdir
+	cd $1 > /dev/null
+	for file in */ ; do
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		  if [ -d "$file/.git" ]; then
+			  cd $file > /dev/null
+			  echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
+        git fetch && gdelbranch
+			  cd ..  > /dev/null
+		  fi
+	  fi
+	done
+	cd $currentdir > /dev/null
 }
 
 git_update_all(){

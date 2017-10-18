@@ -125,7 +125,8 @@ function get_space {
     then
       ((PWD_LENGTH=${#ACTUAL_PWD} - 22))
   fi
-  (( LENGTH = ${COLUMNS} - $LENGTH - ${PWD_LENGTH} - ${GIT_BRANCH_LENGTH}))
+  
+  (( LENGTH = ${COLUMNS} - ${LENGTH} - ${PWD_LENGTH} - ${GIT_BRANCH_LENGTH}))
 
   for i in $(seq 1 $LENGTH)
     do 
@@ -243,7 +244,7 @@ function prompt {
     scm_prompt_info
     my_ps_host="${green}\h${normal}${bold_purple} with ${normal}$(battery_char)${normal}"
     my_ps_user="${bold_green}\u${normal}"
-    PS1="${TITLEBAR}$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\w${normal} $(modern_scm_prompt)${bold_orange}$(get_space)$(clock_char)${normal}\n⤷ ${normal}"
+    PS1="${TITLEBAR}${normal}$(clock_char)$my_ps_user ${bold_red}at${normal} $my_ps_host ${bold_cyan}in ${cyan}\W${normal} $(modern_scm_prompt)${bold_orange}${normal}\n$ ${normal}"
 }
 
 TITLEBAR=""

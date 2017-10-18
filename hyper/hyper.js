@@ -207,7 +207,6 @@ module.exports = {
 	plugins: [
 		'hyper-blink',
 		'hyper-tab-icons',
-		'hyperfullscreen',
 		'hyperline',
 		'hyperterm-crosshair',
 		'hyper-material-theme',
