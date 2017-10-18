@@ -56,7 +56,7 @@ git_status_all() {
 	  if [[ -d "$file" && ! -L "$file" ]]; then
 		  if [ -d "$file/.git" ]; then
 			  cd $file > /dev/null
-        echo -e "\033[0;32m" `basename $file` "------------>" "$(git_color_bash)$(git_branch_name)"
+        echo -e "\033[0;32m" `basename $file` " \033[0;37m ------------>" "$(git_color_bash)$(git_branch_name)"
 			  cd ..  > /dev/null
 		  fi
 	  fi
