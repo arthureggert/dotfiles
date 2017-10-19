@@ -152,7 +152,7 @@ module.exports = {
 				permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
 				maximize: 'meta+enter'
 			},
-			showIndicators: true, // Show pane number
+			showIndicators: false, // Show pane number
 			indicatorPrefix: '⌥ ', // Will be completed with pane number
 			indicatorStyle: {
 				// Added to indicator <div>
@@ -205,6 +205,7 @@ module.exports = {
 	//   `@company/project`
 	//   `project#1.0.1`
 	plugins: [
+		'hyper-true-fullscreen',
 		'hyper-blink',
 		'hyper-tab-icons',
 		'hyperline',
