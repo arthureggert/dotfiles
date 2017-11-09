@@ -98,7 +98,7 @@ git_delete_branchs() {
 		  if [ -d "$file/.git" ]; then
 			  cd $file > /dev/null
         echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
-        gdelbranch
+        git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | xargs -n 1 git branch -d
 			  cd ..  > /dev/null
 		  fi
 	  fi
