@@ -1,13 +1,5 @@
 #GIT
 
-git_rola() {
-  if "$(is_clean)"; then
-    echo -e '1';
-  else 
-    echo -e '2'; 
-  fi
-}
-
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -97,6 +89,23 @@ git_update_all(){
 	done
 	cd $currentdir > /dev/null
 }
+
+git_delete_branchs() {
+  currentdir=`pwd`
+	cd $1 > /dev/null
+	for file in */ ; do
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		  if [ -d "$file/.git" ]; then
+			  cd $file > /dev/null
+        echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
+        gdelbranch
+			  cd ..  > /dev/null
+		  fi
+	  fi
+	done
+	cd $currentdir > /dev/null
+}
+
 
 git_branch_name(){
 	git branch | sed -n -e 's/^\* \(.*\)/\1/p'
