@@ -65,7 +65,7 @@ git_fetch_all() {
 		  if [ -d "$file/.git" ]; then
 			  cd $file > /dev/null
 			  echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
-			  git fetch
+			  git fetch --prune
 			  cd ..  > /dev/null
 		  fi
 	  fi
