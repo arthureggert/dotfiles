@@ -106,6 +106,9 @@ git_delete_branchs() {
 	cd $currentdir > /dev/null
 }
 
+git_super() {
+  git_update_all . ; git_fetch_all . ; git_delete_branchs .
+}
 
 git_branch_name(){
 	git branch | sed -n -e 's/^\* \(.*\)/\1/p'
