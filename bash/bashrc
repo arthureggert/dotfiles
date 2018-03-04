@@ -2,13 +2,13 @@
 
 export PATH=$PATH:$WORKSPACE/dotfiles/bash/executables/
 #EXPORT
-if [[ "$HOSTNAME" == 'deathstar' ]]; then
+#if [[ "$HOSTNAME" == 'deathstar' ]]; then
   #HOME PC
-  export WORKSPACE=/c/Users/ArthurH/Documents/Workspace
-else
+ # export WORKSPACE=/c/Users/oparo/Documents/Workspace
+#else
   #WORK PC
-  export WORKSPACE=/c/Users/arthur.eggert/Documents/workspace
-fi
+  export WORKSPACE=$HOMEPATH/Documents/workspace
+#fi
 
 
 source $WORKSPACE/dotfiles/bash/lib/helper.bash
