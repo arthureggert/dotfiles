@@ -1,13 +1,5 @@
 #GIT
 
-git_rola() {
-  if "$(is_clean)"; then
-    echo -e '1';
-  else 
-    echo -e '2'; 
-  fi
-}
-
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -26,10 +18,59 @@ git_color() {
     fi
 }
 
+git_color_bash() {
+	if git rev-parse --git-dir >/dev/null 2>&1; then
+        # check for uncommitted changes in the index
+        if ! git diff-index --quiet --cached HEAD --ignore-submodules -- >&2; then
+            #echo "\[\e[0;31m\]"
+            echo "\033[0;31m"
+        # check for unstaged changes
+        elif ! git diff-files --quiet --ignore-submodules -- >&2; then
+            #echo "\[\e[0;33m\]"
+            echo "\033[0;33m"
+        else
+            #echo "\[\e[0;32m\]"
+            echo "\033[0;32m"
+        fi
+    fi
+}
+
 git_update() {
 	branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 	remote=$(git remote)
 	git pull "$remote" "$branch" -q
+}
+
+git_status_all() {
+  currentdir=`pwd`
+	cd $1 > /dev/null
+	for file in */ ; do
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		  if [ -d "$file/.git" ]; then
+			  cd $file > /dev/null
+        echo -e "\033[0;32m" `basename $file` " \033[0;37m ------------>" "$(git_color_bash)$(git_branch_name)"
+			  cd ..  > /dev/null
+		  fi
+	  fi
+	done
+	cd $currentdir > /dev/null
+}
+
+git_fetch_all() {
+  currentdir=`pwd`
+	echo $currentdir
+	cd $1 > /dev/null
+	for file in */ ; do
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		  if [ -d "$file/.git" ]; then
+			  cd $file > /dev/null
+			  echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
+			  git fetch --prune
+			  cd ..  > /dev/null
+		  fi
+	  fi
+	done
+	cd $currentdir > /dev/null
 }
 
 git_update_all(){
@@ -47,6 +88,26 @@ git_update_all(){
 	  fi
 	done
 	cd $currentdir > /dev/null
+}
+
+git_delete_branchs() {
+  currentdir=`pwd`
+	cd $1 > /dev/null
+	for file in */ ; do
+	  if [[ -d "$file" && ! -L "$file" ]]; then
+		  if [ -d "$file/.git" ]; then
+			  cd $file > /dev/null
+        echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
+        git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | xargs -n 1 git branch -d
+			  cd ..  > /dev/null
+		  fi
+	  fi
+	done
+	cd $currentdir > /dev/null
+}
+
+git_super() {
+  git_update_all . ; git_fetch_all . ; git_delete_branchs .
 }
 
 git_branch_name(){
@@ -70,15 +131,7 @@ function git_remote {
   echo "Running: git remote add origin ${GIT_HOSTING}:$1.git"
   git remote add origin $GIT_HOSTING:$1.git
 }
-
-function git_first_push {
-  # about 'push into origin refs/heads/master'
-  # group 'git'
-
-  echo "Running: git push origin master:refs/heads/master"
-  git push origin master:refs/heads/master
-}
-
+  
 function git_pub() {
   # about 'publishes current branch to remote origin'
   # group 'git'

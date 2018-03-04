@@ -11,8 +11,14 @@ export PATH=$PATH:$WORKSPACE/dotfiles/bash/executables/
 #fi
 
 
+#BIND LIKE ZSH
+bind 'set show-all-if-ambiguous on'
+bind 'set completion-ignore-case on'
+bind 'TAB:menu-complete'
+
+
 source $WORKSPACE/dotfiles/bash/lib/helper.bash
 _load_bash_files $WORKSPACE/dotfiles/bash/plugins/
 _load_bash_files $WORKSPACE/dotfiles/bash/aliases/
 _load_bash_files $WORKSPACE/dotfiles/bash/themes/
-# _load_bash_files $WORKSPACE/dotfiles/bash/completion/
+_load_bash_files $WORKSPACE/dotfiles/bash/completion/
