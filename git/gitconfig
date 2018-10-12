@@ -1,8 +1,0 @@
-[user]
-	email = opa.roa@gmail.com
-	name = Arthur Henrique Eggert
-[push]
-	default = simple
-[core]
-	autocrlf = input
-	excludesfile = '~/.gitignore'
