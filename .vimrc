@@ -23,24 +23,34 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'guns/xterm-color-table.vim'
 Plug 'ternjs/tern_for_vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'Quramy/tsuquyomi'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jxnblk/vim-mdx-js'
+Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
 
 call plug#end()
+
+colorscheme elflord   
 
 " General configuration -------------------------------------------------------
 set number
 set ruler
 set backspace=indent,eol,start
+set noswapfile
+set termwinsize="1x0"
+" set autochdir
 
 let mapleader = ','
+let NERDTreeShowHidden=1
 
 filetype plugin indent on
-" show existing tab with 4 spaces width
 set tabstop=4
-" when indenting with '>', use 4 spaces width
 set shiftwidth=4
-" Sets the number of columns for a TAB.
 set softtabstop=4
-" On pressing tab, insert 4 spaces
 set expandtab
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -53,15 +63,15 @@ set omnifunc=syntaxcomplete#Complete
 set hlsearch
 set incsearch
 
-set paste
+"set paste
 set ttyfast
 
 set autoindent
 set showcmd
+set guifont=Fira\ Code:h18 
 
 " Fugitive (Diff for resolve conflicts) ---------------------------------------
 set diffopt+=vertical
-
 
 " Fold by grouping indented text
 set foldmethod=indent
@@ -75,8 +85,13 @@ set nofoldenable
 " Folds with a higher level will be closed
 set foldlevel=2
 
+
 " NERDTree Configuration ------------------------------------------------------
 map <F3> :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<cr>
+" map <C-b> :NERDTreeFocus<CR>
+
+let g:tsuquyomi_disable_quickfix = 1
 
 " TagBar Configuration --------------------------------------------------------
 
@@ -131,12 +146,12 @@ let g:ctrlp_lazy_update = 2
 " let g:ale_set_loclist=1
 " let g:ale_set_quickfix=0
 " let g:ale_statusline_format = ['✖ %d', '⚠  %d', '⬥ ok']
-let airline#extensions#ale#error_symbol = '✖:'
-let airline#extensions#ale#warning_symbol = '⚠:'
+let airline#extensions#ale#error_symbol = '✖'
+let airline#extensions#ale#warning_symbol = '⚠'
 let airline#extensions#ale#open_lnum_symbol = '('
 let airline#extensions#ale#close_lnum_symbol = ')'
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'tslint']}
 " let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
 " let g:ale_sign_error = '->'
 " let g:ale_sign_warning = '>='
@@ -188,8 +203,8 @@ noremap <C-w> :bd<CR>
 noremap <C-k> :setlocal list!<CR>
 
 " Navigate between errors
-nmap <silent> <S-h> <Plug>(ale_previous_wrap)
-nmap <silent> <C-h> <Plug>(ale_next_wrap)
+" nmap <silent> <S-h> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-h> <Plug>(ale_next_wrap)
 
 " Toggle errors visibility
 noremap <silent> <C-e> :ALEToggle<CR>
@@ -210,3 +225,5 @@ nnoremap <silent> <Leader>bb :bn<CR> "create (N)ew buffer
 nnoremap <silent> <Leader>bd :bdelete<CR> "(D)elete the current buffer
 nnoremap <silent> <Leader>bu :bunload<CR> "(U)nload the current buffer
 nnoremap <silent> <Leader>bl :setnomodifiable<CR> " (L)ock the current buffer"
+
+let g:UltiSnipsExpandTrigger="<c-j>"

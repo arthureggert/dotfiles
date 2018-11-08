@@ -4,6 +4,7 @@ CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(
+  docker
   git
   common-aliases
   git-flow
@@ -25,7 +26,8 @@ export LANG=en_US.UTF-8
 export NPM_TOKEN="5f81e6ab-0e7a-4be4-8da4-2d23850541b3"
 export NVM_DIR="$HOME/.nvm"
 export CYPRESS_KEY="1dfd31d6-6db7-4f06-a9dc-e8e156f756ba"
-export PATH=/usr/local/bin:$PATH
+export GOPATH=/Users/aheggert/go
+export PATH=$GOPATH/bin:/usr/local/bin:$PATH
 
 function code {
     if [[ $# = 0 ]]
@@ -46,6 +48,9 @@ function code {
 
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
+
+autoload -U promptinit; promptinit
+prompt pure
 
   # Set Spaceship ZSH as a prompt
   autoload -U promptinit; promptinit
