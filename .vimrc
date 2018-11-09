@@ -27,7 +27,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'tomaskallup/vim-styled-components', { 'branch': 'main' }
 Plug 'jxnblk/vim-mdx-js'
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
