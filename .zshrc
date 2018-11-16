@@ -1,6 +1,7 @@
 export ZSH=/Users/aheggert/.oh-my-zsh
-ZSH_THEME="lambda-gitster"
-CASE_SENSITIVE="true"
+
+ZSH_THEME="roa"
+CASE_SENSITIVE="false"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(
@@ -17,7 +18,6 @@ plugins=(
   yarn
 )
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export VISUAL=vim
@@ -28,6 +28,11 @@ export NVM_DIR="$HOME/.nvm"
 export CYPRESS_KEY="1dfd31d6-6db7-4f06-a9dc-e8e156f756ba"
 export GOPATH=/Users/aheggert/go
 export PATH=$GOPATH/bin:/usr/local/bin:$PATH
+export NVM_DIR=~/.nvm
+
+source $(brew --prefix nvm)/nvm.sh
+source $ZSH/oh-my-zsh.sh
+export SDKMAN_DIR="$HOME/.sdkman"
 
 function code {
     if [[ $# = 0 ]]
@@ -40,18 +45,8 @@ function code {
     fi
 }
 
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-export SDKMAN_DIR="/Users/aheggert/.sdkman"
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 
-autoload -U promptinit; promptinit
-prompt pure
-
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+alias vim='mvim -v'
+alias ag='ag --path-to-ignore ~/.ignore'
