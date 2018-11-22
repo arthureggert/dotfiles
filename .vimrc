@@ -5,6 +5,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
@@ -28,6 +29,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
 Plug 'jxnblk/vim-mdx-js'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -64,6 +66,7 @@ set timeoutlen=1000 ttimeoutlen=50
 set guifont=Fira\ Code:h22
 set guioptions-=L
 set termguicolors
+set signcolumn=yes
 
 let NERDTreeShowHidden=1
 let mapleader = ','
@@ -83,6 +86,8 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 let g:quantum_italics=1
+let g:tsuquyomi_use_dev_node_module=2
+let g:tsuquyomi_tsserver_path='/Users/aheggert/.nvm/versions/node/v10.13.0/bin/tsserver'
 
 map <F3> :NERDTreeToggle<CR>
 map <F4> :NERDTreeFind<cr>
@@ -125,3 +130,9 @@ highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred gu
 highlight Search cterm=NONE ctermfg=LightGrey ctermbg=Blue
 
 colorscheme quantum
+
+augroup filetypes
+  autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc setfiletype json
+augroup END
+
+autocmd BufNewFile,BufRead *.mdx set syntax=markdown
