@@ -23,16 +23,15 @@ plugins=(
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export LANG=en_US.UTF-8
-export NPM_TOKEN="5f81e6ab-0e7a-4be4-8da4-2d23850541b3"
 export NVM_DIR="$HOME/.nvm"
-export CYPRESS_KEY="1dfd31d6-6db7-4f06-a9dc-e8e156f756ba"
 export GOPATH=/Users/aheggert/go
 export PATH=$GOPATH/bin:/usr/local/bin:$PATH
 export NVM_DIR=~/.nvm
+export SDKMAN_DIR="$HOME/.sdkman"
 
 source $(brew --prefix nvm)/nvm.sh
 source $ZSH/oh-my-zsh.sh
-export SDKMAN_DIR="$HOME/.sdkman"
+source ~/.env
 
 function code {
     if [[ $# = 0 ]]
