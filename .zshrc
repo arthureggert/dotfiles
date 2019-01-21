@@ -5,7 +5,6 @@ CASE_SENSITIVE="false"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(
-  docker
   git
   common-aliases
   git-flow
@@ -15,7 +14,6 @@ plugins=(
   zsh-better-npm-completion
   brew
   sdkman
-  yarn
 )
 
 
@@ -32,6 +30,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 source $(brew --prefix nvm)/nvm.sh
 source $ZSH/oh-my-zsh.sh
 source ~/.env
+source ~/Documents/dotfiles/.git-flow-completatation.zsh
 
 function code {
     if [[ $# = 0 ]]
@@ -49,3 +48,6 @@ function code {
 
 alias vim='mvim -v'
 alias ag='ag --path-to-ignore ~/.ignore'
+
+# added by travis gem
+[ -f /Users/aheggert/.travis/travis.sh ] && source /Users/aheggert/.travis/travis.sh
