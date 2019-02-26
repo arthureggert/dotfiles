@@ -30,6 +30,8 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'mileszs/ack.vim'
+Plug 'hzchirs/vim-material'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -63,16 +65,18 @@ set t_Co=256
 set colorcolumn=120
 set cursorline
 set timeoutlen=1000 ttimeoutlen=50
-set guifont=Fira\ Code:h22
+set guifont=FuraCode\ Nerd\ Font:h22
 set guioptions-=L
 set termguicolors
 set signcolumn=yes
+set encoding=UTF-8
 
 let NERDTreeShowHidden=1
 let mapleader = ','
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = { 'dir': 'node_modules\|build\|coverage\|git', }
 let g:ctrlp_lazy_update = 2
+let g:ctrlp_show_hidden = 1
 let airline#extensions#ale#error_symbol = '✖'
 let airline#extensions#ale#warning_symbol = '⚠'
 let airline#extensions#ale#open_lnum_symbol = '('
