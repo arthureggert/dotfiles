@@ -14,8 +14,8 @@ plugins=(
   zsh-better-npm-completion
   brew
   sdkman
+  yarn
 )
-
 
 # User configuration
 export VISUAL=vim
@@ -31,6 +31,7 @@ source $(brew --prefix nvm)/nvm.sh
 source $ZSH/oh-my-zsh.sh
 source ~/.env
 source ~/Documents/dotfiles/.git-flow-completatation.zsh
+source ~/Documents/dotfiles/git.sh
 
 function code {
     if [[ $# = 0 ]]
@@ -46,8 +47,15 @@ function code {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 
-alias vim='mvim -v'
 alias ag='ag --path-to-ignore ~/.ignore'
+alias gdmb='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -di'
+alias gdgb= 'git branch -vv | grep "origin/.*: gone]" | awk "{print $1}" | xargs git branch -D'
 
 # added by travis gem
 [ -f /Users/aheggert/.travis/travis.sh ] && source /Users/aheggert/.travis/travis.sh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship

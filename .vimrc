@@ -85,13 +85,19 @@ let g:airline#extensions#itabline#show_tabs = 0
 let g:airline_powerline_fonts = 1 
 let g:airline#extensions#tabline#enabled = 1
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript':['prettier','tslint'] }
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript':['tslint'] }
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 let g:quantum_italics=1
 let g:tsuquyomi_use_dev_node_module=2
 let g:tsuquyomi_tsserver_path='/Users/aheggert/.nvm/versions/node/v10.13.0/bin/tsserver'
+
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:webdevicons_enable_ctrlp = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
 
 map <F3> :NERDTreeToggle<CR>
 map <F4> :NERDTreeFind<cr>
@@ -133,7 +139,8 @@ nmap <Leader>j :TernDef<CR>
 highlight CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 highlight Search cterm=NONE ctermfg=LightGrey ctermbg=Blue
 
-colorscheme quantum
+" colorscheme quantum
+" colorscheme darktango
 
 augroup filetypes
   autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc setfiletype json
