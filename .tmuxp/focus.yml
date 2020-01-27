@@ -1,0 +1,8 @@
+session_name: focus
+windows:
+  - window_name: dev
+    panes:
+      - clear
+  - window_name: console
+    panes:
+      - clear

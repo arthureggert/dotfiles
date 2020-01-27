@@ -1,0 +1,36 @@
+session_name: cwa
+windows:
+  - window_name: cwa
+    layout: main-vertical
+    shell_command_before: 
+      - cd ~/Documents/zenjob/zj-company-webapp
+    panes:
+      - shell_command:
+        - vim
+      - shell_command:
+        - git pull
+        - clear
+      - shell_command:
+        - clear
+  - window_name: zjui
+    layout: main-vertical
+    shell_command_before: 
+      - cd ~/Documents/zenjob/zj-ui
+    panes:
+      - shell_command:
+        - vim
+      - shell_command:
+        - git pull
+        - clear
+      - shell_command:
+        - clear
+  - window_name: notes
+    layout: main-vertical
+    shell_command_before:
+      - cd ~/Box\ Sync/Notes
+    panes:
+      - shell_command: 
+        - vim
+      - shell_command:
+        - todo.sh ls
+  - window_name: console
