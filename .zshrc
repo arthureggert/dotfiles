@@ -8,7 +8,7 @@ export DISABLE_AUTO_TITLE='true'
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="materialshell"
 # ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
@@ -146,6 +146,7 @@ export EDITOR='vim'
 export PIP3="/Users/aheggert/Library/Python/3.7/bin/"
 export PATH="$PIP3:$PATH"
 export NVM_DIR="$HOME/.nvm"
+export TERM="xterm-256color"
 
 function nn() {
     NOTE_DIR=~/Box\ Sync/Notes
@@ -156,6 +157,7 @@ function nn() {
 }
 
 [ -f .env ] && source .env
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # this will load nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
@@ -166,10 +168,10 @@ function nn() {
 # This will load npm bash_completation
 [ -s "/usr/local/etc/bash_completion.d/npm" ] && . "/usr/local/etc/bash_completion.d/npm"
 
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
+
