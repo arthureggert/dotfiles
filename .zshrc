@@ -142,21 +142,14 @@ SPACESHIP_EXEC_TIME_PREFIX='🕐 '
 alias vim=nvim
 alias reload="source ~/.zshrc"
 
+
 export EDITOR='vim'
 export PIP3="/Users/aheggert/Library/Python/3.7/bin/"
 export PATH="$PIP3:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
 
-function nn() {
-    NOTE_DIR=~/Box\ Sync/Notes
-    NOTE_NAME="$2"
-    NOTE_TYPE="$1"
-    TIMESTAMP="$(date +%Y-%m-%d)"
-    vim "${NOTE_DIR}/${NOTE_TYPE}/${TIMESTAMP}-${NOTE_NAME}.md"
-}
-
-[ -f .env ] && source .env
+[ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # this will load nvm

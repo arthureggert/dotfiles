@@ -18,32 +18,30 @@ Plug 'junegunn/limelight.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'haishanh/night-owl.vim'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'majutsushi/tagbar'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'edkolev/tmuxline.vim'
-Plug 'freitass/todo.txt-vim'
 Plug 'TaDaa/vimade'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'xolox/vim-misc'
+Plug 'vim-scripts/utl.vim'
+Plug 'kaicataldo/material.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+
 call plug#end()
 
-"Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-"Plug 'elzr/vim-json'
-"Plug 'benmills/vimux'
-"Plug 'janko/vim-test'
-"Plug 'godlygeek/tabular'
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'martinda/Jenkinsfile-vim-syntax'
-
-syntax on
 filetype plugin indent on
+syntax on
 
 let g:vimade = {}
 let g:vimade.enablefocusfading = 1 
-let g:airline_theme='night_owl'
+let g:notes_directories = ['~/Box\ Sync/Notes']
+let g:notes_suffix = '.md'
 let g:python_host_prog  = '/usr/local/bin/python2'
 let g:python3_host_prog  = '/usr/local/bin/python3'
 let mapleader=","
@@ -66,8 +64,6 @@ let test#strategy="vimux"
 let g:blamer_prefix = ''
 let g:blamer_template = '[<author> @ <committer-time>] -> <summary>'
 let g:prettier#autoformat = 0
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
 let g:vitality_tmux_can_focus = 1
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -77,12 +73,11 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+let g:airline_theme = 'dracula'
 
-"let g:vimade = {}
-"let g:vimade.enablefocusfading = 1
-"let g:vimade.basebg = '011627'
-
-
+set foldmethod=syntax "syntax highlighting items specify folds
+set foldcolumn=0 "defines 1 col at window left, to indicate folding
+set foldlevelstart=99 "start file with all folds opened
 set hidden  
 set cmdheight=2 
 set nobackup " Some servers have issues with backup files
@@ -102,7 +97,8 @@ set expandtab
 set background=dark
 set t_Co=256
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-colorscheme night-owl 
+
+colorscheme dracula
 
 if (has("termguicolors"))
  set termguicolors
@@ -117,9 +113,12 @@ if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
+
 map <silent> <leader>m :call TerminalPreviewMarkdown()<CR>
 map <silent> <leader>M :MarkdownPreview<CR>
 map <silent> <leader>df :Goyo<CR>
+map <silent> <C-v>l :vertical resize +10<CR>
+map <silent> <C-v>s :vertical resize -10<CR>
 
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
@@ -127,7 +126,7 @@ nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nt :NERDTreeToggle<CR><C-W>l:call SyncTree()<CR><C-W>h
 nmap <leader>p :PrettierAsync<CR>
 nmap <leader>b :BlamerToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -157,6 +156,7 @@ omap af <Plug>(coc-funcobj-a)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
+nnoremap <Leader>ww :e ~/Box\ Sync/Notes/index.md<cr>
 nnoremap <silent> <Leader>tlg :call ToggleLazyGit()<CR>
 nnoremap <S-Up> :m .-2<CR>==
 nnoremap <S-Down> :m .+1<CR>==
@@ -231,7 +231,7 @@ autocmd TermOpen * startinsert
 autocmd TermOpen * setlocal listchars= nonumber norelativenumber
 
 " Highlight currently open buffer in NERDTree
-"autocmd BufEnter * call SyncTree()
+" autocmd BufEnter * call SyncTree()
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -240,7 +240,7 @@ augroup filetypes
   autocmd BufRead,BufNewFile .babelrc,.eslintrc,.prettierrc setfiletype json
 augroup END
 
-autocmd BufNewFile,BufRead *.mdx set syntax=markdown
+autocmd BufNewFile,BufRead *.mdx set syntax=markdown.pandoc
 
 "hi ActiveWindow ctermbg=None ctermfg=None guibg=#011627
 "hi InactiveWindow ctermbg=none ctermfg=none guibg=#282C34

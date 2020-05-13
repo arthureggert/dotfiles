@@ -6,3 +6,17 @@ function git_prompt_info_no_branch() {
         echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
     fi
 }
+
+function git_fetch() {
+  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+}
+
+function nn() {
+    NOTE_DIR=~/Box\ Sync/Notes
+    NOTE_NAME="$2"
+    NOTE_TYPE="$1"
+    TIMESTAMP="$(date +%Y-%m-%d)"
+    vim "${NOTE_DIR}/${NOTE_TYPE}/${TIMESTAMP}-${NOTE_NAME}.md"
+}
+
+
