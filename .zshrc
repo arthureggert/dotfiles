@@ -139,9 +139,8 @@ SPACESHIP_PACKAGE_PREFIX=''
 SPACESHIP_NODE_PREFIX=''
 SPACESHIP_EXEC_TIME_PREFIX='🕐 '
 
-alias vim=nvim
 alias reload="source ~/.zshrc"
-
+alias vim='nvim'
 
 export EDITOR='vim'
 export PIP3="/Users/aheggert/Library/Python/3.7/bin/"

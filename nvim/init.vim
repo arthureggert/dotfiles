@@ -32,16 +32,14 @@ Plug 'kaicataldo/material.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-
 call plug#end()
 
 filetype plugin indent on
 syntax on
 
+let g:SimplenoteFiletype='md'
 let g:vimade = {}
 let g:vimade.enablefocusfading = 1 
-let g:notes_directories = ['~/Box\ Sync/Notes']
-let g:notes_suffix = '.md'
 let g:python_host_prog  = '/usr/local/bin/python2'
 let g:python3_host_prog  = '/usr/local/bin/python3'
 let mapleader=","
@@ -60,7 +58,6 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let test#strategy="vimux"
 let g:blamer_prefix = ''
 let g:blamer_template = '[<author> @ <committer-time>] -> <summary>'
 let g:prettier#autoformat = 0
@@ -88,7 +85,7 @@ set signcolumn=yes
 set clipboard=unnamed
 set spell
 set spelllang=en_us,pt_br,de_de
-set relativenumber
+set number relativenumber
 set smarttab
 set cindent
 set tabstop=2
@@ -356,3 +353,4 @@ function! SyncTree()
     wincmd p
   endif
 endfunction
+
