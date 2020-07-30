@@ -26,18 +26,21 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'TaDaa/vimade'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'xolox/vim-misc'
 Plug 'vim-scripts/utl.vim'
 Plug 'kaicataldo/material.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 
 call plug#end()
 
 filetype plugin indent on
 syntax on
 
-let g:SimplenoteFiletype='md'
+let g:notes_suffix = '.md'
+let g:notes_markdown_program= 'markdown2'
+let g:notes_directories = ['~/Box Sync']
 let g:vimade = {}
 let g:vimade.enablefocusfading = 1 
 let g:python_host_prog  = '/usr/local/bin/python2'
@@ -72,6 +75,7 @@ let g:coc_global_extensions = [
   \ ]
 let g:airline_theme = 'dracula'
 
+set fillchars=vert:\│,eob:\ 
 set foldmethod=syntax "syntax highlighting items specify folds
 set foldcolumn=0 "defines 1 col at window left, to indicate folding
 set foldlevelstart=99 "start file with all folds opened
@@ -109,6 +113,10 @@ endif
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
+
+
+nmap <F3> i<C-R>=strftime("%Y.%m.%d_%A_%H%M")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y.%m.%d_A%_%H%M")<CR>
 
 
 map <silent> <leader>m :call TerminalPreviewMarkdown()<CR>
@@ -160,6 +168,7 @@ nnoremap <S-Down> :m .+1<CR>==
 nnoremap <leader>s :w<cr>
 nnoremap <S-s> :w<cr>
 nnoremap <leader>q :bd<cr>
+nnoremap <leader>qq :bd!<cr>
 nnoremap <silent> <leader>bh :new<CR>
 nnoremap <S-Right> :bn<cr>
 nnoremap <S-Left> :bp<cr>
