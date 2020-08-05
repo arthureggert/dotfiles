@@ -1,3 +1,9 @@
+source ~/.zplug/init.zsh
+
+zplug "dracula/zsh", as:theme 
+
+zplug load 
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,8 +14,8 @@ export DISABLE_AUTO_TITLE='true'
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="materialshell"
 # ZSH_THEME="minimal"
+ZSH_THEME="dracula"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -143,8 +149,7 @@ alias reload="source ~/.zshrc"
 alias vim='nvim'
 
 export EDITOR='vim'
-export PIP3="/Users/aheggert/Library/Python/3.7/bin/"
-export PATH="$PIP3:$PATH"
+export PATH=$(pyenv root)/shims:$PATH
 export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
 
@@ -164,6 +169,9 @@ export TERM="xterm-256color"
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# autoload -U promptinit; promptinit
+# prompt spaceship
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

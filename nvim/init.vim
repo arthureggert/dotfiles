@@ -27,24 +27,21 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'TaDaa/vimade'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'vim-scripts/utl.vim'
-Plug 'kaicataldo/material.vim'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
 filetype plugin indent on
 syntax on
 
-let g:notes_suffix = '.md'
 let g:notes_markdown_program= 'markdown2'
 let g:notes_directories = ['~/Box Sync']
 let g:vimade = {}
 let g:vimade.enablefocusfading = 1 
-let g:python_host_prog  = '/usr/local/bin/python2'
-let g:python3_host_prog  = '/usr/local/bin/python3'
+let g:python_host_prog  = '/Users/aheggert/.pyenv/versions/2.7.18/bin/python'
+let g:python3_host_prog  = '/Users/aheggert/.pyenv/versions/3.8.5/bin/python'
 let mapleader=","
 let maplocalleader="."
 let g:rg_command = 'rg --vimgrep -S'
@@ -73,7 +70,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
-let g:airline_theme = 'dracula'
+let g:airline_theme='dracula'
 
 set fillchars=vert:\│,eob:\ 
 set foldmethod=syntax "syntax highlighting items specify folds
@@ -95,8 +92,8 @@ set cindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set background=dark
-set t_Co=256
+"set background=dark
+"set t_Co=256
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 colorscheme dracula
@@ -362,4 +359,3 @@ function! SyncTree()
     wincmd p
   endif
 endfunction
-
