@@ -147,6 +147,9 @@ SPACESHIP_EXEC_TIME_PREFIX='🕐 '
 
 alias reload="source ~/.zshrc"
 alias vim='nvim'
+alias del_branches='$HOME/Documents/dotfiles/delete_old_branch.sh .'
+
+
 
 export EDITOR='vim'
 export PATH=$(pyenv root)/shims:$PATH
@@ -168,9 +171,6 @@ export TERM="xterm-256color"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
-# Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
-# prompt spaceship
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"

@@ -30,6 +30,7 @@ Plug 'vim-scripts/utl.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -41,7 +42,7 @@ let g:notes_directories = ['~/Box Sync']
 let g:vimade = {}
 let g:vimade.enablefocusfading = 1 
 let g:python_host_prog  = '/Users/aheggert/.pyenv/versions/2.7.18/bin/python'
-let g:python3_host_prog  = '/Users/aheggert/.pyenv/versions/3.8.5/bin/python'
+let g:python3_host_prog  = '/Users/aheggert/.pyenv/shims/python'
 let mapleader=","
 let maplocalleader="."
 let g:rg_command = 'rg --vimgrep -S'
@@ -121,6 +122,7 @@ map <silent> <leader>M :MarkdownPreview<CR>
 map <silent> <leader>df :Goyo<CR>
 map <silent> <C-v>l :vertical resize +10<CR>
 map <silent> <C-v>s :vertical resize -10<CR>
+map <silent> <F9> /^\(<\{7\}\\|>\{7\}\\|=\{7\}\\|\|\{7\}\)\( \\|$\)<cr>
 
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>

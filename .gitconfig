@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Arthur Henrique Eggert
+email = opa.roa@gmail.com
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore
+[merge]
+	conflictStyle = diff3
+[rerere]
+  enabled = true
+[alias]
+  edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; nvim `f`"
+  add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
