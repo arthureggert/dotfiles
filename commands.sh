@@ -19,4 +19,6 @@ function nn() {
     vim "${NOTE_DIR}/${NOTE_TYPE}/${TIMESTAMP}-${NOTE_NAME}.md"
 }
 
-
+function renew_tokens() {
+    toolbelt credentials.generate -u $1 -a $2 && toolbelt codeartifact.token
+}

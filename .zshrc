@@ -149,13 +149,12 @@ alias reload="source ~/.zshrc"
 alias vim='nvim'
 alias del_branches='$HOME/Documents/dotfiles/delete_old_branch.sh .'
 
-
-
 export EDITOR='vim'
 export PATH=$(pyenv root)/shims:$PATH
 export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
 
+[ -f ~/.commands.sh ] && source ~/.commands.sh
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
