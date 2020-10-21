@@ -1,21 +1,28 @@
 source ~/.zplug/init.zsh
 
-zplug "dracula/zsh", as:theme 
+# zplug "dracula/zsh", as:theme 
 
-zplug load 
+if ! zplug check --verbose ; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/aheggert/.oh-my-zsh"
-export DISABLE_AUTO_TITLE='true'
+# export DISABLE_AUTO_TITLE='true'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="minimal"
-ZSH_THEME="dracula"
+# ZSH_THEME="dracula"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -52,7 +59,7 @@ ZSH_THEME="dracula"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -75,7 +82,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws docker emacs gradle grails iterm2 osx python vscode yarn zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git aws docker emacs gradle grails iterm2 osx python vscode yarn zsh-syntax-highlighting zsh-autosuggestions thefuck)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -149,12 +156,21 @@ alias reload="source ~/.zshrc"
 alias vim='nvim'
 alias del_branches='$HOME/Documents/dotfiles/delete_old_branch.sh .'
 
-
-
 export EDITOR='vim'
-export PATH=$(pyenv root)/shims:$PATH
+export PATH=$(pyenv root)/shims:"/usr/local/sbin:$PATH"
+# export PATH=$(pyenv root)/shims:$PATH
 export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
+
+function pwcopy {
+  < /dev/urandom \
+    LC_CTYPE=C \
+    tr -dc a-zA-Z0-9 \
+    | head -c ${1:-16} \
+    | pbcopy \
+    && pbpaste \
+    && echo
+}
 
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -172,6 +188,13 @@ export TERM="xterm-256color"
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 [[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship

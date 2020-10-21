@@ -1,5 +1,6 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-eunuch'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

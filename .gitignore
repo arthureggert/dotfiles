@@ -1,1 +1,3 @@
 nvim/pack/kite/*
+/.idea/
+/*.iml
