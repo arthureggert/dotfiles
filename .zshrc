@@ -1,6 +1,6 @@
 source ~/.zplug/init.zsh
 
-# zplug "dracula/zsh", as:theme 
+# zplug "dracula/zsh", as:theme
 
 if ! zplug check --verbose ; then
     printf "Install? [y/N]: "
@@ -162,16 +162,7 @@ export PATH=$(pyenv root)/shims:"/usr/local/sbin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
 
-function pwcopy {
-  < /dev/urandom \
-    LC_CTYPE=C \
-    tr -dc a-zA-Z0-9 \
-    | head -c ${1:-16} \
-    | pbcopy \
-    && pbpaste \
-    && echo
-}
-
+[ -f ~/.commands.sh ] && source ~/.commands.sh
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -195,6 +186,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship

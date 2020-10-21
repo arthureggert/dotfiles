@@ -19,4 +19,16 @@ function nn() {
     vim "${NOTE_DIR}/${NOTE_TYPE}/${TIMESTAMP}-${NOTE_NAME}.md"
 }
 
+function renew_tokens() {
+    toolbelt credentials.generate -u $1 -a $2 && toolbelt codeartifact.token
+}
 
+function pwcopy() {
+  < /dev/urandom \
+    LC_CTYPE=C \
+    tr -dc a-zA-Z0-9 \
+    | head -c ${1:-16} \
+    | pbcopy \
+    && pbpaste \
+    && echo
+}

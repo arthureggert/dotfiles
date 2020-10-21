@@ -89,8 +89,8 @@ with open(DOC_FILES_DIR + 'index.md', 'w') as f:
     SORTED_LIST=sorted(MD_FILE_LIST)
     text.append('# Index \n\n')
     for m_file in SORTED_LIST:
-        print m_file
-        if(m_file != './index.md'):
+        print(m_file)
+        if m_file != './index.md':
             levels = m_file.replace(DOC_FILES_DIR, '').count(os.sep)
             group = m_file.split('.')[1]
             if group != lastGroup or lastGroup == '':
@@ -110,4 +110,4 @@ with open(DOC_FILES_DIR + 'index.md', 'w') as f:
     # text[0] = "# Index\n\n"
     f.writelines(text)
 
-print ':: Done ::'
+print(':: Done ::')
