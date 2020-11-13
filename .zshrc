@@ -154,11 +154,10 @@ SPACESHIP_EXEC_TIME_PREFIX='🕐 '
 
 alias reload="source ~/.zshrc"
 alias vim='nvim'
-alias del_branches='$HOME/Documents/dotfiles/delete_old_branch.sh .'
 
 export EDITOR='vim'
-export PATH=$(pyenv root)/shims:"/usr/local/sbin:$PATH"
-# export PATH=$(pyenv root)/shims:$PATH
+export CONFLUENT_HOME="$HOME/.confluent"
+export PATH=$(pyenv root)/shims:"/usr/local/sbin:$CONFLUENT_HOME/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export TERM="xterm-256color"
 

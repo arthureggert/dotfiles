@@ -1,4 +1,4 @@
-" Specify a directory for plugins
+ " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-eunuch'
 Plug 'ctrlpvim/ctrlp.vim' 
@@ -47,8 +47,8 @@ let g:python3_host_prog  = '/Users/aheggert/.pyenv/shims/python'
 let mapleader=","
 let maplocalleader="."
 let g:rg_command = 'rg --vimgrep -S'
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let NERDTreeIgnore = ['^node_modules$']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -74,7 +74,7 @@ let g:coc_global_extensions = [
   \ ]
 let g:airline_theme='dracula'
 
-set fillchars=vert:\│,eob:\ 
+"set fillchars=vert:\│,eob:\ 
 set foldmethod=syntax "syntax highlighting items specify folds
 set foldcolumn=0 "defines 1 col at window left, to indicate folding
 set foldlevelstart=99 "start file with all folds opened
@@ -111,6 +111,13 @@ endif
 
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+
+if has("gui_running")
+  if has("gui_macvim")
+    " MacVim
+    set guifont=FiraMonoForPowerline-Medium:h12
+  endif
 endif
 
 
@@ -231,10 +238,10 @@ augroup pandoc_syntax
 augroup END
 
 " When term starts, auto go into insert mode
-autocmd TermOpen * startinsert
+"autocmd TermOpen * startinsert
 
 " Turn off line numbers etc
-autocmd TermOpen * setlocal listchars= nonumber norelativenumber
+" autocmd TermOpen * setlocal listchars= nonumber norelativenumber
 
 " Highlight currently open buffer in NERDTree
 " autocmd BufEnter * call SyncTree()
