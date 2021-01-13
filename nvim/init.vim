@@ -16,6 +16,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/limelight.vim'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -38,6 +39,8 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<s-tab>"
 let g:notes_markdown_program= 'markdown2'
 let g:notes_directories = ['~/Box Sync']
 let g:vimade = {}

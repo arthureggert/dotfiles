@@ -1,9 +1,9 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-    name = Arthur Henrique Eggert
-    email = opa.roa@gmail.com
-        signingkey = 6D1733DE8ACD43BE
+  name = Arthur Henrique Eggert
+  email = opa.roa@gmail.com
+	signingkey = 6D1733DE8ACD43BE
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
@@ -18,3 +18,5 @@
 	gpgSign = true
 [tag]
 	gpgSign = true
+[pull]
+	rebase = true
