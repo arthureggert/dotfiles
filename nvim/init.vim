@@ -127,7 +127,6 @@ endif
 nmap <F3> i<C-R>=strftime("%Y.%m.%d_%A_%H%M")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y.%m.%d_A%_%H%M")<CR>
 
-
 map <silent> <leader>m :call TerminalPreviewMarkdown()<CR>
 map <silent> <leader>M :MarkdownPreview<CR>
 map <silent> <leader>df :Goyo<CR>

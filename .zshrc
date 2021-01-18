@@ -15,10 +15,10 @@ zplug load
 ZSH_THEME=robbyrussell
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git docker gradle iterm2 osx python vscode yarn zsh-syntax-highlighting zsh-autosuggestions )
+
+plugins=(git docker gradle iterm2 osx python vscode yarn zsh-syntax-highlighting zsh-autosuggestions)
 
 alias reload="source ~/.zshrc"
-alias vim='nvim'
 
 export LANG=en_US.UTF-8
 export EDITOR='vim'
@@ -35,7 +35,7 @@ export GPG_TTY=$(tty)
 [ -f ~/.env ] && source ~/.env
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use 
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 [ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 
