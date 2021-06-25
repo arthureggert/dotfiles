@@ -7,9 +7,6 @@ function git_prompt_info_no_branch() {
   fi
 }
 
-function git_fetch() {
-  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-}
 
 function nn() {
   NOTE_DIR=~/Box\ Sync/Notes
@@ -42,10 +39,6 @@ function docker_images_prune() {
 function docker_container_prune() {
   docker stop $(docker ps -a -q)
   docker container prune --force
-}
-
-function git_del_branches() {
-  ~/Documents/dotfiles/delete_old_branch.sh .
 }
 
 function git_reset_destroy() {
@@ -167,74 +160,126 @@ git_update() {
 }
 
 git_status_all() {
-  currentdir=`pwd`
-	cd $1 > /dev/null
+	current_dir=$(pwd)
+  repos_dir=$HOME/Documents/
+  dir_to_check=${1:-$repos_dir}
+	cd "$dir_to_check" > /dev/null || exit
 	for file in */ ; do
 	  if [[ -d "$file" && ! -L "$file" ]]; then
 		  if [ -d "$file/.git" ]; then
-			  cd $file > /dev/null
-        echo -e "\033[0;32m" `basename $file` " \033[0;37m ------------>" "$(git_color_bash)$(git_branch_name)"
-			  cd ..  > /dev/null
+			  cd "$file" > /dev/null || exit
+			  echo -e "\033[0;32m" "$(basename "$file")" " \033[0;37m ------------>" "$(git_color_bash)$(git_branch_name)"
+        cd ..  > /dev/null || exit
 		  fi
 	  fi
 	done
-	cd $currentdir > /dev/null
-}
-
-git_fetch_all() {
-  currentdir=`pwd`
-	echo $currentdir
-	cd $1 > /dev/null
-	for file in */ ; do
-	  if [[ -d "$file" && ! -L "$file" ]]; then
-		  if [ -d "$file/.git" ]; then
-			  cd $file > /dev/null
-			  echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
-			  git fetch --prune
-			  cd ..  > /dev/null
-		  fi
-	  fi
-	done
-	cd $currentdir > /dev/null
+	cd "$current_dir" > /dev/null || exit
 }
 
 git_update_all(){
-	currentdir=`pwd`
-	echo $currentdir
-	cd $1 > /dev/null
-	for file in */ ; do
-	  if [[ -d "$file" && ! -L "$file" ]]; then
-		if [ -d "$file/.git" ]; then
-			cd $file > /dev/null
-			echo -e "\033[0;32m" `pwd` "\033[0;37m" `git_branch_name`
-			git_update
-			cd ..  > /dev/null
-		fi
-	  fi
-	done
-	cd $currentdir > /dev/null
-}
-
-git_delete_branchs() {
-  currentdir=`pwd`
-	cd $1 > /dev/null
+  current_dir=$(pwd)
+  repos_dir=$HOME/Documents/
+  dir_to_check=${1:-$repos_dir}
+	cd "$dir_to_check" > /dev/null || exit
 	for file in */ ; do
 	  if [[ -d "$file" && ! -L "$file" ]]; then
 		  if [ -d "$file/.git" ]; then
-			  cd $file > /dev/null
-			    git_del_branches .
-        cd ..  > /dev/null
+			  cd "$file" > /dev/null || exit
+			  echo -e "\033[0;32m" "$(pwd)" "\033[0;37m" "$(git_branch_name)"
+			  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+			  git_update .
+        cd ..  > /dev/null || exit
 		  fi
 	  fi
 	done
-	cd $currentdir > /dev/null
+	cd "$current_dir" > /dev/null || exit
 }
-
 
 git_branch_name(){
 	git branch | sed -n -e 's/^\* \(.*\)/\1/p'
 }
 
+docker_run() {
+  open -a Docker
+}
 
+start_communication() {
+  open -a Slack
+  open -a Whatsapp
+  open -a Telegram
+}
+
+start_development() {
+  repos_dir=$HOME/Documents/
+  echo -e "\033[0;32m" "Renewing Zenjob Tokens" "\033[0;37m"
+  renew_tokens "$ZENJOB_USERNAME" "$ZENJOB_ENV"
+  echo -e "\033[0;32m" "Starting Docker" "\033[0;37m"
+  docker_run
+  echo -e "\033[0;32m" "Updating all repositories" "\033[0;37m"
+  git_update_all "$repos_dir"
+  echo -e "\033[0;32m" "Starting Kafka" "\033[0;37m"
+  kafka_start
+  echo -e "\033[0;32m" "Opening Intellij IDEA" "\033[0;37m"
+  idea
+  echo -e "\033[0;32m" "Update Brew" "\033[0;37m"
+  brew update && brew upgrade
+  echo -e "\033[0;32m" "Done" "\033[0;37m"
+}
+
+start_day() {
+  start_communication
+  start_development
+}
+
+stop_development() {
+  echo -e "\033[0;32m" "Stopping Docker" "\033[0;37m"
+  pkill -x Docker
+  echo -e "\033[0;32m" "Stopping Kafka" "\033[0;37m"
+  kafka_stop > /dev/null
+  echo -e "\033[0;32m" "Stopping Intellij IDEA" "\033[0;37m"
+  pkill idea
+  echo -e "\033[0;32m" "Done" "\033[0;37m"
+}
+
+function git_delete_branch() {
+  git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
+}
+
+function reset_idea() {
+#https://github.com/PythonicNinja/jetbrains-reset-trial-mac-osx/blob/master/runme.sh
+
+for product in IntelliJIdea WebStorm DataGrip PhpStorm CLion PyCharm GoLand RubyMine Rider; do
+  echo "Closing $product"
+  ps aux | grep -i MacOs/$product | cut -d " " -f 5 | xargs kill -9
+
+  echo "Resetting trial period for $product"
+
+  echo "removing evaluation key..."
+  rm -rf ~/Library/Preferences/$product*/eval
+
+  # Above path not working on latest version. Fixed below
+  rm -rf ~/Library/Application\ Support/JetBrains/$product*/eval
+
+  echo "removing all evlsprt properties in options.xml..."
+  sed -i '' '/evlsprt/d' ~/Library/Preferences/$product*/options/other.xml
+
+  # Above path not working on latest version. Fixed below
+  sed -i '' '/evlsprt/d' ~/Library/Application\ Support/JetBrains/$product*/options/other.xml
+
+  echo
+done
+
+echo "removing additional plist files..."
+rm -f ~/Library/Preferences/com.apple.java.util.prefs.plist
+rm -f ~/Library/Preferences/com.jetbrains.*.plist
+rm -f ~/Library/Preferences/jetbrains.*.*.plist
+
+echo "restarting cfprefsd"
+killall cfprefsd
+
+echo
+echo "That's it, enjoy ;)"
+
+}
 
 group_lazy_load  "/usr/local/opt/nvm/nvm.sh" nvm node npm truffle gulp yarn

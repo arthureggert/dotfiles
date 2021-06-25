@@ -4,6 +4,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+    Plug 'psliwka/vim-smoothie'
     Plug 'tpope/vim-eunuch'
     Plug 'ctrlpvim/ctrlp.vim' 
     Plug 'sheerun/vim-polyglot'

@@ -1,22 +1,30 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-  name = Arthur Henrique Eggert
-  email = opa.roa@gmail.com
-	signingkey = 6D1733DE8ACD43BE
+	name = Arthur Eggert
+email = opa.roa@gmail.com
+signingkey = 6D1733DE8ACD43BE
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore
+editor = vim
+excludesfile = ~/.gitignore
+	autocrlf = input
 [merge]
-	conflictStyle = diff3
+conflictStyle = diff3
 [rerere]
-  enabled = true
+enabled = true
 [alias]
-  edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; nvim `f`"
-  add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; nvim $(f)"
+add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add $(f)"
 [commit]
-	gpgSign = true
+# gpgSign = true
 [tag]
-	gpgSign = true
+# gpgSign = true
 [pull]
-	rebase = true
+rebase = true
+[gpg]
+program = gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

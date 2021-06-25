@@ -24,11 +24,11 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 export CONFLUENT_HOME="$HOME/.confluent"
 export NVM_DIR="$HOME/.nvm"
-export PATH=$(pyenv root)/shims:"/usr/local/sbin:$CONFLUENT_HOME/bin:$NVM_DIR/versions/node/v12.13.0/bin:$PATH"
 export TERM="xterm-256color"
 export ZSH="/Users/aheggert/.oh-my-zsh"
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 export GPG_TTY=$(tty)
+export PATH=$(pyenv root)/shims:"/usr/local/opt/libpq/bin:/usr/local/sbin:$CONFLUENT_HOME/bin:$NVM_DIR/versions/node/v12.13.0/bin:$PATH"
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.commands.sh ] && source ~/.commands.sh
