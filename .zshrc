@@ -19,6 +19,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git docker gradle iterm2 osx python vscode yarn zsh-syntax-highlighting zsh-autosuggestions)
 
 alias reload="source ~/.zshrc"
+alias vim='nvim'
 
 export LANG=en_US.UTF-8
 export EDITOR='vim'
@@ -29,6 +30,8 @@ export ZSH="/Users/aheggert/.oh-my-zsh"
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
 export GPG_TTY=$(tty)
 export PATH=$(pyenv root)/shims:"/usr/local/opt/libpq/bin:/usr/local/sbin:$CONFLUENT_HOME/bin:$NVM_DIR/versions/node/v12.13.0/bin:$PATH"
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export LDFLAGS=-L/usr/local/opt/openssl/lib
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.commands.sh ] && source ~/.commands.sh

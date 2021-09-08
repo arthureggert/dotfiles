@@ -65,6 +65,7 @@ function kafka_stop() {
 }
 
 function db() {
+  export AWS_PROFILE=terraform
   echo "$AWS_PROFILE"
   i=1
   services=()
