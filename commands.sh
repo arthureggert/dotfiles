@@ -1,3 +1,8 @@
+function report() {
+  cd $1 ; license-report --output=csv --csvHeaders --config ../license-report-config.json --exclude=@zenjob/mf-login --exclude=@zenjob/zj-ui --exclude=@zenjob/zj-unleash-react-client > ../$2 ; cd ..
+}
+
+
 function git_prompt_info_no_branch() {
   local ref
   if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then

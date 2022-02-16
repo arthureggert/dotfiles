@@ -16,12 +16,14 @@ ZSH_THEME=robbyrussell
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git docker gradle iterm2 osx python vscode yarn zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker gradle iterm2 macos python vscode yarn zsh-syntax-highlighting zsh-autosuggestions)
 
 alias reload="source ~/.zshrc"
 alias vim='nvim'
 
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
 export CONFLUENT_HOME="$HOME/.confluent"
 export NVM_DIR="$HOME/.nvm"
