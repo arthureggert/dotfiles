@@ -1,51 +1,26 @@
-source ~/.zplug/init.zsh
-
-zplug "dracula/zsh", as:theme
-
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo
-    zplug install
-  fi
-fi
-
-zplug load
-
 ZSH_THEME=robbyrussell
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git docker gradle iterm2 macos python vscode yarn zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker gradle iterm2 macos python sdk)
 
 alias reload="source ~/.zshrc"
-alias vim='nvim'
 
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
-export CONFLUENT_HOME="$HOME/.confluent"
-export NVM_DIR="$HOME/.nvm"
-export TERM="xterm-256color"
 export ZSH="/Users/aheggert/.oh-my-zsh"
 export SDKMAN_DIR="/Users/aheggert/.sdkman"
-export GPG_TTY=$(tty)
-export PATH=$(pyenv root)/shims:"/usr/local/opt/libpq/bin:/usr/local/sbin:$CONFLUENT_HOME/bin:$NVM_DIR/versions/node/v12.13.0/bin:$PATH"
-export CPPFLAGS=-I/usr/local/opt/openssl/include
-export LDFLAGS=-L/usr/local/opt/openssl/lib
+export NVM_DIR="$HOME/.nvm"
+export PATH="$HOME/.local/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.commands.sh ] && source ~/.commands.sh
 [ -f ~/.env ] && source ~/.env
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 [ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
 
-gpgconf --launch gpg-agent
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+eval "$(pyenv init -)"
