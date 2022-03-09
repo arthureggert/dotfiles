@@ -1,3 +1,5 @@
 nvim/pack/kite/*
 /.idea/
 /*.iml
+/private/env.zsh
+.DS_Store

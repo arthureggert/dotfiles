@@ -1,26 +1,64 @@
-ZSH_THEME=robbyrussell
-ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="true"
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 
-plugins=(git docker gradle iterm2 macos python sdk)
+source ~/.antigen/antigen.zsh
 
-alias reload="source ~/.zshrc"
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-export EDITOR='vim'
-export ZSH="/Users/aheggert/.oh-my-zsh"
-export SDKMAN_DIR="/Users/aheggert/.sdkman"
-export NVM_DIR="$HOME/.nvm"
-export PATH="$HOME/.local/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle docker
+antigen bundle gradle
+antigen bundle iterm2
+antigen bundle macos
+antigen bundle python
+antigen bundle sdk
+antigen bundle command-not-found
 
-[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
-[ -f ~/.commands.sh ] && source ~/.commands.sh
-[ -f ~/.env ] && source ~/.env
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-[ -s "/Users/aheggert/.sdkman/bin/sdkman-init.sh" ] && source "/Users/aheggert/.sdkman/bin/sdkman-init.sh"
+# NVM bundle
+antigen bundle lukechilds/zsh-nvm
+
+# Load the theme.
+antigen theme dracula/zsh dracula
+
+# Tell Antigen that you're done.
+antigen apply
+
+# NVM
+nvm use stable
+
+# Cycle through history based on characters already typed on the line
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+# Load private szh files
+local __filename=~/.zshrc
+local __filename=${__filename:A}
+local __dirname=$(dirname $__filename)
+
+for file in $(find $__dirname/scripts -type f -name '*.zsh'); do
+  source $file
+done
+
+[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh" # This loads SDKMAN
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(pyenv init -)"
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
