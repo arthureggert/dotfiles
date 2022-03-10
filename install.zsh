@@ -6,6 +6,7 @@ local __dirname=$(dirname ${0:A})
 
 ln -s $__dirname/.zshrc ~/.zshrc
 ln -s $__dirname/.zprofile ~/.zprofile
+ln -s $__dirname/tmux/.tmux.conf ~/.tmux.conf
 ln -s $__dirname/git/.gitconfig ~/.gitconfig
 
 zsh brew/brew.sh

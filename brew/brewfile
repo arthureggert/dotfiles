@@ -15,6 +15,7 @@ brew 'pyenv'
 brew 'awscli'
 brew 'postgresql'
 brew 'openssl'
+brew 'tmux'
 
 cask 'alt-tab'
 cask 'docker'

@@ -1,7 +1,4 @@
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+ZSH_TMUX_AUTOSTART=true
 
 source ~/.antigen/antigen.zsh
 
@@ -17,8 +14,10 @@ antigen bundle macos
 antigen bundle python
 antigen bundle sdk
 antigen bundle command-not-found
+antigen bundle tmux
 
-# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # NVM bundle
@@ -31,7 +30,7 @@ antigen theme dracula/zsh dracula
 antigen apply
 
 # NVM
-nvm use stable
+nvm use stable &> /dev/null
 
 # Cycle through history based on characters already typed on the line
 autoload -U up-line-or-beginning-search
@@ -58,7 +57,4 @@ done
 
 eval "$(pyenv init -)"
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+
