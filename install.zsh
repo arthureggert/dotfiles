@@ -8,6 +8,8 @@ ln -s $__dirname/.zshrc ~/.zshrc
 ln -s $__dirname/.zprofile ~/.zprofile
 ln -s $__dirname/tmux/.tmux.conf ~/.tmux.conf
 ln -s $__dirname/git/.gitconfig ~/.gitconfig
+ln -s $__dirname/vim/.vimrc ~/.vimrc
+ln -s $__dirname/vim/package.json ~/.config/coc/extensions/package.json
 
 zsh brew/brew.sh
 zsh macos/defaults.zsh

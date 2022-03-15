@@ -29,6 +29,8 @@ antigen theme dracula/zsh dracula
 # Tell Antigen that you're done.
 antigen apply
 
+# alias vim='/opt/homebrew/bin/vim'
+
 # NVM
 nvm use stable &> /dev/null
 
