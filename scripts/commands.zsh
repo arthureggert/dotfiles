@@ -82,6 +82,10 @@ function gpg-no-tty() {
   echo passphrase | gpg --passphrase-fd 0 --batch --no-tty --yes "$@"
 }
 
+function gradle_install() {
+  gradle build -x test
+}
+
 function _web_search() {
     emulate -L zsh
 
