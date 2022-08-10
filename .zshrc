@@ -1,4 +1,6 @@
-ZSH_TMUX_AUTOSTART=true
+if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+  export ZSH_TMUX_AUTOSTART=true
+fi
 
 source ~/.antigen/antigen.zsh
 
@@ -23,8 +25,12 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # NVM bundle
 antigen bundle lukechilds/zsh-nvm
 
+# Gradle Autocomplete
+antigen bundle gradle/gradle-completion --branch=master
+
 # Load the theme.
 antigen theme dracula/zsh dracula
+
 
 # Tell Antigen that you're done.
 antigen apply
@@ -58,8 +64,3 @@ done
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 eval "$(pyenv init -)"
-
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

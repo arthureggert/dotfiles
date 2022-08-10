@@ -20,6 +20,8 @@ brew 'vim'
 brew 'terraform'
 brew 'aws-iam-authenticator'
 brew 'pnpm'
+brew 'caffeine'
+brew 'm1-terraform-provider-helper'
 
 cask 'alt-tab'
 cask 'docker'

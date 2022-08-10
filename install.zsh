@@ -35,7 +35,3 @@ if ! [ -x "$(command -v toolbelt)" ]; then
 	aws s3 cp $toolbeltUrl ~/pypi-temp/
 	python3 -m pip install ~/pypi-temp/zenjobtoolbelt-latest.tar.gz
 fi
-
-
-
-
