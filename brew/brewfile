@@ -22,6 +22,7 @@ brew 'aws-iam-authenticator'
 brew 'pnpm'
 brew 'caffeine'
 brew 'm1-terraform-provider-helper'
+brew 'thefuck'
 
 cask 'alt-tab'
 cask 'docker'
