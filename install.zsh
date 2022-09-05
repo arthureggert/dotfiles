@@ -10,6 +10,7 @@ ln -s $__dirname/tmux/.tmux.conf ~/.tmux.conf
 ln -s $__dirname/git/.gitconfig ~/.gitconfig
 ln -s $__dirname/vim/.vimrc ~/.vimrc
 ln -s $__dirname/vim/package.json ~/.config/coc/extensions/package.json
+# ln -s $__dirname/nvim ~/.config/nvim
 
 zsh brew/brew.sh
 zsh macos/defaults.zsh

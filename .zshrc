@@ -64,3 +64,5 @@ done
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 eval "$(pyenv init -)"
+
+eval $(thefuck --alias fuck)

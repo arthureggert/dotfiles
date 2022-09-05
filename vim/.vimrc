@@ -40,6 +40,7 @@ set nowritebackup
 set t_ZH=[3m  " This is a 'HACK' to see italics in vim
 set t_ZR=[23m " This is a 'HACK' to see italics in vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip "willignore listed files will be ignored by vim and by CTRL+P
+
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set smarttab
 set cindent
@@ -101,16 +102,16 @@ nnoremap <S-Left> :bp<CR>
 nnoremap <S-Right> :bn<CR>
 nnoremap <S-Up> :m .-2<CR>==
 nnoremap <S-Down> :m .+1<CR>==
-nnoremap <leader>s :w<cr>
 nnoremap <S-s> :w<cr>
+nnoremap <leader>s :w<cr>
 nnoremap <leader>q :bd<cr>
 nnoremap <leader>qq :bd!<cr>
-nnoremap <silent> <leader>bh :new<CR>
+nnoremap <C-s> <Esc> :w<cr>
+nnoremap <C-z> <Esc> :u <CR>
 nnoremap <S-Right> :bn<cr>
 nnoremap <S-Left> :bp<cr>
+nnoremap <silent> <leader>bh :new<CR>
 nnoremap <silent> <leader>bv :vnew<CR>
-nnoremap <C-s> <Esc> :w<cr>
-nnoremap <C-z> <Esc>:u <CR>
 
 "Autocmds
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
