@@ -63,6 +63,8 @@ done
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-eval "$(pyenv init -)"
+[ -s "/home/aheggert/.antigen/bundles/dracula/zsh/dracula.zsh-theme" ] && source "/home/aheggert/.antigen/bundles/dracula/zsh/dracula.zsh-theme"
+
+eval "$(pyenv init --path)"
 
 eval $(thefuck --alias fuck)
