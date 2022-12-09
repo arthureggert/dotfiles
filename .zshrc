@@ -1,5 +1,5 @@
 if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
-  export ZSH_TMUX_AUTOSTART=true
+  export ZSH_TMUX_AUTOSTART=false
 fi
 
 source ~/.antigen/antigen.zsh
