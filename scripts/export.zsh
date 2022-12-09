@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-# export GH_TOKEN=$privateGitHubToken
-# export GITHUB_TOKEN=$privateGitHubToken
-# export GITHUB_NPM_TOKEN=$privateGitHubToken
+export GH_TOKEN=$privateGitHubToken
+export GITHUB_TOKEN=$privateGitHubToken
+export GITHUB_NPM_TOKEN=$privateGitHubToken
 
 export COLOR=true
 export FORCE_COLOR=true
