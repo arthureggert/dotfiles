@@ -24,3 +24,4 @@ export NVM_SYMLINK_CURRENT=true
 # export TERM=xterm-256color-italic
 
 export GPG_TTY=$(tty)
+export PATH="$HOME/.local/bin:$PATH"
