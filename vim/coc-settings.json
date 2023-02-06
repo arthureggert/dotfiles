@@ -1,4 +1,3 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["*"],
-  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar"
+  "coc.preferences.formatOnSaveFiletypes": ["*"]
 }

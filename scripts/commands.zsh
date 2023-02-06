@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+function create_docker_separator() {
+  defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
+}
+
 function randpw() { 
   LENGTH=${1:-16}
   openssl rand -base64 $LENGTH | pbcopy

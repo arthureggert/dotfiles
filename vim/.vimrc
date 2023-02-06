@@ -4,25 +4,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-   Plug 'preservim/nerdtree'
-   Plug 'preservim/nerdcommenter'
    Plug 'dracula/vim', { 'as': 'dracula' }
-   Plug 'psliwka/vim-smoothie'
-   Plug 'ctrlpvim/ctrlp.vim'
-   Plug 'sheerun/vim-polyglot'
-   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-   Plug 'honza/vim-snippets'
-   Plug 'APZelos/blamer.nvim'
-   Plug 'Yggdroot/indentLine'
    Plug 'vim-airline/vim-airline'
    Plug 'vim-airline/vim-airline-themes'
-   Plug 'TaDaa/vimade'
-   Plug 'pangloss/vim-javascript'
-   Plug 'leafgarland/typescript-vim'
-   Plug 'peitalin/vim-jsx-typescript'
-   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-   Plug 'jparise/vim-graphql'
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let g:dracula_colorterm = 0 "For some reason with this value as 1 the colorscheme does not work as expected
@@ -60,7 +45,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 "List of COC-Vim extensions to load
-let g:coc_global_extensions = ['coc-browser', 'coc-css', 'coc-cssmodules', 'coc-docker', 'coc-eslint', 'coc-git', 'coc-graphql', 'coc-html', 'coc-java', 'coc-json', 'coc-prettier', 'coc-prisma', 'coc-pyright', 'coc-sql', 'coc-tsserver', 'coc-flutter', 'coc-snippets']
+let g:coc_global_extensions = ['coc-sh', 'coc-clangd', 'coc-cl', 'coc-css', 'coc-go', 'coc-html', 'coc-java', 'coc-tsserver', 'coc-json', 'coc-markdownlint', 'coc-perl', 'coc-pyright', 'coc-metals' ]
 
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument "Will make prettier use coc-prettier to do the formating
 
