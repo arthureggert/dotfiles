@@ -5,14 +5,11 @@ export GITHUB_TOKEN=$privateGitHubToken
 export GITHUB_NPM_TOKEN=$privateGitHubToken
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-#    export TERM=xterm-256color-italic
-#    export TERMINFO=/usr/share/terminfo
+    export RUBY_HOME="~/.gem/ruby/2.6.0/bin/"
     export COLOR=true
     export FORCE_COLOR=true
     export EDITOR='vim'
-    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PATH"
-#    export LDFLAGS="-L/usr/local/opt/openssl/lib"
-#    export CPPFLAGS="-I/usr/local/opt/openssl/include"
+    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$RUBY_HOME:$PATH"
     export SDKMAN_DIR="$HOME/.sdkman"
     export NVM_DIR="$HOME/.nvm"
     export NVM_AUTO_USE=true
