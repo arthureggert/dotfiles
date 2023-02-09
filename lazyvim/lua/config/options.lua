@@ -3,5 +3,7 @@
 -- Add any additional options here
 
 vim.opt.winbar = "%=%m %f"
+vim.opt.spelllang = { "en", "pt_br" }
+
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
