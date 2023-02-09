@@ -22,7 +22,8 @@ brew 'terraform'
 brew 'aws-iam-authenticator'
 brew 'caffeine'
 brew 'm1-terraform-provider-helper'
-brew llvm
+brew 'llvm'
+brew 'czg'
 
 # brew 'pnpm'
 # brew 'thefuck'
