@@ -24,6 +24,7 @@ brew 'caffeine'
 brew 'm1-terraform-provider-helper'
 brew 'llvm'
 brew 'czg'
+brew 'git-delta'
 
 # brew 'pnpm'
 # brew 'thefuck'
