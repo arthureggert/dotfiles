@@ -1,5 +1,6 @@
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
   export ZSH_TMUX_AUTOSTART=false
+  export DISABLE_AUTO_TITLE=true
 fi
 
 source ~/.antigen/antigen.zsh
