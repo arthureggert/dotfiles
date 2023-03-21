@@ -7,3 +7,9 @@ vim.opt.spelllang = { "en", "pt_br" }
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
+
+vim.g.vim_markdown_folding_disabled = 1
+
+vim.wo.wrap = true
+vim.wo.linebreak = true
+vim.wo.list = false
