@@ -13,3 +13,8 @@ vim.g.vim_markdown_folding_disabled = 1
 vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.wo.list = false
+
+vim.opt.list = false
+vim.opt.listchars = "tab:>·,trail:~,extends:>,precedes:<,space:␣,eol:¬"
+
+vim.opt.colorcolumn = "119"

@@ -1,5 +1,5 @@
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  export ZSH_TMUX_AUTOSTART=false
+  export ZSH_TMUX_AUTOSTART=true
   export DISABLE_AUTO_TITLE=true
 fi
 
@@ -69,3 +69,7 @@ done
 eval "$(pyenv init --path)"
 
 eval $(thefuck --alias fuck)
+
+eval "$(zoxide init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

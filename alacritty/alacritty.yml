@@ -1,0 +1,59 @@
+#
+#  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
+# ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝
+# ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝
+# ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
+# A cross-platform, OpenGL terminal emulator.
+# https://alacritty.org
+
+live_config_reload: true
+
+import:
+  - ~/Documents/dotfiles/alacritty/dracula.yml
+
+env:
+  TERM: xterm-256color
+
+font:
+  normal:
+    family: "Hack Nerd Font"
+    style: Regular
+  size: 22.0
+
+window:
+  opacity: 0.8
+  padding:
+    x: 14
+    y: 10
+  dynamic_padding: false
+  decorations: buttonless
+
+mouse:
+  hide_when_typing: true
+
+# NOTE: helpful hex codes
+# \x1b = escape (useful for vim-related keybindings)
+# \x02 = control-b (the default tmux prefix)
+
+key_bindings:
+  - { key: Key1, mods: Command, chars: "\x021" }
+  - { key: Key2, mods: Command, chars: "\x022" }
+  - { key: Key3, mods: Command, chars: "\x023" }
+  - { key: Key4, mods: Command, chars: "\x024" }
+  - { key: Key5, mods: Command, chars: "\x025" }
+  - { key: Key6, mods: Command, chars: "\x026" }
+  - { key: Key7, mods: Command, chars: "\x027" }
+  - { key: Key8, mods: Command, chars: "\x028" }
+  - { key: Key9, mods: Command, chars: "\x029" }
+  - { key: Comma, mods: Command, chars: "\x02," }
+  - { key: E, mods: Command, chars: "\x02\"" }
+  - { key: E, mods: Command|Shift, chars: "\x02%" }
+  - { key: Q, mods: Command, chars: ":q\n" }
+  - { key: S, mods: Command, chars: "\e:w\n" }
+  - { key: S, mods: Command|Shift, chars: ":wa\n" }
+  - { key: Semicolon, mods: Command, chars: "\x02:" }
+  - { key: T, mods: Command, chars: "\x02c" }
+  - { key: W, mods: Command, chars: "\x02x" }
+  - { key: Z, mods: Command, chars: "\x02z" }
