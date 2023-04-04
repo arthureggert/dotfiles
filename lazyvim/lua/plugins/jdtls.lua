@@ -65,7 +65,9 @@ return {
 
               local root_dir = require("jdtls.setup").find_root(root_markers)
 
-              local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+              --local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+
+              local workspace_folder = "/tmp/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
               local config = {
                 cmd = {
@@ -132,8 +134,8 @@ return {
                     format = {
                       enabled = true,
                       settings = {
-                        url = vim.fn.stdpath("config") .. "/formats/intellij-java-google-style.xml",
-                        profile = "GoogleStyle",
+                        url = vim.fn.stdpath("config") .. "/formats/aheggert.xml",
+                        profile = "aheggert",
                       },
                     },
                   },
@@ -178,12 +180,14 @@ return {
                   end,
                 },
               }
+              -- require("notify")("jdtls is starting", "info", {})
               require("jdtls").start_or_attach(config)
+              -- require("notify")("jdtls started", "info", {})
             end,
           })
 
-          vim.bo.shiftwidth = 4
-          vim.bo.tabstop = 4
+          -- vim.bo.shiftwidth = 4
+          -- vim.bo.tabstop = 4
 
           return true
         end,
