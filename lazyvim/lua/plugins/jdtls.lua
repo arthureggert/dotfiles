@@ -65,9 +65,9 @@ return {
 
               local root_dir = require("jdtls.setup").find_root(root_markers)
 
-              --local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+              local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
-              local workspace_folder = "/tmp/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+              -- local workspace_folder = "/tmp/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
               local config = {
                 cmd = {
