@@ -11,20 +11,26 @@
 live_config_reload: true
 
 import:
-  - ~/Documents/dotfiles/alacritty/dracula.yml
-  # - ~/Documents/dotfiles/alacritty/tokyonight.yml
+  # - ~/Documents/dotfiles/alacritty/dracula.yml
+  - ~/Documents/dotfiles/alacritty/tokyonight.yml
 
 env:
   TERM: xterm-256color
 
 font:
   normal:
-    family: "Hack Nerd Font"
+    family: "JetBrainsMono Nerd Font"
     style: Regular
+  bold:
+    family: "JetBrainsMono Nerd Font"
+    style: Bold
+  italic:
+    family: "JetBrainsMono Nerd Font"
+    style: Italic
   size: 22.0
 
 window:
-  opacity: 0.8
+  opacity: 0.95
   padding:
     x: 14
     y: 10

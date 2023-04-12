@@ -1,5 +1,5 @@
 return {
-  { "Mofiqul/dracula.nvim" },
+  -- { "Mofiqul/dracula.nvim" },
   -- {
   -- "catppuccin/nvim",
   -- lazy = true,
@@ -8,17 +8,17 @@ return {
   -- flavour = "frappe", -- latte, frappe, macchiato, mocha
   -- },
   -- },
-  -- {
-  -- "folke/tokyonight.nvim",
-  -- lazy = true,
-  -- opts = { style = "storm" },
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = { style = "storm" },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "dracula",
+      -- colorscheme = "dracula",
       -- colorscheme = "catppuccin",
-      -- colorscheme = "tokyonight",
+      colorscheme = "tokyonight",
     },
   },
 }
