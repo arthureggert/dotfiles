@@ -1,5 +1,14 @@
 return {
+  {
+    "arthureggert/dracula",
+    name = "dracula",
+    lazy = true,
+    enabled = true,
+  },
+  -- return {
   -- { "Mofiqul/dracula.nvim" },
+  -- { "arthurggert/dracula", name = "dracula", lazy = true },
+
   -- {
   -- "catppuccin/nvim",
   -- lazy = true,
@@ -8,17 +17,16 @@ return {
   -- flavour = "frappe", -- latte, frappe, macchiato, mocha
   -- },
   -- },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-    opts = { style = "storm" },
-  },
+  -- {
+  -- "folke/tokyonight.nvim",
+  -- lazy = true,
+  -- opts = { style = "storm" },
+  -- },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "dracula",
-      -- colorscheme = "catppuccin",
-      colorscheme = "tokyonight",
+      colorscheme = "dracula_pro",
+      -- colorscheme = "catppuccin", -- colorscheme = "tokyonight",
     },
   },
 }

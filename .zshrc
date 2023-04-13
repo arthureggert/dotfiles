@@ -30,13 +30,15 @@ antigen bundle lukechilds/zsh-nvm
 antigen bundle gradle/gradle-completion --branch=master
 
 # Load the theme.
-antigen theme dracula/zsh dracula
+# antigen theme dracula/zsh dracula
 
 
 # Tell Antigen that you're done.
 antigen apply
 
 # alias vim='/opt/homebrew/bin/vim'
+
+ZSH_THEME="dracula-pro"
 
 # NVM
 nvm use stable &> /dev/null
