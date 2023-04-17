@@ -68,10 +68,13 @@ done
 
 [ -s "/home/aheggert/.antigen/bundles/dracula/zsh/dracula.zsh-theme" ] && source "/home/aheggert/.antigen/bundles/dracula/zsh/dracula.zsh-theme"
 
-eval "$(pyenv init --path)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval $(thefuck --alias fuck)
+eval "$(tmuxifier init -)"
+
+eval "$(pyenv init --path)"
 
 eval "$(zoxide init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(thefuck --alias fuck)"
+

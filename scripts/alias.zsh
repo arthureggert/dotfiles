@@ -9,4 +9,5 @@ alias youtube='web_search duckduckgo \!yt'
 alias map='web_search duckduckgo \!m'
 
 alias cd='z'
-alias java-lsp='~/Documents/dotfiles/java-lsp.zsh'
+alias vim='nvim'
+alias vi='vim'

@@ -5,11 +5,12 @@ export GITHUB_TOKEN=$privateGitHubToken
 export GITHUB_NPM_TOKEN=$privateGitHubToken
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    export TMUXIFIER_PATH="$HOME/.tmux/plugins/tmuxifier/bin"
     export RUBY_HOME="~/.gem/ruby/2.6.0/bin/"
     export COLOR=true
     export FORCE_COLOR=true
     export EDITOR='nvim'
-    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$RUBY_HOME:$PATH"
+    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$RUBY_HOME:$TMUXIFIER_PATH:$PATH"
     export SDKMAN_DIR="$HOME/.sdkman"
     export NVM_DIR="$HOME/.nvm"
     export NVM_AUTO_USE=true
