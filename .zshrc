@@ -78,3 +78,5 @@ eval "$(zoxide init zsh)"
 
 eval "$(thefuck --alias fuck)"
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

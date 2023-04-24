@@ -45,6 +45,7 @@ mouse:
 # \x02 = control-b (the default tmux prefix)
 
 key_bindings:
+  #
   - { key: Key1, mods: Command, chars: "\x021" }
   - { key: Key2, mods: Command, chars: "\x022" }
   - { key: Key3, mods: Command, chars: "\x023" }
