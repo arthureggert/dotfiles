@@ -1,4 +1,3 @@
-
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
   export ZSH_TMUX_AUTOSTART=true
   export DISABLE_AUTO_TITLE=true
@@ -32,14 +31,15 @@ antigen bundle gradle/gradle-completion --branch=master
 
 # Load the theme.
 # antigen theme dracula/zsh dracula
-
+# antigen theme spaceship-prompt/spaceship-prompt
 
 # Tell Antigen that you're done.
 antigen apply
 
 # alias vim='/opt/homebrew/bin/vim'
 
-ZSH_THEME="dracula-pro"
+# ZSH_THEME=""
+# ZSH_THEME="dracula-pro"
 
 # NVM
 nvm use stable &> /dev/null
@@ -47,13 +47,14 @@ nvm use stable &> /dev/null
 # Cycle through history based on characters already typed on the line
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
+autoload -U promptinit
 
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
-
+ 
 # Load private szh files
 local __filename=~/.zshrc
 local __filename=${__filename:A}
@@ -63,11 +64,11 @@ for file in $(find $__dirname/scripts -type f -name '*.zsh'); do
   source $file
 done
 
-[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh" # This loads SDKMAN
+[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$HOMEBREW_HOME/spaceship/spaceship.zsh" ] && source "$HOMEBREW_HOME/spaceship/spaceship.zsh" 
 
-[ -s "/home/aheggert/.antigen/bundles/dracula/zsh/dracula.zsh-theme" ] && source "/home/aheggert/.antigen/bundles/dracula/zsh/dracula.zsh-theme"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -79,5 +80,5 @@ eval "$(zoxide init zsh)"
 
 eval "$(thefuck --alias fuck)"
 
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# promptinit
+# prompt pure
