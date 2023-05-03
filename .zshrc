@@ -1,3 +1,4 @@
+
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
   export ZSH_TMUX_AUTOSTART=true
   export DISABLE_AUTO_TITLE=true
