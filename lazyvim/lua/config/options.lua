@@ -18,3 +18,8 @@ vim.opt.list = false
 vim.opt.listchars = "tab:>·,trail:~,extends:>,precedes:<,space:␣,eol:¬"
 
 vim.opt.colorcolumn = "119"
+
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
+-- vim.opt.signcolumn = "number"
+vim.opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T"

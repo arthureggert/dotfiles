@@ -186,8 +186,8 @@ return {
             end,
           })
 
-          -- vim.bo.shiftwidth = 4
-          -- vim.bo.tabstop = 4
+          vim.bo.shiftwidth = 4
+          vim.bo.tabstop = 4
 
           return true
         end,
