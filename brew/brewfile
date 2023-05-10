@@ -31,6 +31,7 @@ brew 'fzf'
 brew 'thefuck'
 brew 'pure'
 brew 'spaceship'
+brew 'koekeishiya/formulae/skhd'
 
 # brew 'pnpm'
 

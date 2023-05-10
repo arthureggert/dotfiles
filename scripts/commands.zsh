@@ -1,5 +1,32 @@
 #!/usr/bin/env zsh
 
+function todo() {
+  if [[ "$1" == '--work' ]]; then
+    pter $HOME/Documents/workbech/todo/work.txt
+  else 
+    pter $HOME/Documents/workbech/todo/todo.txt
+  fi
+}
+
+function idea() {
+  declare -a ideargs=()
+  declare -- wait=""
+
+  for o in "$@"; do
+	  if [[ "$o" = "--wait" || "$o" = "-w" ]]; then
+  		wait="-W"
+	  	o="--wait"
+  	fi
+	  if [[ "$o" =~ " " ]]; then
+		  ideargs+=("\"$o\"")
+  	else
+	  	ideargs+=("$o")
+  	fi
+  done
+
+  open -na "Intellij IDEA Ultimate" $wait --args "${ideargs[@]}"
+}
+
 function create_docker_separator() {
   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 }
