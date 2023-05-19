@@ -18,8 +18,10 @@ return {
         nls.builtins.formatting.prettierd,
         nls.builtins.formatting.black.with({ extra_args = { "--fast" } }),
         nls.builtins.formatting.isort,
-        nls.builtins.formatting.google_java_format,
-        --nls.builtins.formatting.clang_format,
+        nls.builtins.formatting.clang_format,
+        -- nls.builtins.formatting.astyle,
+        -- nls.builtins.formatting.npm_groovy_lint,
+        -- nls.builtins.formatting.google_java_format,
       },
     }
   end,
