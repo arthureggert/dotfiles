@@ -18,6 +18,7 @@ antigen bundle python
 antigen bundle sdk
 antigen bundle command-not-found
 antigen bundle tmux
+antigen bundle pyenv
 
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
@@ -68,6 +69,8 @@ done
 
 [ -s "$HOMEBREW_HOME/spaceship/spaceship.zsh" ] && source "$HOMEBREW_HOME/spaceship/spaceship.zsh" 
 
+[ -s "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh" ] && source "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -75,6 +78,7 @@ done
 eval "$(tmuxifier init -)"
 
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 eval "$(zoxide init zsh)"
 

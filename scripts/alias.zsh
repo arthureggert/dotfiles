@@ -8,6 +8,7 @@ alias wiki='web_search duckduckgo \!w'
 alias youtube='web_search duckduckgo \!yt'
 alias map='web_search duckduckgo \!m'
 
-alias cd='z'
+alias c='z'
 alias vim='nvim'
 alias vi='vim'
+alias mkvirtualenv='mkvirtualenv -p $(which python)'

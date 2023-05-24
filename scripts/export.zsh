@@ -7,6 +7,8 @@ export GITHUB_NPM_TOKEN=$privateGitHubToken
 if [[ "$OSTYPE" == "darwin"* ]]; then
     fpath+=("$(brew --prefix)/share/zsh/site-functions")
   
+    export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+    export WORKON_HOME="$HOME/.virtualenvs"
     export TMUXIFIER_PATH="$HOME/.tmux/plugins/tmuxifier/bin"
     export RUBY_HOME="~/.gem/ruby/2.6.0/bin/"
     export COLOR=true
