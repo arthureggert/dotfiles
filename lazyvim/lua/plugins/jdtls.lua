@@ -65,9 +65,9 @@ return {
 
               local root_dir = require("jdtls.setup").find_root(root_markers)
 
-              -- local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+              local workspace_folder = home .. "/Documents/workspaces/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
-              local workspace_folder = "/tmp/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+              -- local workspace_folder = "/tmp/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
               local config = {
                 cmd = {
@@ -98,7 +98,7 @@ return {
                   workspace_folder,
                 },
 
-                root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
+                root_dir = root_dir,
 
                 settings = {
                   java = {
@@ -132,11 +132,7 @@ return {
                       includeDecompiledSources = true,
                     },
                     format = {
-                      enabled = true,
-                      settings = {
-                        url = vim.fn.stdpath("config") .. "/formats/aheggert.xml",
-                        profile = "aheggert",
-                      },
+                      enabled = false,
                     },
                   },
                   signatureHelp = { enabled = true },
@@ -180,9 +176,9 @@ return {
                   end,
                 },
               }
-              require("notify")("jdtls is starting", "info", {})
+              -- require("notify")("jdtls is starting", "info", {})
               require("jdtls").start_or_attach(config)
-              require("notify")("jdtls started", "info", {})
+              -- require("notify")("jdtls started", "info", {})
             end,
           })
 
