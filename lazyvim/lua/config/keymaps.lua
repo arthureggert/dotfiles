@@ -67,3 +67,5 @@ end, { desc = "Dockly" })
 vim.keymap.set("n", "<leader>zt", ":TZAtaraxis<CR>", { desc = "Toggle ZenMode" })
 vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Markdown Preview" })
 vim.keymap.set("n", "<leader>mg", ":Glow<CR>", { desc = "Markdown Preview (Glow)" })
+
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })

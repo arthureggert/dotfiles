@@ -28,6 +28,11 @@ config.font_size = 22.0
 
 config.keys = {
 	{
+		key = "m",
+		mods = "SHIFT",
+		action = wezterm.action({ SendString = "\x02\\" }),
+	},
+	{
 		key = "1",
 		mods = "CMD",
 		action = wezterm.action({ SendString = "\x021" }),
