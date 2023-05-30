@@ -8,6 +8,7 @@ wk.register({
   ["<leader>D"] = { name = "+docker" },
   ["<leader>m"] = { name = "+markdown" },
   ["<leader>z"] = { name = "+zenmode" },
+  ["<leader>j"] = { name = "+java" },
 })
 
 vim.keymap.set("n", "i", function()
