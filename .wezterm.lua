@@ -23,13 +23,16 @@ config.window_background_opacity = 0.95
 
 config.disable_default_key_bindings = true
 
+config.send_composed_key_when_left_alt_is_pressed = true
+config.send_composed_key_when_right_alt_is_pressed = true
+
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 22.0
 
 config.keys = {
 	{
 		key = "m",
-		mods = "SHIFT",
+		mods = "CTRL",
 		action = wezterm.action({ SendString = "\x02\\" }),
 	},
 	{
