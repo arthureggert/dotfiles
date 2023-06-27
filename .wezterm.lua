@@ -18,6 +18,7 @@ config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = false
 
+-- config.window_decorations = "RESIZE | TITLE"
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 
