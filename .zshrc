@@ -78,11 +78,11 @@ done
 eval "$(tmuxifier init -)"
 
 eval "$(pyenv init --path)"
+
 eval "$(pyenv init -)"
 
 eval "$(zoxide init zsh)"
 
 eval "$(thefuck --alias fuck)"
 
-# promptinit
-# prompt pure
+eval "$(atuin init zsh --disable-up-arrow)"

@@ -20,7 +20,7 @@ config.enable_tab_bar = false
 
 -- config.window_decorations = "RESIZE | TITLE"
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.95
+config.window_background_opacity = 1
 
 config.disable_default_key_bindings = true
 
