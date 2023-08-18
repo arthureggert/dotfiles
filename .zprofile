@@ -7,5 +7,11 @@ else
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(zoxide init zsh)"
+eval "$(thefuck --alias fuck)"
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"

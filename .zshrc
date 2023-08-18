@@ -1,11 +1,13 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
   export ZSH_TMUX_AUTOSTART=true
   export DISABLE_AUTO_TITLE=true
 fi
 
-source ~/.antigen/antigen.zsh
+[ -s "~/.antigen/antigen.zsh" ] && source "~/.antigen/antigen.zsh"
+[ -s "/opt/homebrew/share/antigen/antigen.zsh" ] && source "/opt/homebrew/share/antigen/antigen.zsh"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -14,7 +16,6 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle docker
 antigen bundle gradle
-antigen bundle iterm2
 antigen bundle macos
 antigen bundle python
 antigen bundle sdk
@@ -32,17 +33,8 @@ antigen bundle lukechilds/zsh-nvm
 # Gradle Autocomplete
 antigen bundle gradle/gradle-completion --branch=master
 
-# Load the theme.
-# antigen theme dracula/zsh dracula
-# antigen theme spaceship-prompt/spaceship-prompt
-
 # Tell Antigen that you're done.
 antigen apply
-
-# alias vim='/opt/homebrew/bin/vim'
-
-# ZSH_THEME=""
-# ZSH_THEME="dracula-pro"
 
 # NVM
 nvm use stable &> /dev/null
@@ -74,20 +66,6 @@ done
 [ -s "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh" ] && source "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(tmuxifier init -)"
-
-eval "$(pyenv init --path)"
-
-eval "$(pyenv init -)"
-
-eval "$(zoxide init zsh)"
-
-eval "$(thefuck --alias fuck)"
-
-eval "$(atuin init zsh --disable-up-arrow)"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

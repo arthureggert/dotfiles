@@ -1,0 +1,1 @@
+SPACESHIP_USER_SHOW=always
