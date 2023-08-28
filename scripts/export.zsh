@@ -14,11 +14,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 
-
+    export TERM="screen-256color"
 
     export TMUXIFIER_PATH="$HOME/.tmux/plugins/tmuxifier/bin"
-
-
 
     export COLOR=true
     export FORCE_COLOR=true
@@ -36,8 +34,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export NVM_NO_USE=true
     export NVM_SYMLINK_CURRENT=true
 
-export GPG_TTY=$(tty)
+    export GPG_TTY=$(tty)
+    
     export HOMEBREW_HOME="/opt/homebrew/opt"
+
+    export PATH="/Users/aheggert/.perl5/bin${PATH:+:${PATH}}"
+    export PERL5LIB="/Users/aheggert/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+    export PERL_LOCAL_LIB_ROOT="/Users/aheggert/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+    export PERL_MB_OPT="--install_base \"/Users/aheggert/.perl5\""
+    export PERL_MM_OPT="INSTALL_BASE=/Users/aheggert/.perl5";
 
     export FZF_CTRL_R_OPTS="--reverse"
     export FZF_TMUX_OPTS="-p"
