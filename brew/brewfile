@@ -39,6 +39,7 @@ brew 'luarocks'
 brew 'composer'
 brew 'julia'
 
+cask 'browserosaurus'
 cask 'alt-tab'
 cask 'docker'
 cask 'jetbrains-toolbox'
