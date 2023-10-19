@@ -11,8 +11,6 @@ return {
       "typescript",
       "tsx",
       "bash",
-      "java",
-      "kotlin",
       "help",
       "html",
       "javascript",
