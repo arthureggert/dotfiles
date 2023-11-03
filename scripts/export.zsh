@@ -7,12 +7,12 @@ export GITHUB_NPM_TOKEN=$privateGitHubToken
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export GOPATH="$HOME/.go"
     export WORKON_HOME="$HOME/.virtualenvs"
-    export RUBY_HOME="~/.gem/ruby/2.6.0/bin/"
+    #export RUBY_HOME="~/.gem/ruby/2.6.0/bin/"
 
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_PATH="$PYENV_ROOT/bin"
 
-    export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+    #export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 
     export TERM="screen-256color"
 
@@ -24,7 +24,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     export JETBRAINS_SCRIPT='/Users/aheggert/Library/Application Support/JetBrains/Toolbox/scripts'
 
-    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$RUBY_HOME:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
+    # export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$RUBY_HOME:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
+    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
 
     export SDKMAN_DIR="$HOME/.sdkman"
 

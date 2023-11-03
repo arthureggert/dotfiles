@@ -64,9 +64,13 @@ done
 
 [ -s "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh" ] && source "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$HOMEBREW_HOME/chruby/share/chruby/chruby.sh" ] && source "$HOMEBREW_HOME/chruby/share/chruby/chruby.sh"
 
-eval "$(atuin init zsh --disable-up-arrow)"
+[ -s "$HOMEBREW_HOME/chruby/share/chruby/auto.sh" ] && source "$HOMEBREW_HOME/chruby/share/chruby/auto.sh"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+eval "$(atuin init zsh --disable-up-arrow)"
