@@ -8,7 +8,7 @@ wk.register({
   ["<leader>D"] = { name = "+docker" },
   ["<leader>m"] = { name = "+markdown" },
   ["<leader>z"] = { name = "+zenmode" },
-  ["<leader>j"] = { name = "+java" },
+  -- ["<leader>j"] = { name = "+java" },
 })
 
 vim.keymap.set("n", "i", function()
@@ -37,7 +37,7 @@ vim.keymap.set("n", "<C-k>", ":m .-2<CR>==", { noremap = true })
 vim.keymap.set("n", "<C-j>", ":m .+1<CR>==", { noremap = true })
 vim.keymap.set("n", "<C-h>", ":bp<CR>")
 vim.keymap.set("n", "<C-l>", ":bn<CR>")
-vim.keymap.set("n", "<C-p>", Util.telescope("find_files"))
+vim.keymap.set("n", "<C-p>", Util.telescope("files"))
 vim.keymap.set("i", "<C-g>", "<c-g>u<Esc>[s1z=`]a<c-g>u")
 vim.keymap.set("n", "<C-g>", "[s1z=<c-o>")
 vim.keymap.set("n", "<S-t>", ":Ttoggle<CR>")

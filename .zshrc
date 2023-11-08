@@ -1,7 +1,8 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  export ZSH_TMUX_AUTOSTART=true
+  export ZSH_TMUX_AUTOSTART=false
   export DISABLE_AUTO_TITLE=true
 fi
 
