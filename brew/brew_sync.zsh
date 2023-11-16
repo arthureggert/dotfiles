@@ -14,7 +14,7 @@ $BREW list  --formulae > /tmp/brew-sync.installed
 $BREW list --cask -1 > /tmp/brew-sync.casks
 
 # then combine it with list in Dropbox
-echo "Reading settings from Dropbox ..."
+echo "Reading settings from iCloud..."
 [ -e ~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/brew-sync.taps ] && cat ~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/brew-sync.taps >> /tmp/brew-sync.taps
 [ -e ~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/brew-sync.installed ] && cat ~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/brew-sync.installed >> /tmp/brew-sync.installed
 [ -e ~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/brew-sync.casks ] && cat ~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/brew-sync.casks >> /tmp/brew-sync.casks
