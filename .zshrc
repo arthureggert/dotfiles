@@ -20,7 +20,7 @@ antigen bundle macos
 antigen bundle python
 antigen bundle sdk
 antigen bundle command-not-found
-antigen bundle tmux
+# antigen bundle tmux
 antigen bundle pyenv
 
 antigen bundle zsh-users/zsh-completions
