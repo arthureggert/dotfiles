@@ -31,7 +31,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle lukechilds/zsh-nvm
 
 # Gradle Autocomplete
-antigen bundle gradle/gradle-completion --branch=master
+antigen bundle gradle/gradle-completion
 
 # Tell Antigen that you're done.
 antigen apply

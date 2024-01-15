@@ -39,7 +39,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     
     export HOMEBREW_HOME="/opt/homebrew/opt"
 
-    export PATH="/Users/aheggert/.perl5/bin${PATH:+:${PATH}}"
+    export PATH="/Users/aheggert/.perl5/bin${PATH:+:${PATH}}:.:$PATH"
     export PERL5LIB="/Users/aheggert/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
     export PERL_LOCAL_LIB_ROOT="/Users/aheggert/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
     export PERL_MB_OPT="--install_base \"/Users/aheggert/.perl5\""
