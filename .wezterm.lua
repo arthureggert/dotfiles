@@ -13,11 +13,11 @@ config.color_scheme = "Dracula (Official)"
 
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
-config.enable_tab_bar = true
+config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false
 config.disable_default_key_bindings = true
 
-config.window_decorations = "RESIZE | TITLE"
+config.window_decorations = "RESIZE"
 config.window_background_opacity = 1
 
 config.send_composed_key_when_left_alt_is_pressed = true

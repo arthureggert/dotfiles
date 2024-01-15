@@ -1,10 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  export ZSH_TMUX_AUTOSTART=false
-  export DISABLE_AUTO_TITLE=true
-fi
+export ZSH_TMUX_AUTOSTART=true
 
 [ -s "~/.antigen/antigen.zsh" ] && source "~/.antigen/antigen.zsh"
 [ -s "/opt/homebrew/share/antigen/antigen.zsh" ] && source "/opt/homebrew/share/antigen/antigen.zsh"
@@ -20,7 +17,7 @@ antigen bundle macos
 antigen bundle python
 antigen bundle sdk
 antigen bundle command-not-found
-# antigen bundle tmux
+antigen bundle tmux
 antigen bundle pyenv
 
 antigen bundle zsh-users/zsh-completions
