@@ -23,6 +23,7 @@ return {
       "regex",
       "vim",
       "yaml",
+      "groovy",
     })
   end,
 }
