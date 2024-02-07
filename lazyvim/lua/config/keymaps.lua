@@ -2,14 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local Util = require("lazyvim.util")
-local wk = require("which-key")
-
-wk.register({
-  ["<leader>D"] = { name = "+docker" },
-  ["<leader>m"] = { name = "+markdown" },
-  ["<leader>z"] = { name = "+zenmode" },
-  -- ["<leader>j"] = { name = "+java" },
-})
 
 vim.keymap.set("n", "i", function()
   if #vim.fn.getline(".") == 0 then
@@ -59,13 +51,5 @@ end, { desc = "Lazydocker" })
 vim.keymap.set("n", "<leader>Dc", function()
   Util.float_term({ "ctop" }, { cwd = Util.get_root() })
 end, { desc = "Ctop" })
-
-vim.keymap.set("n", "<leader>Dd", function()
-  Util.float_term({ "dockly" }, { cwd = Util.get_root() })
-end, { desc = "Dockly" })
-
-vim.keymap.set("n", "<leader>zt", ":TZAtaraxis<CR>", { desc = "Toggle ZenMode" })
-vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Markdown Preview" })
-vim.keymap.set("n", "<leader>mg", ":Glow<CR>", { desc = "Markdown Preview (Glow)" })
 
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
