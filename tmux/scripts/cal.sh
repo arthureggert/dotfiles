@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ALERT_IF_IN_NEXT_MINUTES=10
+ALERT_IF_IN_NEXT_MINUTES=60
 ALERT_POPUP_BEFORE_SECONDS=10
 NERD_FONT_FREE="󱁕 "
 NERD_FONT_MEETING="󰤙"
@@ -59,7 +59,7 @@ get_next_next_meeting() {
 			--excludeAllDayEvents \
 			--separateByDate \
 			--bullet "" \
-			--excludeCals "training,omerxx@gmail.com" \
+			--excludeCals "training" \
 			eventsFrom:"${end_timestamp}" to:"${tonight}"
 	)
 }
@@ -101,8 +101,8 @@ display_popup() {
 }
 
 print_tmux_status() {
-	if [[ $minutes_till_meeting -lt $ALERT_IF_IN_NEXT_MINUTES &&
-		$minutes_till_meeting -gt -60 ]]; then
+	echo $minutes_till_meeting $ALERT_IF_IN_NEXT_MINUTES
+	if [[ $minutes_till_meeting -lt $ALERT_IF_IN_NEXT_MINUTES && $minutes_till_meeting -gt -60 ]]; then
 		echo "$NERD_FONT_MEETING \
 			$time $title ($minutes_till_meeting minutes)"
 	else

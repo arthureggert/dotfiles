@@ -23,11 +23,11 @@ return {
       },
       twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
       gitsigns = { enabled = true }, -- disables git signs
-      tmux = { enabled = false }, -- disables the tmux statusline
+      tmux = { enabled = true }, -- disables the tmux statusline
       -- this will change the font size on wezterm when in zen mode
       -- See alse also the Plugins/Wezterm section in this projects README
       wezterm = {
-        enabled = false,
+        enabled = true,
         -- can be either an absolute font size or the number of incremental steps
         font = "+2", -- (10% increase per step)
       },

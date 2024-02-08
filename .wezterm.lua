@@ -15,7 +15,7 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 		elseif number_value < 0 then
 			window:perform_action(wezterm.action.ResetFontSize, pane)
 			overrides.font_size = nil
-			overrides.enable_tab_bar = true
+			overrides.enable_tab_bar = false
 		else
 			overrides.font_size = number_value
 			overrides.enable_tab_bar = false
@@ -33,7 +33,7 @@ if wezterm.config_builder then
 end
 
 -- config.color_scheme = "Dracula (Official)"
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = "Catppuccin Mocha"
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = false
