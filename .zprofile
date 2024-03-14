@@ -7,3 +7,7 @@ eval "$(zoxide init zsh)"
 eval "$(thefuck --alias fuck)"
 
 [[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/aheggert/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<

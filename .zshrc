@@ -1,6 +1,5 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 export ZSH_TMUX_AUTOSTART=false
 
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
@@ -63,7 +62,7 @@ done
 
 [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-[ -s "$HOMEBREW_HOME/spaceship/spaceship.zsh" ] && source "$HOMEBREW_HOME/spaceship/spaceship.zsh" 
+# [ -s "$HOMEBREW_HOME/spaceship/spaceship.zsh" ] && source "$HOMEBREW_HOME/spaceship/spaceship.zsh" 
 
 [ -s "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh" ] && source "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh"
 
@@ -73,7 +72,8 @@ done
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+
+eval "$(starship init zsh)"

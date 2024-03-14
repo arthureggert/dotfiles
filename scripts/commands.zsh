@@ -9,22 +9,38 @@ function todo() {
 }
 
 function idea() {
-  declare -a ideargs=()
-  declare -- wait=""
+  IDEA = "IntelliJ IDEA Ultimate"
+  # Check current working directory
+  wd=""
+  if [ -z "$1" ]; then
+	  wd=$(pwd)
+  elif [ -d "$1" ]; then
+	  wd=$(ls -1d "$1" 2>&1 | head -n1)
+  fi
 
-  for o in "$@"; do
-	  if [[ "$o" = "--wait" || "$o" = "-w" ]]; then
-  		wait="-W"
-	  	o="--wait"
-  	fi
-	  if [[ "$o" =~ " " ]]; then
-		  ideargs+=("\"$o\"")
-  	else
-	  	ideargs+=("$o")
-  	fi
-  done
+  # Check if we were given a file
+  if [ -f "$1" ]; then
+	  open -a "$IDEA" "$1"
+  else
+	  # Check working directory
+  	pushd $wd > /dev/null
 
-  open -na "Intellij IDEA Ultimate" $wait --args "${ideargs[@]}"
+	  if [ -d ".idea" ]; then
+		  # Handle .idea folders
+		  open -a "$IDEA" .
+	  elif [ -f *.ipr ]; then
+		  # Handle idea project files
+		  open -a "$IDEA" `ls -1d *.ipr | head -n1`
+	  elif [ -f pom.xml ]; then
+		  # Handle pom.xml
+		  open -a "$IDEA" "pom.xml"
+	  else
+		# Can't do anything else, just open Intellij
+		open "$IDEA"
+	fi
+
+	popd > /dev/null
+fi
 }
 
 function create_docker_separator() {
@@ -122,39 +138,11 @@ function gradle_install() {
   gradle build -x test
 }
 
-function _web_search() {
-    emulate -L zsh
-
-    # define search engine URLS
-    typeset -A urls
-    urls[google]="https://www.google.com/search?q="
-    urls[duckduckgo]="https://www.duckduckgo.com/?q="
-    urls[startpage]="https://www.startpage.com/do/search?q="
-    urls[github]="https://github.com/search?q="
-
-    # check whether the search engine is supported
-    if [[ -z "${urls[$1]}" ]]; then
-        echo "Search engine $1 not supported."
-        return 1
-    fi
-
-    # search or go to main page depending on number of arguments passed
-    if [[ $# -gt 1 ]]; then
-        # build search url:
-        # join arguments passed with '+', then append to search engine URL
-        # shellcheck disable=SC2154
-        url="${urls[$1]}${(j:+:)@[2,-1]}"
-    else
-        # build main page url:
-        # split by '/', then rejoin protocol (1) and domain (2) parts with '//'
-        # shellcheck disable=SC2154
-        url="${(j://:)${(s:/:)urls[$1]}[1,2]}"
-    fi
-
-    open_command "$url"
-    return 0
+function live() {
+  workon zenjob && renew_tokens $COMPANY_USER_NAME live > /dev/null 2>&1
 }
 
-function web_search() {
-    _web_search "$@"
+function dev() {
+  workon zenjob && renew_tokens $COMPANY_USER_NAME dev > /dev/null 2>&1
 }
+
