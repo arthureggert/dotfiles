@@ -18,8 +18,6 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "Resume" }
 )
 
-vim.keymap.set("n", "<leader>we", ":Neotree<CR>", { noremap = true, silent = true, desc = "Neo Tree" })
-
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<S-Up>", ":m .-2<CR>==", { noremap = true })
 vim.keymap.set("n", "<S-Down>", ":m .+1<CR>==", { noremap = true })

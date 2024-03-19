@@ -44,5 +44,5 @@ return {
     opts = {
       colorscheme = "catppuccin-mocha",
     },
-  }
+  },
 }

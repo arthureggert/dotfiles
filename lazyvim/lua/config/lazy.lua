@@ -9,18 +9,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.dap.core" },
-    { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.dap.core" },
-    { import = "lazyvim.plugins.extras.dap.nlua" },
-    { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.util.project" },
-    { import = "lazyvim.plugins.extras.coding.copilot" },
-    { import = "lazyvim.plugins.extras.linting.eslint" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "plugins" },
   },
   defaults = {
@@ -33,9 +21,6 @@ require("lazy").setup({
     rtp = {
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
