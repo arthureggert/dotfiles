@@ -3,9 +3,9 @@
 account=$(aws sts get-caller-identity --query Account --output text)
 
 if [ "$account" == "$AWS_DEV_ACCOUNT" ]; then
-	echo "󰵮"
+	echo "dev"
 elif [ "$account" == "$AWS_LIVE_ACCOUNT" ]; then
-	echo "󱓇"
+	echo "live"
 else
 	echo ""
 fi

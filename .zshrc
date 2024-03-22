@@ -1,9 +1,10 @@
 # CodeWhisperer pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+
 export ZSH_TMUX_AUTOSTART=false
 
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  export ZSH_TMUX_AUTOSTART=true
+  export ZSH_TMUX_AUTOSTART=false
   export DISABLE_AUTO_TITLE=false
 fi
 

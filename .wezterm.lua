@@ -1,29 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-wezterm.on("user-var-changed", function(window, pane, name, value)
-	local overrides = window:get_config_overrides() or {}
-	if name == "ZEN_MODE" then
-		local incremental = value:find("+")
-		local number_value = tonumber(value)
-		if incremental ~= nil then
-			while number_value > 0 do
-				window:perform_action(wezterm.action.IncreaseFontSize, pane)
-				number_value = number_value - 1
-			end
-			overrides.enable_tab_bar = false
-		elseif number_value < 0 then
-			window:perform_action(wezterm.action.ResetFontSize, pane)
-			overrides.font_size = nil
-			overrides.enable_tab_bar = false
-		else
-			overrides.font_size = number_value
-			overrides.enable_tab_bar = false
-		end
-	end
-	window:set_config_overrides(overrides)
-end)
-
 -- This table will hold the configuration.
 local config = {}
 -- In newer versions of wezterm, use the config_builder which will
@@ -36,7 +13,7 @@ end
 config.color_scheme = "Catppuccin Mocha"
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = false
 config.disable_default_key_bindings = true
 config.window_decorations = "RESIZE"
@@ -64,6 +41,26 @@ config.keys = {
 		key = "w",
 		mods = "CMD",
 		action = wezterm.action.CloseCurrentTab({ confirm = true }),
+	},
+	{
+		key = "LeftArrow",
+		mods = "CMD",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "RightArrow",
+		mods = "CMD",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "UpArrow",
+		mods = "CMD",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "DownArrow",
+		mods = "CMD",
+		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{ key = "c", mods = "CMD", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },

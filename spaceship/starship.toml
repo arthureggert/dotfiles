@@ -1,8 +1,8 @@
 [custom.aws_account_live]
 command = " ~/Documents/dotfiles/spaceship/.aws_account.sh"
 when = " ~/Documents/dotfiles/spaceship/.test_aws.sh"
-format = '[($output)  ]($style)'
-style = 'bold green'
+format = '[\($output\)]($style)'
+style = 'bold yellow'
 ignore_timeout = true
 
 [character]
@@ -11,11 +11,13 @@ success_symbol = '[➜](bold green)'
 [aws]
 # format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 # format = 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
-format = 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
-symbol = " "
+# format = 'on [$symbol($profile)(\($region\))(\[$duration\])]($style)'
+format = 'on [$symbol]($style)'
+symbol = '󰸏 '
+# " "
 
 [aws.profile_aliases]
-terraform = 'AWS'
+terraform = 'Zenjob AWS'
 
 [buf]
 symbol = " "
@@ -59,6 +61,7 @@ read_only = " 󰌾"
 
 [docker_context]
 # format = '\[[$symbol$context]($style)\]'
+format = 'via [$symbol]($style) '
 symbol = " "
 
 [dotnet]
@@ -240,8 +243,10 @@ symbol = " "
 [python]
 # format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 # format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-format = 'via [${symbol}${pyenv_prefix}(${version}) ]($style)'
+# format = 'via [${symbol}${pyenv_prefix}(${version}) ]($style)'
+format = 'via [${symbol}(${virtualenv}\(${version}\)) ]($style)'
 symbol = " "
+version_format = "v${major}.${minor}"
 
 [raku]
 # format = '\[[$symbol($version-$vm_version)]($style)\]'
