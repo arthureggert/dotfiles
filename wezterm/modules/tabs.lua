@@ -93,7 +93,6 @@ wezterm.on("format-tab-title", function(tab, tabs, _, _, hover, max_width)
 	local foreground = NEW_TAB_FG
 
 	local is_first = tab.tab_id == tabs[1].tab_id
-	local is_last = tab.tab_id == tabs[#tabs].tab_id
 
 	if tab.is_active then
 		background = ACTIVE_TAB_BG
@@ -116,7 +115,7 @@ wezterm.on("format-tab-title", function(tab, tabs, _, _, hover, max_width)
 
 	local title = tab_title(tab)
 
-	title = wezterm.truncate_right(title, max_width - 2)
+	title = wezterm.truncate_right(title, max_width)
 
 	return {
 		{ Background = { Color = leading_bg } },
