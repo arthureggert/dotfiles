@@ -1,1 +1,0 @@
-# aheggert's dotfiles

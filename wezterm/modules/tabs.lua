@@ -4,15 +4,15 @@ local module = {}
 
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
-local TAB_BAR_BG = "#201D21"
+local TAB_BAR_BG = "#181825"
 
-local ACTIVE_TAB_BG = "#FFDC66"
-local ACTIVE_TAB_FG = "#2B2B2B"
+local ACTIVE_TAB_BG = "#89b4fa"
+local ACTIVE_TAB_FG = "#1e1e2e"
 
-local INACTIVE_TAB_BG = "#3D353F"
-local INACTIVE_TAB_FG = "#A5A5A5"
+local INACTIVE_TAB_BG = "#313244"
+local INACTIVE_TAB_FG = "#bac2de"
 
-local HOVER_TAB_BG = "#877436"
+local HOVER_TAB_BG = "#74c7ec"
 local HOVER_TAB_FG = "#2B2B2B"
 
 local NEW_TAB_BG = INACTIVE_TAB_BG
@@ -80,8 +80,7 @@ function module.setup(config)
 	}
 end
 
--- Custom Powerline Tabs
-function tab_title(tab_info)
+local function tab_title(tab_info)
 	local title = tab_info.tab_title
 	if title and #title > 0 then
 		return title
@@ -89,7 +88,7 @@ function tab_title(tab_info)
 	return tab_info.active_pane.title
 end
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+wezterm.on("format-tab-title", function(tab, tabs, _, _, hover, max_width)
 	local background = NEW_TAB_BG
 	local foreground = NEW_TAB_FG
 
@@ -105,24 +104,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	end
 
 	local leading_bg = background
-	local leading_fg = NEW_TAB_FG
-
-	local trailing_bg = NEW_TAB_BG
 	local trailing_fg = background
 
-	if is_first then
-		leading_fg = TAB_BAR_BG
-	else
-		leading_fg = NEW_TAB_BG
-	end
-
-	if is_last then
-		trailing_bg = TAB_BAR_BG
-	else
-		trailing_bg = NEW_TAB_BG
-	end
-
-	function check_start_arrow()
+	local function check_start_arrow()
 		if not is_first then
 			return SOLID_RIGHT_ARROW
 		else
@@ -134,7 +118,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
 	title = wezterm.truncate_right(title, max_width - 2)
 
-	-- TODO: Put tab numbers in powerline symbols (like tokyo-night tmux)
 	return {
 		{ Background = { Color = leading_bg } },
 		{ Foreground = { Color = TAB_BAR_BG } },
