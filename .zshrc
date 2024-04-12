@@ -8,35 +8,30 @@ if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
   export DISABLE_AUTO_TITLE=false
 fi
 
-[ -s "~/.antigen/antigen.zsh" ] && source "~/.antigen/antigen.zsh"
-[ -s "/opt/homebrew/share/antigen/antigen.zsh" ] && source "/opt/homebrew/share/antigen/antigen.zsh"
+[ -s "/opt/homebrew/opt/antidote/share/antidote/antidote.zsh" ] && source "/opt/homebrew/opt/antidote/share/antidote/antidote.zsh"
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+source <(antidote init)
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle docker
-antigen bundle gradle
-antigen bundle macos
-antigen bundle python
-antigen bundle sdk
-antigen bundle command-not-found
-antigen bundle tmux
-antigen bundle pyenv
+antidote bundle ohmyzsh/ohmyzsh path:lib
+antidote bundle ohmyzsh/ohmyzsh path:plugins/git
+antidote bundle ohmyzsh/ohmyzsh path:plugins/gradle
+antidote bundle ohmyzsh/ohmyzsh path:plugins/macos
+antidote bundle ohmyzsh/ohmyzsh path:plugins/python
+antidote bundle ohmyzsh/ohmyzsh path:plugins/sdk
+antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
+antidote bundle ohmyzsh/ohmyzsh path:plugins/pyenv
+antidote bundle ohmyzsh/ohmyzsh path:plugins/aws
+antidote bundle ohmyzsh/ohmyzsh path:plugins/brew
+antidote bundle ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
+antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-machine
 
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# NVM bundle
-antigen bundle lukechilds/zsh-nvm
-
-# Gradle Autocomplete
-antigen bundle gradle/gradle-completion
-
-# Tell Antigen that you're done.
-antigen apply
+antidote bundle zsh-users/zsh-completions
+antidote bundle zsh-users/zsh-autosuggestions
+antidote bundle zsh-users/zsh-syntax-highlighting
+antidote bundle lukechilds/zsh-nvm
+antidote bundle gradle/gradle-completion
+antidote bundle spaceship-prompt/spaceship-prompt
 
 # NVM
 nvm use stable &> /dev/null
@@ -63,8 +58,6 @@ done
 
 [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-# [ -s "$HOMEBREW_HOME/spaceship/spaceship.zsh" ] && source "$HOMEBREW_HOME/spaceship/spaceship.zsh" 
-
 [ -s "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh" ] && source "$HOMEBREW_HOME/virtualenvwrapper/bin/virtualenvwrapper.sh"
 
 [ -s "$HOMEBREW_HOME/chruby/share/chruby/chruby.sh" ] && source "$HOMEBREW_HOME/chruby/share/chruby/chruby.sh"
@@ -74,11 +67,6 @@ done
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 eval "$(atuin init zsh --disable-up-arrow)"
-
-eval "$(starship init zsh)"
-
-
-[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # CodeWhisperer post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"

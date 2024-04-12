@@ -7,12 +7,9 @@ export GITHUB_NPM_TOKEN=$privateGitHubToken
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export GOPATH="$HOME/.go"
     export WORKON_HOME="$HOME/.virtualenvs"
-    #export RUBY_HOME="~/.gem/ruby/2.6.0/bin/"
 
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_PATH="$PYENV_ROOT/bin"
-
-    #export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 
     export TERM="screen-256color"
 
@@ -26,9 +23,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$RUBY_HOME:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
     export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
+    export PATH="$PATH:/Users/aheggert/Library/Application Support/Coursier/bin"
 
     export SDKMAN_DIR="$HOME/.sdkman"
-
+    export ZSH="$HOME/.zsh"
+    export ZSH_CACHE_DIR="$ZSH/cache/"
     export NVM_DIR="$HOME/.nvm"
     export NVM_AUTO_USE=true
     export NVM_COMPLETION=true
