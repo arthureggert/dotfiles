@@ -5,8 +5,11 @@ local function get_icon(title)
 		return ""
 	elseif title == "lazygit" then
 		return ""
+	elseif title == "atac" or title == "apis" then
+		return "󱂛"
 	end
-	return ""
+	return " (" .. title .. ")"
+	-- return ""
 end
 
 module.get_window_title = function(tab)

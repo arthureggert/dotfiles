@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+function apis() {
+  atac --directory ~/Documents/apis
+}
+
+function back () {
+  cd ..
+}
+
 function create_docker_separator() {
   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 }
