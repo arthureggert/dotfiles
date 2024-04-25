@@ -5,6 +5,9 @@ export GITHUB_TOKEN=$privateGitHubToken
 export GITHUB_NPM_TOKEN=$privateGitHubToken
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export GEM_PATH="$GEM_HOME/bin"
+
     export GOPATH="$HOME/.go"
     export WORKON_HOME="$HOME/.virtualenvs"
 
@@ -20,10 +23,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export EDITOR='nvim'
 
     export JETBRAINS_SCRIPT='/Users/aheggert/Library/Application Support/JetBrains/Toolbox/scripts'
+    
+    export COUSIER_HOME="/Users/aheggert/Library/Application Support/Coursier"
+    export COURSIER_PATH="$COUSIER_HOME/bin"
 
-    # export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$RUBY_HOME:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
-    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$PATH"
-    export PATH="$PATH:/Users/aheggert/Library/Application Support/Coursier/bin"
+    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$COURSIER_PATH:$GEM_PATH:$PATH"
 
     export SDKMAN_DIR="$HOME/.sdkman"
     export ZSH="$HOME/.zsh"
@@ -39,6 +43,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export HOMEBREW_HOME="/opt/homebrew/opt"
 
     export PATH="/Users/aheggert/.perl5/bin${PATH:+:${PATH}}:.:$PATH"
+
     export PERL5LIB="/Users/aheggert/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
     export PERL_LOCAL_LIB_ROOT="/Users/aheggert/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
     export PERL_MB_OPT="--install_base \"/Users/aheggert/.perl5\""
