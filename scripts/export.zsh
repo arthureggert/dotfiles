@@ -27,7 +27,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export COUSIER_HOME="/Users/aheggert/Library/Application Support/Coursier"
     export COURSIER_PATH="$COUSIER_HOME/bin"
 
-    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$COURSIER_PATH:$GEM_PATH:$PATH"
+    export RVM_HOME="$HOME/.rvm"
+    export RVM_PATH="$RVM_HOME/bin"
 
     export SDKMAN_DIR="$HOME/.sdkman"
     export ZSH="$HOME/.zsh"
@@ -41,6 +42,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export GPG_TTY=$(tty)
     
     export HOMEBREW_HOME="/opt/homebrew/opt"
+    export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.local/bin:$PYENV_PATH:$TMUXIFIER_PATH:$JETBRAINS_SCRIPT:$COURSIER_PATH:$GEM_PATH:$RVM_PATH:$PATH"
 
     export PATH="/Users/aheggert/.perl5/bin${PATH:+:${PATH}}:.:$PATH"
 
