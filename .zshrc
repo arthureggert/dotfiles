@@ -26,7 +26,7 @@ antidote bundle zsh-users/zsh-autosuggestions
 antidote bundle zsh-users/zsh-syntax-highlighting
 antidote bundle lukechilds/zsh-nvm
 antidote bundle gradle/gradle-completion
-antidote bundle spaceship-prompt/spaceship-prompt
+# antidote bundle spaceship-prompt/spaceship-prompt
 
 # NVM
 nvm use stable &> /dev/null
@@ -61,5 +61,5 @@ done
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(starship init zsh)"
 
