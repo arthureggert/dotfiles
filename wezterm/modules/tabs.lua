@@ -4,11 +4,11 @@ local module = {}
 
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 local TAB_BAR_BG = "#181825"
-local ACTIVE_TAB_BG = "#89b4fa"
-local ACTIVE_TAB_FG = "#1e1e2e"
-local INACTIVE_TAB_BG = "#313244"
-local INACTIVE_TAB_FG = "#bac2de"
-local HOVER_TAB_BG = "#74c7ec"
+local ACTIVE_TAB_BG = "#94e2d5"
+local ACTIVE_TAB_FG = "#11111b"
+local INACTIVE_TAB_BG = "#585b70"
+local INACTIVE_TAB_FG = "#181825"
+local HOVER_TAB_BG = "#94e2d5"
 local HOVER_TAB_FG = "#2B2B2B"
 local NEW_TAB_BG = INACTIVE_TAB_BG
 local NEW_TAB_FG = INACTIVE_TAB_FG
