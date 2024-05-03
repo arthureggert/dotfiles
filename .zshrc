@@ -62,4 +62,4 @@ done
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 eval "$(starship init zsh)"
-
+eval "$(atuin init zsh --disable-up-arrow)"
