@@ -133,7 +133,8 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 [docker_context]
 symbol = ""
 style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+# format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+format = '[[ $symbol( $context) ](fg:crust bg:color_bg3)]($style)'
 
 [conda]
 style = "bg:color_bg3"
@@ -176,6 +177,7 @@ color_bg1 = "#6c7086"
 color_blue = "#89b4fa"
 color_aqua = "#94e2d5"
 color_green = "#a6e3a1"
+# color_green = "#11111b"
 color_orange = "#fab387"
 color_purple = "#b4befe"
 color_red = "#f38ba8"
