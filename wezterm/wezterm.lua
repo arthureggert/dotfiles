@@ -5,7 +5,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-require("modules.tabs").setup(config)
+require("modules.tabs").setup(config, false)
 
 config.color_scheme = "Catppuccin Mocha"
 

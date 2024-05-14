@@ -13,8 +13,9 @@ local HOVER_TAB_FG = "#2B2B2B"
 local NEW_TAB_BG = INACTIVE_TAB_BG
 local NEW_TAB_FG = INACTIVE_TAB_FG
 
-function module.setup(config)
-	config.enable_tab_bar = true
+function module.setup(config, enabled)
+	enabled = enabled == nil and true or false
+	config.enable_tab_bar = enabled
 	config.hide_tab_bar_if_only_one_tab = false
 	config.show_new_tab_button_in_tab_bar = true
 	config.show_tab_index_in_tab_bar = false
