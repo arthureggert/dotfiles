@@ -1,7 +1,9 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+export ZSH_TMUX_AUTOSTART=true
+
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  export ZSH_TMUX_AUTOSTART=false
   export DISABLE_AUTO_TITLE=false
 fi
 
@@ -19,6 +21,7 @@ antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
 antidote bundle ohmyzsh/ohmyzsh path:plugins/pyenv
 antidote bundle ohmyzsh/ohmyzsh path:plugins/aws
 antidote bundle ohmyzsh/ohmyzsh path:plugins/brew
+antidote bundle ohmyzsh/ohmyzsh path:plugins/tmux
 antidote bundle ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-compose
 antidote bundle ohmyzsh/ohmyzsh path:plugins/docker-machine

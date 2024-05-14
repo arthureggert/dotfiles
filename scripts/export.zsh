@@ -14,7 +14,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_PATH="$PYENV_ROOT/bin"
 
-    export TERM="screen-256color"
+    # export TERM="screen-256color"
+    export TERM="xterm-256color"
 
     export TMUXIFIER_PATH="$HOME/.tmux/plugins/tmuxifier/bin"
 

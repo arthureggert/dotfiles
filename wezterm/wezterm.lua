@@ -9,7 +9,7 @@ require("modules.tabs").setup(config, false)
 
 config.color_scheme = "Catppuccin Mocha"
 
-config.disable_default_key_bindings = false
+config.disable_default_key_bindings = true
 config.send_composed_key_when_left_alt_is_pressed = true
 config.send_composed_key_when_right_alt_is_pressed = true
 config.font_size = 22.0
@@ -56,6 +56,7 @@ config.keys = {
 	{ key = "s", mods = "CMD", action = wezterm.action({ SendString = "\x1b:w\n" }) },
 	{ key = "s", mods = "CTRL", action = wezterm.action({ SendString = "\x1b:w\n" }) },
 	{ key = "s", mods = "CMD|SHIFT", action = wezterm.action({ SendString = "\x1b:wa\n" }) },
+	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
 }
 
 for i = 1, 8 do
