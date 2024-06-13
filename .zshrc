@@ -1,13 +1,6 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
-export ZSH_TMUX_AUTOSTART=true
-
-if [[ "$OSTYPE" == "darwin"* ]] && [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  export DISABLE_AUTO_TITLE=false
-  export ZSH_TMUX_AUTOSTART=false
-fi
-
 [ -s "/opt/homebrew/opt/antidote/share/antidote/antidote.zsh" ] && source "/opt/homebrew/opt/antidote/share/antidote/antidote.zsh"
 
 source <(antidote init)
@@ -69,6 +62,11 @@ done
 
 eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
+
+
+if [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
+  if [ "$TMUX" = "" ]; then exec tmux; fi
+fi 
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
