@@ -64,9 +64,9 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 
-if [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
-  if [ "$TMUX" = "" ]; then exec tmux; fi
-fi 
+# if [[ -z "$INTELLIJ_ENVIRONMENT_READER" ]]; then
+  # if [ "$TMUX" = "" ]; then exec tmux; fi
+# fi 
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
