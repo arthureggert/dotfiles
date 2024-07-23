@@ -8,8 +8,8 @@ local function get_icon(title)
 	elseif title == "atac" or title == "apis" then
 		return "󱂛"
 	end
-	return " (" .. title .. ")"
-	-- return ""
+	-- return " (" .. title .. ")"
+	return ""
 end
 
 module.get_window_title = function(tab)
