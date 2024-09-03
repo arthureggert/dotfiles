@@ -10,6 +10,7 @@ export GOPATH="$HOME/.go"
 
 # VARIABLES
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export GPG_TTY=$(tty)
 
 # PATH
 export PYENV_PATH="$PYENV_ROOT/bin"
