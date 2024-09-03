@@ -1,3 +1,11 @@
+# FOLDERS
 export NVM_DIR="$HOME/.nvm"
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 export SDKMAN_DIR="/opt/homebrew/opt/sdkman-cli/libexec"
+export PYENV_ROOT="$HOME/.pyenv"
+
+# VARIABLES
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+# PATH
+export PATH="$PYENV_ROOT/bin:$PATH"

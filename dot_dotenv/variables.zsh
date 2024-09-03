@@ -1,0 +1,1 @@
+export COMPANY_USER_NAME=$(op read "op://env/zenjob/username")

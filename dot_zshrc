@@ -1,5 +1,12 @@
-# [[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
-# fpath=($ZSH_CACHE_DIR/completions $fpath)
-autoload -Uz compinit && compinit
-
+# Load Antidote
 antidote load
+
+# Load Custom Scripts
+check_and_source "$HOME/.dotenv/commands.zsh"
+check_and_source "$HOME/.dotenv/variables.zsh"
+
+# Enable Virtualenvs with Pyenv
+pyenv virtualenvwrapper
+
+# Load Starship
+eval "$(starship init zsh)"
