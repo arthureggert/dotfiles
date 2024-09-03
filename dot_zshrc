@@ -1,3 +1,5 @@
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
 # Load Antidote
 antidote load
 
@@ -15,3 +17,5 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 # Load Atuin
 eval "$(atuin init zsh --disable-up-arrow)"
+
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

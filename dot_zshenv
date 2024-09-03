@@ -6,6 +6,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export LUAVER_ROOT="$HOME/.luaver"
 export GOENV_ROOT="$HOME/.goenv"
 export CARGO_HOME="$HOME/.cargo"
+export GOPATH="$HOME/.go"
 
 # VARIABLES
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"

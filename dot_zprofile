@@ -1,3 +1,5 @@
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh"
+
 check_and_source() {
   if [ -s $1 ]; then
     source $1
@@ -20,3 +22,5 @@ check_and_source "$HOME/.luaver/luaver"
 
 
 compinit
+
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh"
