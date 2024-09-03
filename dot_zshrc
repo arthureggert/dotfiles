@@ -3,5 +3,4 @@ ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 fpath=($ZSH_CACHE_DIR/completions $fpath)
 autoload -Uz compinit && compinit
 
-source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 antidote load

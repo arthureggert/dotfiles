@@ -1,14 +1,15 @@
-function check_and_source() {
-  if [ -s "$1" ]; then
-    source "$1"
+check_and_source() {
+  if [ -s $1 ]; then
+    source $1
   fi
 }
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+
 export SDKMAN_DIR="$HOME/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 
-check_and_source("$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh")
-check_and_source("$HOMEBREW_PREFIX/opt/nvm/nvm.sh")
-check_and_source("$SDKMAN_DIR/bin/sdkman-init.sh")
+check_and_source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
+check_and_source "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+check_and_source "$SDKMAN_DIR/bin/sdkman-init.sh"
