@@ -1,3 +1,0 @@
-return {
-  "bracki/vim-prometheus",
-}

@@ -1,5 +1,0 @@
-nvim/pack/kite/*
-/.idea/
-/*.iml
-/scripts/env.zsh
-.DS_Store
