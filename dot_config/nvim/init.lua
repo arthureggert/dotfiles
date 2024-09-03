@@ -1,1 +1,2 @@
-vim.g.python3_host_prog='/Users/arthur.eggert/.virtualenvs/nvim/bin/python'
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
