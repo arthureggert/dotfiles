@@ -4,9 +4,14 @@ antidote load
 # Load Custom Scripts
 check_and_source "$HOME/.dotenv/commands.zsh"
 check_and_source "$HOME/.dotenv/variables.zsh"
+check_and_source "$HOME/.dotenv/alias.zsh"
 
 # Enable Virtualenvs with Pyenv
 pyenv virtualenvwrapper
 
 # Load Starship
 eval "$(starship init zsh)"
+# Load Zoxide
+eval "$(zoxide init zsh)"
+# Load Atuin
+eval "$(atuin init zsh --disable-up-arrow)"
