@@ -1,6 +1,5 @@
-ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-[[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
-fpath=($ZSH_CACHE_DIR/completions $fpath)
+# [[ -d $ZSH_CACHE_DIR/completions ]] || mkdir -p $ZSH_CACHE_DIR/completions  # For kubectl completions
+# fpath=($ZSH_CACHE_DIR/completions $fpath)
 autoload -Uz compinit && compinit
 
 antidote load

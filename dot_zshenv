@@ -1,0 +1,3 @@
+export NVM_DIR="$HOME/.nvm"
+export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+export SDKMAN_DIR="/opt/homebrew/opt/sdkman-cli/libexec"
