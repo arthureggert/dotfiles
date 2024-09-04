@@ -7,6 +7,7 @@ antidote load
 check_and_source "$HOME/.dotenv/commands.zsh"
 check_and_source "$HOME/.dotenv/variables.zsh"
 check_and_source "$HOME/.dotenv/alias.zsh"
+check_and_source "$HOME/.dotenv/idea.zsh"
 
 # Enable Virtualenvs with Pyenv
 pyenv virtualenvwrapper
