@@ -12,6 +12,9 @@ export GOPATH="$HOME/.go"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export GPG_TTY=$(tty)
 
+# CONFIG
+export EDITOR="nvim"
+
 # PATH
 export PYENV_PATH="$PYENV_ROOT/bin"
 export LUA_PATH="$LUAVER_ROOT/lua/5.1/bin"
