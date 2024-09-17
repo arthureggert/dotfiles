@@ -7,6 +7,8 @@ export LUAVER_ROOT="$HOME/.luaver"
 export GOENV_ROOT="$HOME/.goenv"
 export CARGO_HOME="$HOME/.cargo"
 export GOPATH="$HOME/.go"
+export RVM_DIR="$HOME/.rvm"
+export GEM_DIR="$HOME/.gem"
 
 # VARIABLES
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
@@ -20,5 +22,7 @@ export PYENV_PATH="$PYENV_ROOT/bin"
 export LUA_PATH="$LUAVER_ROOT/lua/5.1/bin"
 export LUAROCKS_PATH="$LUAVER_ROOT/luarocks/3.11.1_5.1/bin"
 export CARGO_PATH="$CARGO_HOME/bin"
+export RVM_PATH="$RVM_DIR/bin"
+export GEM_PATH="$GEM_DIR/ruby/3.3.0/bin"
 
-export PATH="$CARGO_PATH:$LUA_PATH:$LUAROCKS_PATH:$PYENV_PATH:$PATH"
+export PATH="$CARGO_PATH:$LUA_PATH:$LUAROCKS_PATH:$PYENV_PATH:$PATH:$RVM_PATH:$GEM_PATH"
