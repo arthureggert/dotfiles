@@ -1,10 +1,22 @@
+function brew_dump() {
+  # this commands dumps all the brew packages installed in a Brewfile
+  # this requires that ozxide is installed
+  local chezmoi_dir=$(chezmoi source-path)
+  local current_dir=$(pwd)
+  cd $chezmoi_dir
+  cd dot_brew
+  rm -rf Brewfile
+  brew bundle dump
+  sed  -i '' '/^vscode/d' Brewfile
+  cd $current_dir
+}
+
 function renew_tokens() {
   workon zenjob && toolbelt credentials.generate -u $1 -a $2 && toolbelt codeartifact.token && export AWS_PROFILE=terraform
 }
 
 function db() {
   export AWS_PROFILE=terraform
-  echo "$AWS_PROFILE"
   i=1
   services=()
   if [ -z "$1" ]; then
