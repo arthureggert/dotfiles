@@ -9,13 +9,13 @@
 	email = opa.roa@gmail.com
 	signingkey = 0059BD22860F9A0C
 [commit]
-  gpgsign = true
+	gpgsign = true
 [rerere]
   enabled = true
 [pull]
   rebase = true
 [gpg]
-  program = gpg
+	program = gpg
 [push]
 	default = current
 [filter "lfs"]
