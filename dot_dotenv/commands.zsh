@@ -1,3 +1,10 @@
+function get_db_password() {
+  local output=$(toolbelt database.connection $1)
+  local access_token=$(echo "$output" | grep -A 1 "Access token (password)" | tail -n 1)
+  echo $access_token | pbcopy
+  export PGPASSWORD="$access_token"
+}
+
 function brew_dump() {
   # this commands dumps all the brew packages installed in a Brewfile
   # this requires that ozxide is installed
