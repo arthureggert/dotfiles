@@ -63,15 +63,16 @@ format = '[ $user ]($style)'
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
 format = "[ $path ]($style)"
-truncation_length = 2
+truncation_length = 1
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = "󰈙 "
+# "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+"Documents" = "󰲋 "
 
 [git_branch]
 symbol = ""
@@ -101,7 +102,7 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [golang]
-disabled = false
+disabled = true
 symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
@@ -113,13 +114,13 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [java]
-disabled = false
+disabled = true
 symbol = " "
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [kotlin]
-disabled = false
+disabled = true
 symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
@@ -131,28 +132,28 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [python]
-disabled = false
+disabled = true
 symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version)( 󰒔 $virtualenv) ](fg:color_fg0 bg:color_blue)]($style)'
+# format = '[[ ( 󰒔 $virtualenv) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [docker_context]
-disabled = false
+disabled = true
 symbol = ""
 style = "bg:color_bg3"
 # format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 format = '[[ $symbol( $context) ](fg:crust bg:color_bg3)]($style)'
 
 [conda]
-disabled = false
+disabled = true
 style = "bg:color_bg3"
 format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R"
 style = "bg:color_bg1"
-# format = '[[ $time ](fg:color_fg0 bg:color_bg1)]($style)'
 format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [line_break]
@@ -166,18 +167,6 @@ vimcmd_symbol = '[](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
 vimcmd_visual_symbol = '[](bold fg:color_yellow)'
-
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
 
 [palettes.catppuccin_mocha]
 color_fg0 = "#11111b"
