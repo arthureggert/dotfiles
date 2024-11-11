@@ -65,8 +65,8 @@ format = '[ roa ]($style)'
 style = "fg:color_fg0 bg:color_yellow"
 format = "[ $path ]($style)"
 truncation_length = 1
-truncation_symbol = "…"
 # truncation_symbol = "…/"
+truncation_symbol = "…/"
 
 [directory.substitutions]
 # "Documents" = "󰈙 "
