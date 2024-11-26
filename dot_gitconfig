@@ -15,7 +15,7 @@
 [pull]
   rebase = true
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 [push]
 	default = current
 [filter "lfs"]
