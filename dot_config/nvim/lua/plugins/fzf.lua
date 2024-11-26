@@ -1,8 +1,8 @@
 return {
   "ibhagwan/fzf-lua",
   cmd = "FzfLua",
-  opts = function(_, opts)
-    local config = require("fzf-lua.config")
+  opts = function(_, _)
+    -- local config = require("fzf-lua.config")
     local actions = require("fzf-lua.actions")
     return {
       files = {
