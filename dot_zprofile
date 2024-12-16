@@ -15,7 +15,6 @@ check_and_source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
 check_and_source "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 check_and_source "$HOMEBREW_PREFIX/bin/virtualenvwrapper.sh"
 check_and_source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-check_and_source "$HOME/.luaver/luaver"
 
 compinit
 
