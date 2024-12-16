@@ -8,13 +8,11 @@ return {
       files = {
         cwd_prompt = false,
         actions = {
-          -- ["ctrl-i"] = { actions.toggle_ignore },
           ["ctrl-i"] = { actions.toggle_hidden },
         },
       },
       grep = {
         actions = {
-          -- ["ctrl-i"] = { actions.toggle_ignore },
           ["ctrl-i"] = { actions.toggle_hidden },
         },
       },
