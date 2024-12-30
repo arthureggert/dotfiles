@@ -1,0 +1,5 @@
+theme = catppuccin-macchiato
+font-size = 18
+font-family = "JetBrainsMono Nerd Font"
+window-decoration = true
+macos-titlebar-style = hidden

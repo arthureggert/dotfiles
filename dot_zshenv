@@ -16,6 +16,7 @@ export GPG_TTY=$(tty)
 
 # CONFIG
 export EDITOR="nvim"
+export ZSH_TMUX_AUTOSTART=true
 
 # PATH
 export PYENV_PATH="$PYENV_ROOT/bin"
