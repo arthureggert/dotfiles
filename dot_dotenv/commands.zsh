@@ -20,7 +20,7 @@ function brew_dump() {
 
 function renew_tokens() {
   # workon zenjob && toolbelt credentials.generate -u $1 -a $2 && toolbelt codeartifact.token && export AWS_PROFILE=terraform
-  zenpie credentials generate --username $1 --account $2 && zenpie codeartifact token
+  zenpie credentials generate -a $1 && zenpie codeartifact token
 }
 
 function db() {
@@ -53,9 +53,9 @@ function gpg-no-tty() {
 }
 
 function live() {
-  renew_tokens $COMPANY_USER_NAME live > /dev/null 2>&1
+  renew_tokens live > /dev/null 2>&1
 }
 
 function dev() {
-  renew_tokens $COMPANY_USER_NAME dev > /dev/null 2>&1
+  renew_tokens dev > /dev/null 2>&1
 }
