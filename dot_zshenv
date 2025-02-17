@@ -6,6 +6,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 export GOPATH="$HOME/.go"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
+# COLIMA
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+
 # VARIABLES
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export GPG_TTY=$(tty)
