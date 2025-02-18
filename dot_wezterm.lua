@@ -7,6 +7,8 @@ local function get_icon(title)
 		return ""
 	elseif title == "lazygit" then
 		return ""
+	elseif title == "lazydocker" then
+		return ""
 	elseif title == "atac" or title == "apis" then
 		return "󱂛"
 	end
@@ -186,7 +188,8 @@ config.inactive_pane_hsb = {
 	brightness = 0.2,
 }
 
-config.color_scheme = "Catppuccin Macchiato"
+-- config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "One Half Black (Gogh)"
 
 config.disable_default_key_bindings = true
 -- config.send_composed_key_when_left_alt_is_pressed = true
