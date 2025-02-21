@@ -194,7 +194,7 @@ config.color_scheme = "Catppuccin Mocha"
 config.disable_default_key_bindings = true
 -- config.send_composed_key_when_left_alt_is_pressed = true
 -- config.send_composed_key_when_right_alt_is_pressed = true
-config.font_size = 18.0
+config.font_size = 20.0
 
 config.window_decorations = "TITLE | RESIZE"
 config.window_background_opacity = 1
