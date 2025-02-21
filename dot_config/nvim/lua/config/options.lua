@@ -25,3 +25,7 @@ vim.opt.colorcolumn = "119"
 -- vim.opt.relativenumber = true
 -- vim.opt.signcolumn = "number"
 vim.opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T"
+
+if vim.g.neovide then
+  vim.o.guifont = "Hack Nerd Font:h20"
+end

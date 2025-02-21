@@ -18,3 +18,8 @@ vim.keymap.set("n", "<C-g>", "[s1z=<c-o>")
 vim.keymap.set("n", "-", require("oil").open, {
   desc = "Open parent directory",
 })
+
+vim.keymap.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<D-w>", "<cmd>:bd<cr><esc>", { desc = "Close Buffer" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<D-q>", "<cmd>qa<cr><esc>", { desc = "Close Neovide" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<D-v>", '"+p', { desc = "Paste" })
