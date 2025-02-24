@@ -13,6 +13,7 @@ export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 # VARIABLES
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export GPG_TTY=$(tty)
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # CONFIG
 export EDITOR="nvim"
