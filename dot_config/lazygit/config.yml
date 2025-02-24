@@ -82,10 +82,10 @@ customCommands:
 
         Write your 10 commit messages below in the format shown in Output Template section above." \
           | fzf --height 40% --border --ansi --preview "echo {}" --preview-window=up:wrap \
-          | xargs -I {} bash -c '
+          | xargs -S1024 -I {} bash -c '
               COMMIT_MSG_FILE=$(mktemp)
               echo "{}" > "$COMMIT_MSG_FILE"
-              ${EDITOR:-vim} "$COMMIT_MSG_FILE"
+              nvim "$COMMIT_MSG_FILE"
               if [ -s "$COMMIT_MSG_FILE" ]; then
                   git commit -F "$COMMIT_MSG_FILE"
               else
@@ -94,4 +94,3 @@ customCommands:
               rm -f "$COMMIT_MSG_FILE"'
     context: files
     subprocess: true
-
