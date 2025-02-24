@@ -8,6 +8,7 @@ check_and_source "$HOME/.dotenv/commands.zsh"
 check_and_source "$HOME/.dotenv/variables.zsh"
 check_and_source "$HOME/.dotenv/alias.zsh"
 check_and_source "$HOME/.dotenv/idea.zsh"
+check_and_source "$HOME/.dotenv/env.zsh"
 
 # Enable Virtualenvs with Pyenv
 pyenv virtualenvwrapper
