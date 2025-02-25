@@ -1,2 +1,2 @@
 alias vimdiff='nvim -d'
-alias neovide='nohup neovide &'
+alias neovide='neovide &> /dev/null &'
