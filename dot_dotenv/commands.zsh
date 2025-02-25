@@ -26,3 +26,15 @@ function live() {
 function dev() {
   renew_tokens dev > /dev/null 2>&1
 }
+
+function check_node_version() {
+  if [ -f .nvmrc ]; then
+    nvm install
+    corepack enable
+  fi
+}
+
+function cd(){
+  z "$@"
+  check_node_version
+}
