@@ -1,5 +1,24 @@
 local wezterm = require("wezterm")
 
+local function is_vim(pane)
+	local process_name = pane:get_title()
+	return process_name == "nvim" or process_name == "vim"
+end
+
+local function bind_super_key_to_vim(key, vim_action, term_action)
+	return {
+		key = key,
+		mods = "CMD",
+		action = wezterm.action_callback(function(win, pane)
+			if is_vim(pane) then
+				win:perform_action(vim_action, pane)
+			else
+				win:perform_action(term_action, pane)
+			end
+		end),
+	}
+end
+
 local config = wezterm.config_builder()
 
 local function get_icon(title)
@@ -204,6 +223,7 @@ config.integrated_title_button_style = "Windows"
 config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 
 config.keys = {
+	{ key = "l", mods = "SHIFT|CTRL", action = "ShowDebugOverlay" },
 	{ key = "t", mods = "CMD", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 	{
 		key = "e",
@@ -239,21 +259,11 @@ config.keys = {
 		-- action = wezterm.action({ SendString = "\x02k" }),
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
-	{ key = "q", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
-	{ key = "q", mods = "CMD|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
-	-- { key = "w", mods = "CMD", action = wezterm.action({ SendString = "\x1b:bd\n" }) },
-	-- { key = "q", mods = "CMD", action = wezterm.action({ SendString = "\x1b:qa\n" }) },
-	-- { key = "s", mods = "CMD", action = wezterm.action({ SendString = "\x1b:w\n" }) },
-	-- { key = "s", mods = "CTRL", action = wezterm.action({ SendString = "\x1b:w\n" }) },
-	-- { key = "s", mods = "CMD|SHIFT", action = wezterm.action({ SendString = "\x1b:wa\n" }) },
 	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
 	{ key = "c", mods = "CMD", action = wezterm.action({ CopyTo = "Clipboard" }) },
-	-- { key = ":", mods = "CTRL|SHIFT", action = wezterm.action({ SendString = "\x02:" }) },
-	-- 	{ key = "t", mods = "CMD", action = wezterm.action({ SendString = "\x02c" }) },
-	-- 	{ key = "q", mods = "CMD", action = wezterm.action({ SendString = "\x02x" }) },
-	-- 	{ key = "z", mods = "CMD", action = wezterm.action({ SendString = "\x02z" }) },
-	-- 	{ key = "e", mods = "CMD|SHIFT", action = wezterm.action({ SendString = '\x02"' }) },
-	-- 	{ key = "e", mods = "CMD", action = wezterm.action({ SendString = "\x02%" }) },
+	bind_super_key_to_vim("w", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = true })),
+	bind_super_key_to_vim("q", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
+	bind_super_key_to_vim("s", { SendString = "\x1b:w\n" }),
 }
 
 for i = 1, 8 do
