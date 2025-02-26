@@ -1,41 +1,28 @@
-local wezterm = require("wezterm")
-local act = wezterm.action
-
 local M = {}
 
-M.theme_switcher = function(window, pane)
-	-- get builting color schemes
-	local schemes = wezterm.get_builtin_color_schemes()
-	local choices = {}
+local colors = {
+	foreground = "#ffffff",
+	background = "#16181a",
 
-	-- populate theme names in choices list
-	for key, _ in pairs(schemes) do
-		table.insert(choices, { label = tostring(key) })
-	end
+	cursor_bg = "#ffffff",
+	cursor_fg = "#16181a",
+	cursor_border = "#ffffff",
 
-	-- sort choices list
-	table.sort(choices, function(c1, c2)
-		return c1.label < c2.label
-	end)
+	selection_fg = "#ffffff",
+	selection_bg = "#3c4048",
 
-	window:perform_action(
-		act.InputSelector({
-			title = "🎨 Pick a Theme!",
-			choices = choices,
-			fuzzy = true,
+	scrollbar_thumb = "#16181a",
+	split = "#16181a",
 
-			-- execute 'sed' shell command to replace the line
-			-- responsible of colorscheme in my config
-			action = wezterm.action_callback(function(inner_window, _, id, label)
-				if not id and not label then
-					wezterm.log_info("cancelled")
-				else
-					inner_window:set_config_overrides({ color_scheme = label })
-				end
-			end),
-		}),
-		pane
-	)
+	ansi = { "#16181a", "#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff", "#ffffff" },
+	brights = { "#3c4048", "#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff", "#ffffff" },
+	indexed = { [16] = "#ffbd5e", [17] = "#ff6e5e" },
+}
+
+local function apply_to_config(c)
+	c.colors = colors
 end
+
+M.apply_to_config = apply_to_config
 
 return M

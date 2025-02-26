@@ -1,10 +1,9 @@
 local wezterm = require("wezterm")
+local mappings = require("mappings")
 local theme = require("theme")
-local neovim = require("neovim")
+local tab_bar = require("tab_bar")
 
 local config = wezterm.config_builder()
-
-config.color_scheme = color_scheme
 
 config.enable_tab_bar = true
 
@@ -21,67 +20,8 @@ config.inactive_pane_hsb = {
 	brightness = 0.2,
 }
 
-config.keys = {
-	{ key = "l", mods = "SHIFT|CTRL", action = "ShowDebugOverlay" },
-	{ key = "t", mods = "CMD", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-	{
-		key = "e",
-		mods = "CMD",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		key = "e",
-		mods = "CMD|SHIFT",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		mods = "CMD",
-		key = "LeftArrow",
-		-- action = wezterm.action({ SendString = "\x02h" }),
-		action = wezterm.action.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "RightArrow",
-		mods = "CMD",
-		-- action = wezterm.action({ SendString = "\x02l" }),
-		action = wezterm.action.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "UpArrow",
-		mods = "CMD",
-		-- action = wezterm.action({ SendString = "\x02j" }),
-		action = wezterm.action.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "DownArrow",
-		mods = "CMD",
-		-- action = wezterm.action({ SendString = "\x02k" }),
-		action = wezterm.action.ActivatePaneDirection("Down"),
-	},
-	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
-	{ key = "c", mods = "CMD", action = wezterm.action({ CopyTo = "Clipboard" }) },
-	neovim.bind_super_key_to_vim(
-		"w",
-		{ SendString = "\x1b:bd\n" },
-		wezterm.action.CloseCurrentPane({ confirm = true })
-	),
-	neovim.bind_super_key_to_vim("q", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
-	neovim.bind_super_key_to_vim("s", { SendString = "\x1b:w\n" }),
-	{
-		key = "k",
-		mods = "CMD",
-		action = wezterm.action_callback(function(window, pane)
-			theme.theme_switcher(window, pane)
-		end),
-	},
-}
-
-for i = 1, 8 do
-	table.insert(config.keys, {
-		key = "F" .. tostring(i),
-		action = wezterm.action.ActivateTab(i - 1),
-		-- action = wezterm.action({ SendString = "\x02" .. tostring(i - 1) }),
-	})
-end
+mappings.apply_to_config(config)
+theme.apply_to_config(config)
+tab_bar.apply_to_config(config)
 
 return config

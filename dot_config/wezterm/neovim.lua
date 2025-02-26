@@ -1,12 +1,12 @@
 local M = {}
-local wezterm = require('wezterm')
+local wezterm = require("wezterm")
 
 local function is_vim(pane)
 	local process_name = pane:get_title()
 	return process_name == "nvim" or process_name == "vim"
 end
 
-M.bind_super_key_to_vim = function (key, vim_action, term_action)
+local function bind_super_key_to_vim(key, vim_action, term_action)
 	return {
 		key = key,
 		mods = "CMD",
@@ -20,4 +20,7 @@ M.bind_super_key_to_vim = function (key, vim_action, term_action)
 	}
 end
 
+M.bind = bind_super_key_to_vim
+
 return M
+
