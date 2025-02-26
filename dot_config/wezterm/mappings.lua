@@ -8,6 +8,8 @@ local M = {}
 
 local keys = {
 	{ key = "l", mods = "SHIFT|CTRL", action = "ShowDebugOverlay" },
+	{ key = "x", mods = "CTRL", action = wezterm.action.ActivateCopyMode },
+	{ key = "p", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
 	{ key = "t", mods = "CMD", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 	{ key = "e", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "e", mods = "CMD|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },

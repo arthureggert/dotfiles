@@ -5,15 +5,9 @@ local tab_bar = require("tab_bar")
 
 local config = wezterm.config_builder()
 
-config.enable_tab_bar = true
-
 config.font = wezterm.font("Hack Nerd Font")
 config.disable_default_key_bindings = true
 config.font_size = 20.0
-
-config.window_frame = {
-	font_size = 16.0,
-}
 
 config.inactive_pane_hsb = {
 	saturation = 0.9,
