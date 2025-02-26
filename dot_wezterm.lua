@@ -1,23 +1,6 @@
 local wezterm = require("wezterm")
-
-local function is_vim(pane)
-	local process_name = pane:get_title()
-	return process_name == "nvim" or process_name == "vim"
-end
-
-local function bind_super_key_to_vim(key, vim_action, term_action)
-	return {
-		key = key,
-		mods = "CMD",
-		action = wezterm.action_callback(function(win, pane)
-			if is_vim(pane) then
-				win:perform_action(vim_action, pane)
-			else
-				win:perform_action(term_action, pane)
-			end
-		end),
-	}
-end
+local theme = require("theme")
+local neovim = require("neovim")
 
 local config = wezterm.config_builder()
 
@@ -207,7 +190,7 @@ config.inactive_pane_hsb = {
 	brightness = 0.2,
 }
 
-config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Catppuccin Mocha"
 -- config.color_scheme = "One Half Black (Gogh)"
 
 config.disable_default_key_bindings = true
@@ -261,9 +244,16 @@ config.keys = {
 	},
 	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
 	{ key = "c", mods = "CMD", action = wezterm.action({ CopyTo = "Clipboard" }) },
-	bind_super_key_to_vim("w", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = true })),
-	bind_super_key_to_vim("q", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
-	bind_super_key_to_vim("s", { SendString = "\x1b:w\n" }),
+	neovim.bind_super_key_to_vim("w", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = true })),
+	neovim.bind_super_key_to_vim("q", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
+	neovim.bind_super_key_to_vim("s", { SendString = "\x1b:w\n" }),
+	{
+		key = "k",
+		mods = "CMD",
+		action = wezterm.action_callback(function(window, pane)
+			theme.theme_switcher(window, pane)
+		end),
+	},
 }
 
 for i = 1, 8 do
@@ -273,5 +263,9 @@ for i = 1, 8 do
 		-- action = wezterm.action({ SendString = "\x02" .. tostring(i - 1) }),
 	})
 end
+
+wezterm.plugin
+  .require('https://github.com/yriveiro/wezterm-status')
+  .apply_to_config(config)
 
 return config
