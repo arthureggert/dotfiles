@@ -1,4 +1,5 @@
 local M = {}
+local wezterm = require('wezterm')
 
 local function is_vim(pane)
 	local process_name = pane:get_title()
