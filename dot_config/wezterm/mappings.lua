@@ -24,8 +24,18 @@ local keys = {
 	neovim.bind("s", { SendString = "\x1b:w\n" }),
 }
 
+local mouse_keys = {
+	-- Ctrl-click will open the link under the mouse cursor
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "CMD",
+		action = wezterm.action.OpenLinkAtMouseCursor,
+	},
+}
+
 local function apply_to_config(c)
 	c.keys = keys
+	c.mouse_bindings = mouse_keys
 
 	for i = 1, 8 do
 		table.insert(c.keys, {

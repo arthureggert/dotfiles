@@ -35,8 +35,9 @@ local function process_name(tab)
 	if tab.tab_title and #tab.tab_title > 0 then
 		return tab.tab_title
 	end
-	local active_pane_title = tab.active_pane.title
-	return active_pane_title
+	-- local active_pane_title = tab.active_pane.title
+	-- return active_pane_title
+	return ""
 end
 
 local function get_config(c)
