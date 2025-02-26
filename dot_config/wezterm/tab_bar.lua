@@ -23,10 +23,10 @@ local function tab_title(tab)
 	end
 	local active_pane_title = tab.active_pane.title
 	if string.match(active_pane_title, "^~") ~= nil then
-		return icons.oct_terminal
+		return icons.cod_home
 	end
 	if string.match(active_pane_title, "^%.%.") ~= nil then
-		return icons.oct_terminal
+		return icons.custom_folder_open
 	end
 	return get_icon(tab.active_pane.title)
 end
@@ -35,9 +35,14 @@ local function process_name(tab)
 	if tab.tab_title and #tab.tab_title > 0 then
 		return tab.tab_title
 	end
-	-- local active_pane_title = tab.active_pane.title
-	-- return active_pane_title
-	return ""
+	local active_pane_title = tab.active_pane.title
+	if string.match(active_pane_title, "^~") ~= nil then
+		return active_pane_title
+	end
+	if string.match(active_pane_title, "^%.%.") ~= nil then
+		return "../" .. active_pane_title:match("([^/\\]+)[/\\]?$")
+	end
+	return tab.active_pane.title
 end
 
 local function get_config(c)
