@@ -46,6 +46,13 @@ local function process_name(tab)
 end
 
 local function get_config(c)
+	local is_work = os.getenv("USER") == "arthur.eggert"
+	local tabline_x = { "ram", "cpu" }
+
+	if is_work then
+		table.insert(tabline_x, "battery")
+	end
+
 	return {
 		options = {
 			icons_enabled = true,
@@ -71,7 +78,7 @@ local function get_config(c)
 			tabline_c = {},
 			tab_active = { tab_title, " ", process_name },
 			tab_inactive = { tab_title },
-			tabline_x = { "ram", "cpu" },
+			tabline_x = tabline_x,
 			tabline_y = { "datetime" },
 			tabline_z = {},
 		},
