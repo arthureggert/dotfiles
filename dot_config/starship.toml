@@ -104,7 +104,7 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [golang]
-disabled = true
+disabled = false
 symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
@@ -116,13 +116,13 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [java]
-disabled = true
+disabled = false
 symbol = " "
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [kotlin]
-disabled = true
+disabled = false
 symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
@@ -141,7 +141,7 @@ style = "bg:color_blue"
 format = '[[ ( 󰒔 $virtualenv) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [docker_context]
-disabled = true
+disabled = false
 symbol = ""
 style = "bg:color_bg3"
 # format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
@@ -165,10 +165,10 @@ disabled = false
 disabled = false
 success_symbol = '[](bold fg:color_green)'
 error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+# vimcmd_symbol = '[](bold fg:color_green)'
+# vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+# vimcmd_replace_symbol = '[](bold fg:color_purple)'
+# vimcmd_visual_symbol = '[](bold fg:color_yellow)'
 
 [palettes.catppuccin_mocha]
 color_fg0 = "#11111b"
