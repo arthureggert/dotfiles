@@ -64,17 +64,15 @@ format = '[ roa ]($style)'
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
 format = "[ $path ]($style)"
-truncation_length = 1
+# truncation_length = 1
 # truncation_symbol = "…/"
-truncation_symbol = "…/"
 
-[directory.substitutions]
+# [directory.substitutions]
 # "Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-"Documents" = "󰲋 "
+# "Downloads" = " "
+# "Music" = "󰝚 "
+# "Pictures" = " "
+# "Developer" = "󰲋 "
 
 [git_branch]
 symbol = ""

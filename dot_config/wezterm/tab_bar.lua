@@ -45,6 +45,23 @@ local function process_name(tab)
 	return tab.active_pane.title
 end
 
+local colors = {
+	bg = "#16181a",
+	bg_alt = "#1e2124",
+	bg_highlight = "#3c4048",
+	fg = "#ffffff",
+	grey = "#7b8496",
+	blue = "#5ea1ff",
+	green = "#5eff6c",
+	cyan = "#5ef1ff",
+	red = "#ff6e5e",
+	yellow = "#f1ff5e",
+	magenta = "#ff5ef1",
+	pink = "#ff5ea0",
+	orange = "#ffbd5e",
+	purple = "#bd5eff",
+}
+
 local function get_config(c)
 	local is_work = os.getenv("USER") == "arthur.eggert"
 	local tabline_x = { "ram", "cpu" }
@@ -58,7 +75,18 @@ local function get_config(c)
 			icons_enabled = true,
 			theme = c.colors,
 			tabs_enabled = true,
-			theme_overrides = {},
+			theme_overrides = {
+				normal_mode = {
+					a = { bg = colors.cyan },
+					x = { fg = colors.fg },
+					y = { fg = colors.purple },
+				},
+				tab = {
+					active = { fg = colors.magenta },
+					inactive = { fg = colors.grey },
+					inactive_hover = { fg = colors.magenta },
+				},
+			},
 			section_separators = {
 				left = wezterm.nerdfonts.pl_left_hard_divider,
 				right = wezterm.nerdfonts.pl_right_hard_divider,

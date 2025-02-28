@@ -29,7 +29,7 @@ local keys = {
 	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
 	{ key = "c", mods = "CMD", action = wezterm.action({ CopyTo = "Clipboard" }) },
 	{ key = "o", mods = "CMD", action = open_link_action },
-	neovim.bind("w", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = true })),
+	neovim.bind("w", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = false })),
 	neovim.bind("q", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
 	neovim.bind("s", { SendString = "\x1b:w\n" }),
 }
