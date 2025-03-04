@@ -19,7 +19,7 @@ vim.wo.list = false
 vim.opt.list = false
 vim.opt.listchars = "tab:>·,trail:~,extends:>,precedes:<,space:␣,eol:¬"
 
-vim.opt.colorcolumn = "79,119"
+-- vim.opt.colorcolumn = "79,119"
 
 -- vim.opt.number = true
 -- vim.opt.relativenumber = true
