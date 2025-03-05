@@ -20,7 +20,8 @@ local colors = {
 }
 
 local function apply_to_config(c)
-	c.colors = colors
+	-- c.colors = colors
+	c.color_scheme = "Catppuccin Mocha"
 end
 
 M.apply_to_config = apply_to_config

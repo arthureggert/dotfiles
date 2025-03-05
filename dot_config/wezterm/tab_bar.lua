@@ -46,20 +46,32 @@ local function process_name(tab)
 end
 
 local colors = {
-	bg = "#16181a",
-	bg_alt = "#1e2124",
-	bg_highlight = "#3c4048",
-	fg = "#ffffff",
-	grey = "#7b8496",
-	blue = "#5ea1ff",
-	green = "#5eff6c",
-	cyan = "#5ef1ff",
-	red = "#ff6e5e",
-	yellow = "#f1ff5e",
-	magenta = "#ff5ef1",
-	pink = "#ff5ea0",
-	orange = "#ffbd5e",
-	purple = "#bd5eff",
+	rosewater = "#f5e0dc",
+	flamingo = "#f2cdcd",
+	pink = "#f5c2e7",
+	mauve = "#cba6f7",
+	red = "#f38ba8",
+	maroon = "#eba0ac",
+	peach = "#fab387",
+	yellow = "#f9e2af",
+	green = "#a6e3a1",
+	teal = "#94e2d5",
+	sky = "#89dceb",
+	sapphire = "#74c7ec",
+	blue = "#89b4fa",
+	lavender = "#b4befe",
+	text = "#cdd6f4",
+	subtext1 = "#bac2de",
+	subtext0 = "#a6adc8",
+	overlay2 = "#9399b2",
+	overlay1 = "#7f849c",
+	overlay0 = "#6c7086",
+	surface2 = "#585b70",
+	surface1 = "#45475a",
+	surface0 = "#313244",
+	base = "#1e1e2e",
+	mantle = "#181825",
+	crust = "#11111b",
 }
 
 local function get_config(c)
@@ -77,15 +89,42 @@ local function get_config(c)
 			tabs_enabled = true,
 			theme_overrides = {
 				normal_mode = {
-					a = { bg = colors.cyan },
-					x = { fg = colors.fg },
-					y = { fg = colors.purple },
+					a = { fg = colors.mantle, bg = colors.peach },
+					b = { fg = "#89b4fa", bg = "#313244" },
+					c = { fg = "#cdd6f4", bg = "#181825" },
 				},
+				copy_mode = {
+					a = { fg = "#181825", bg = "#f9e2af" },
+					b = { fg = "#f9e2af", bg = "#313244" },
+					c = { fg = "#cdd6f4", bg = "#181825" },
+				},
+				search_mode = {
+					a = { fg = "#181825", bg = "#a6e3a1" },
+					b = { fg = "#a6e3a1", bg = "#313244" },
+					c = { fg = "#cdd6f4", bg = "#181825" },
+				},
+				-- Defining colors for a new key table
+				window_mode = {
+					a = { fg = "#181825", bg = "#cba6f7" },
+					b = { fg = "#cba6f7", bg = "#313244" },
+					c = { fg = "#cdd6f4", bg = "#181825" },
+				},
+				-- Default tab colors
 				tab = {
-					active = { fg = colors.magenta },
-					inactive = { fg = colors.grey },
-					inactive_hover = { fg = colors.magenta },
+					active = { fg = colors.yellow, bg = "#313244" },
+					inactive = { fg = "#cdd6f4", bg = "#181825" },
+					inactive_hover = { fg = "#f5c2e7", bg = "#313244" },
 				},
+				-- normal_mode = {
+				-- 	a = { bg = colors.peach },
+				-- 	x = { fg = colors.text },
+				-- 	y = { fg = colors.mauve },
+				-- },
+				-- tab = {
+				-- 	active = { fg = colors.lavender },
+				-- 	inactive = { fg = colors.overlay0 },
+				-- 	inactive_hover = { fg = colors.yellow },
+				-- },
 			},
 			section_separators = {
 				left = wezterm.nerdfonts.pl_left_hard_divider,

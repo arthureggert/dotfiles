@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 config.font = wezterm.font("Hack Nerd Font")
 config.disable_default_key_bindings = true
 config.font_size = 20.0
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.95
 
 config.inactive_pane_hsb = {
 	saturation = 0.9,
