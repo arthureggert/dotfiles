@@ -40,7 +40,7 @@ local function process_name(tab)
 		return active_pane_title
 	end
 	if string.match(active_pane_title, "^%.%.") ~= nil then
-		return "../" .. active_pane_title:match("([^/\\]+)[/\\]?$")
+		return active_pane_title:match("([^/\\]+)[/\\]?$")
 	end
 	return tab.active_pane.title
 end
@@ -90,13 +90,13 @@ local function get_config(c)
 			theme_overrides = {
 				normal_mode = {
 					a = { fg = colors.mantle, bg = colors.peach },
-					b = { fg = "#89b4fa", bg = "#313244" },
-					c = { fg = "#cdd6f4", bg = "#181825" },
+					b = { fg = colors.blue, bg = colors.surface0 },
+					c = { fg = colors.text, bg = colors.mantle },
 				},
 				copy_mode = {
-					a = { fg = "#181825", bg = "#f9e2af" },
-					b = { fg = "#f9e2af", bg = "#313244" },
-					c = { fg = "#cdd6f4", bg = "#181825" },
+					a = { fg = colors.mantle, bg = colors.yellow },
+					b = { fg = colors.yellow, bg = colors.surface0 },
+					c = { fg = colors.text, bg = colors.mantle },
 				},
 				search_mode = {
 					a = { fg = "#181825", bg = "#a6e3a1" },
