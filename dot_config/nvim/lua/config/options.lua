@@ -12,7 +12,7 @@ vim.g.maplocalleader = ","
 vim.g.vim_markdown_folding_disabled = 1
 vim.g.python3_host_prog = homedir .. "/.virtualenvs/nvim/bin/python"
 
-vim.wo.wrap = true
+vim.wo.wrap = false
 vim.wo.linebreak = true
 vim.wo.list = false
 
