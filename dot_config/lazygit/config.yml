@@ -115,3 +115,6 @@ customCommands:
               rm -f "$COMMIT_MSG_FILE"'
     context: files
     subprocess: true
+
+git:
+  overrideGpg: true
