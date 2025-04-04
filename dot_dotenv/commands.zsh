@@ -38,3 +38,11 @@ function cd(){
   z "$@"
   check_node_version
 }
+
+function update() {
+  brew update
+  brew upgrade
+  brew cleanup
+  brew doctor
+  brew_dump
+}
