@@ -21,7 +21,4 @@ compinit
 source <(fzf --zsh)
 source <(zenpie completion zsh)
 
-# this needs to live here, since it makes use of colima, and colima is not available in the zshenv
-export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
-
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh"
