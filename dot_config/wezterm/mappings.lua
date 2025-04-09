@@ -16,7 +16,7 @@ local open_link_action = wezterm.action.QuickSelectArgs({
 local M = {}
 
 local keys = {
-	{ key = "l", mods = "SHIFT|CTRL", action = "ShowDebugOverlay" },
+	{ key = "l", mods = "OPT", action = "ShowDebugOverlay" },
 	{ key = "x", mods = "CTRL", action = wezterm.action.ActivateCopyMode },
 	{ key = "p", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
 	{ key = "t", mods = "CMD", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
@@ -29,9 +29,10 @@ local keys = {
 	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
 	{ key = "c", mods = "CMD", action = wezterm.action({ CopyTo = "Clipboard" }) },
 	{ key = "o", mods = "CMD", action = open_link_action },
-	neovim.bind("w", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = false })),
-	neovim.bind("q", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
-	neovim.bind("s", { SendString = "\x1b:w\n" }),
+	neovim.bind("w", "CMD", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = false })),
+	neovim.bind("q", "CMD", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
+	neovim.bind("s", "CMD", { SendString = "\x1b:w\n" }),
+	neovim.bind("r", "CMD", { SendString = "\x1b:source %\n" }),
 }
 
 local mouse_keys = {
