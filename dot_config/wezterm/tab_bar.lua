@@ -45,6 +45,10 @@ local function process_name(tab)
 	return tab.active_pane.title
 end
 
+local function tab_active(tab)
+	return tab_title(tab) .. " " .. process_name(tab)
+end
+
 local colors = {
 	rosewater = "#f5e0dc",
 	flamingo = "#f2cdcd",
@@ -76,7 +80,7 @@ local colors = {
 
 local function get_config(c)
 	local is_work = os.getenv("USER") == "arthur.eggert"
-	local tabline_x = { "ram", "cpu" }
+	local tabline_x = {}
 
 	if is_work then
 		table.insert(tabline_x, "battery")
@@ -99,36 +103,26 @@ local function get_config(c)
 					c = { fg = colors.text, bg = colors.mantle },
 				},
 				search_mode = {
-					a = { fg = "#181825", bg = "#a6e3a1" },
-					b = { fg = "#a6e3a1", bg = "#313244" },
-					c = { fg = "#cdd6f4", bg = "#181825" },
+					a = { fg = colors.mantle, bg = colors.green },
+					b = { fg = colors.green, bg = colors.surface0 },
+					c = { fg = colors.text, bg = colors.mantle },
 				},
 				-- Defining colors for a new key table
 				window_mode = {
-					a = { fg = "#181825", bg = "#cba6f7" },
-					b = { fg = "#cba6f7", bg = "#313244" },
-					c = { fg = "#cdd6f4", bg = "#181825" },
+					a = { fg = colors.mantle, bg = colors.mauve },
+					b = { fg = colors.mauve, bg = colors.surface0 },
+					c = { fg = colors.text, bg = colors.mantle },
 				},
 				-- Default tab colors
 				tab = {
-					active = { fg = colors.yellow, bg = "#313244" },
-					inactive = { fg = "#cdd6f4", bg = "#181825" },
-					inactive_hover = { fg = "#f5c2e7", bg = "#313244" },
+					active = { fg = colors.yellow, bg = colors.surface0 },
+					inactive = { fg = colors.text, bg = colors.mantle },
+					inactive_hover = { fg = colors.pink, bg = colors.surface0 },
 				},
-				-- normal_mode = {
-				-- 	a = { bg = colors.peach },
-				-- 	x = { fg = colors.text },
-				-- 	y = { fg = colors.mauve },
-				-- },
-				-- tab = {
-				-- 	active = { fg = colors.lavender },
-				-- 	inactive = { fg = colors.overlay0 },
-				-- 	inactive_hover = { fg = colors.yellow },
-				-- },
 			},
 			section_separators = {
-				left = wezterm.nerdfonts.pl_left_hard_divider,
-				right = wezterm.nerdfonts.pl_right_hard_divider,
+				-- left = wezterm.nerdfonts.pl_left_hard_divider,
+				-- right = wezterm.nerdfonts.pl_right_hard_divider,
 			},
 			component_separators = {
 				left = wezterm.nerdfonts.pl_left_soft_divider,
@@ -143,7 +137,7 @@ local function get_config(c)
 			tabline_a = { "mode" },
 			tabline_b = {},
 			tabline_c = {},
-			tab_active = { tab_title, " ", process_name },
+			tab_active = { tab_active },
 			tab_inactive = { tab_title },
 			tabline_x = tabline_x,
 			tabline_y = { "datetime" },
