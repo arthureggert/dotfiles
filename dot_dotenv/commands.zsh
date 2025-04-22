@@ -34,7 +34,12 @@ function dev() {
 function check_node_version() {
   if [ -f .nvmrc ]; then
     nvm install
-    corepack enable
+    local version=$(node --version)
+    local major=${version#v}      
+    major=${major%%.*}
+    if [ $major -ge 18 ]; then 
+      corepack enable
+    fi
   fi
 }
 
