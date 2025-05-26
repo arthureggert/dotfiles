@@ -2,6 +2,7 @@ return {
   {
     "https://gitlab.com/schrieveslaach/sonarlint.nvim.git",
     lazy = true,
+    enabled = false,
     ft = { "typescript", "typescriptreact", "javascript", "javascriptreact", "java" },
     opts = {
       server = {
