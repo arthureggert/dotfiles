@@ -50,6 +50,7 @@ local function apply_to_config(c)
 
 	for i = 1, 8 do
 		table.insert(c.keys, {
+			mods = "CMD",
 			key = "F" .. tostring(i),
 			action = wezterm.action.ActivateTab(i - 1),
 		})
