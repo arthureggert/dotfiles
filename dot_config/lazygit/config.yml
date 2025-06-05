@@ -30,8 +30,8 @@ customCommands:
     description: "Prune local branches no longer on its remote; (G)one."
     loadingText: "Pruning gone..."
   - key: <c-a>
-    description: Pick AI commit
     output: terminal
+    description: Pick AI commit
     command: |
       aichat "Please suggest 10 commit messages, given the following diff:
 
@@ -97,7 +97,7 @@ customCommands:
         scenarios than include a lot of overlap.
 
         Write your 10 commit messages below in the format shown in Output Template section above." \
-          | fzf --height 40% --border --ansi --preview "echo {}" --preview-window=up:wrap \
+          | fzf --border --ansi --preview "echo {}" --preview-window=up:wrap \
           | xargs -S1024 -I {} bash -c '
               COMMIT_MSG_FILE=$(mktemp)
               echo "{}" > "$COMMIT_MSG_FILE"
