@@ -4,13 +4,15 @@
 local homedir = os.getenv("HOME")
 
 vim.opt.winbar = "%=%m %f"
-vim.opt.spelllang = { "en", "pt_br" }
+vim.opt.spelllang = { "en" }
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 vim.g.vim_markdown_folding_disabled = 1
 vim.g.python3_host_prog = homedir .. "/.virtualenvs/nvim/bin/python"
+
+vim.g.lazyvim_eslint_auto_format = false
 
 vim.wo.wrap = false
 vim.wo.linebreak = true
