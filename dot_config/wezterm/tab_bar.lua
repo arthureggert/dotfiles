@@ -50,32 +50,23 @@ local function tab_active(tab)
 end
 
 local colors = {
-	rosewater = "#f5e0dc",
-	flamingo = "#f2cdcd",
-	pink = "#f5c2e7",
-	mauve = "#cba6f7",
-	red = "#f38ba8",
-	maroon = "#eba0ac",
-	peach = "#fab387",
-	yellow = "#f9e2af",
-	green = "#a6e3a1",
-	teal = "#94e2d5",
-	sky = "#89dceb",
-	sapphire = "#74c7ec",
-	blue = "#89b4fa",
-	lavender = "#b4befe",
-	text = "#cdd6f4",
-	subtext1 = "#bac2de",
-	subtext0 = "#a6adc8",
-	overlay2 = "#9399b2",
-	overlay1 = "#7f849c",
-	overlay0 = "#6c7086",
-	surface2 = "#585b70",
-	surface1 = "#45475a",
-	surface0 = "#313244",
-	base = "#1e1e2e",
-	mantle = "#181825",
-	crust = "#11111b",
+	bg = "#282a36",
+	black = "#21222c",
+	red = "#ff5555",
+	green = "#50fa7b",
+	yellow = "#f1fa8c",
+	purple = "#bd93f9",
+	pink = "#ff79c6",
+	blue = "#8be9fd",
+	white = "#f8f8f2",
+	light_black = "#6272a4",
+	light_red = "#ff6e6e",
+	light_green = "#69ff94",
+	light_yellow = "#ffffa5",
+	light_purple = "#d6acff",
+	light_pink = "#ff92df",
+	light_blue = "#a4ffff",
+	light_white = "#ffffff",
 }
 
 local function get_config(c)
@@ -93,31 +84,31 @@ local function get_config(c)
 			tabs_enabled = true,
 			theme_overrides = {
 				normal_mode = {
-					a = { fg = colors.mantle, bg = colors.peach },
-					b = { fg = colors.blue, bg = colors.surface0 },
-					c = { fg = colors.text, bg = colors.mantle },
+					a = { fg = colors.black, bg = colors.green },
+					b = { fg = colors.black, bg = colors.purple },
+					c = { fg = colors.black, bg = colors.bg },
 				},
-				copy_mode = {
-					a = { fg = colors.mantle, bg = colors.yellow },
-					b = { fg = colors.yellow, bg = colors.surface0 },
-					c = { fg = colors.text, bg = colors.mantle },
-				},
-				search_mode = {
-					a = { fg = colors.mantle, bg = colors.green },
-					b = { fg = colors.green, bg = colors.surface0 },
-					c = { fg = colors.text, bg = colors.mantle },
-				},
+				-- copy_mode = {
+				-- 	a = { fg = colors.mantle, bg = colors.yellow },
+				-- 	b = { fg = colors.yellow, bg = colors.surface0 },
+				-- 	c = { fg = colors.text, bg = colors.mantle },
+				-- },
+				-- search_mode = {
+				-- 	a = { fg = colors.mantle, bg = colors.green },
+				-- 	b = { fg = colors.green, bg = colors.surface0 },
+				-- 	c = { fg = colors.text, bg = colors.mantle },
+				-- },
 				-- Defining colors for a new key table
-				window_mode = {
-					a = { fg = colors.mantle, bg = colors.mauve },
-					b = { fg = colors.mauve, bg = colors.surface0 },
-					c = { fg = colors.text, bg = colors.mantle },
-				},
+				-- window_mode = {
+				-- 	a = { fg = colors.mantle, bg = colors.mauve },
+				-- 	b = { fg = colors.mauve, bg = colors.surface0 },
+				-- 	c = { fg = colors.text, bg = colors.mantle },
+				-- },
 				-- Default tab colors
 				tab = {
-					active = { fg = colors.yellow, bg = colors.surface0 },
-					inactive = { fg = colors.text, bg = colors.mantle },
-					inactive_hover = { fg = colors.pink, bg = colors.surface0 },
+					active = { fg = colors.black, bg = colors.purple },
+					inactive = { fg = colors.white, bg = colors.bg },
+					inactive_hover = { fg = colors.white, bg = colors.light_black },
 				},
 			},
 			section_separators = {

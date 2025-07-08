@@ -13,7 +13,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # CONFIG
 export EDITOR="nvim"
-export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=false
 
 # PATH
 export PYENV_PATH="$PYENV_ROOT/bin"
