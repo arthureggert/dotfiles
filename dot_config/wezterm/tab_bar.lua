@@ -138,7 +138,7 @@ local function get_config(c)
 			tabline_b = {},
 			tabline_c = {},
 			tab_active = { tab_active },
-			tab_inactive = { tab_title },
+			tab_inactive = { tab_active },
 			tabline_x = tabline_x,
 			tabline_y = { "datetime" },
 			tabline_z = {},
