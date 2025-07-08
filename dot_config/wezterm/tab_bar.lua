@@ -42,7 +42,7 @@ local function process_name(tab)
 	if string.match(active_pane_title, "^%.%.") ~= nil then
 		return active_pane_title:match("([^/\\]+)[/\\]?$")
 	end
-	return tab.active_pane.title
+	return active_pane_title
 end
 
 local function tab_active(tab)
@@ -88,25 +88,24 @@ local function get_config(c)
 					b = { fg = colors.black, bg = colors.purple },
 					c = { fg = colors.black, bg = colors.bg },
 				},
-				-- copy_mode = {
-				-- 	a = { fg = colors.mantle, bg = colors.yellow },
-				-- 	b = { fg = colors.yellow, bg = colors.surface0 },
-				-- 	c = { fg = colors.text, bg = colors.mantle },
-				-- },
-				-- search_mode = {
-				-- 	a = { fg = colors.mantle, bg = colors.green },
-				-- 	b = { fg = colors.green, bg = colors.surface0 },
-				-- 	c = { fg = colors.text, bg = colors.mantle },
-				-- },
-				-- Defining colors for a new key table
-				-- window_mode = {
-				-- 	a = { fg = colors.mantle, bg = colors.mauve },
-				-- 	b = { fg = colors.mauve, bg = colors.surface0 },
-				-- 	c = { fg = colors.text, bg = colors.mantle },
-				-- },
+				copy_mode = {
+					a = { fg = colors.black, bg = colors.green },
+					b = { fg = colors.black, bg = colors.purple },
+					c = { fg = colors.black, bg = colors.bg },
+				},
+				search_mode = {
+					a = { fg = colors.mantle, bg = colors.yellow },
+					b = { fg = colors.yellow, bg = colors.surface0 },
+					c = { fg = colors.text, bg = colors.mantle },
+				},
+				window_mode = {
+					a = { fg = colors.mantle, bg = colors.green },
+					b = { fg = colors.green, bg = colors.surface0 },
+					c = { fg = colors.text, bg = colors.mantle },
+				},
 				-- Default tab colors
 				tab = {
-					active = { fg = colors.black, bg = colors.purple },
+					active = { fg = colors.black, bg = colors.pink },
 					inactive = { fg = colors.white, bg = colors.bg },
 					inactive_hover = { fg = colors.white, bg = colors.light_black },
 				},
