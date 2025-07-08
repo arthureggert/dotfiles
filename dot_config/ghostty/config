@@ -1,5 +1,20 @@
-theme = catppuccin-macchiato
 font-size = 18
 font-family = "JetBrainsMono Nerd Font"
 window-decoration = true
-macos-titlebar-style = hidden
+theme = dracula-pro
+title = roa
+desktop-notifications = false
+fullscreen = true
+initial-window = true
+confirm-close-surface = false
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
+keybind = clear
+keybind = cmd+t=text:\x02c
+keybind = cmd+e=text:\x02%
+keybind = cmd+w=text:\x02x
+keybind = cmd+shift+e=text:\x02"
+keybind = cmd+right=text:\x02}
+keybind = cmd+left=text:\x02{
+keybind = cmd+k=text:\x0c
