@@ -7,7 +7,7 @@ local M = {}
 local function get_icon(title)
 	if title == "nvim" or title == "vim" then
 		return icons.custom_neovim
-	elseif title == "lazygit" then
+	elseif title == "lazygit" or title == "lg" then
 		return icons.dev_git
 	elseif title == "lazydocker" then
 		return icons.dev_docker
