@@ -49,26 +49,6 @@ local function tab_active(tab)
 	return tab_title(tab) .. " " .. process_name(tab)
 end
 
-local colors = {
-	bg = "#282a36",
-	black = "#21222c",
-	red = "#ff5555",
-	green = "#50fa7b",
-	yellow = "#f1fa8c",
-	purple = "#bd93f9",
-	pink = "#ff79c6",
-	blue = "#8be9fd",
-	white = "#f8f8f2",
-	light_black = "#6272a4",
-	light_red = "#ff6e6e",
-	light_green = "#69ff94",
-	light_yellow = "#ffffa5",
-	light_purple = "#d6acff",
-	light_pink = "#ff92df",
-	light_blue = "#a4ffff",
-	light_white = "#ffffff",
-}
-
 local function get_config(c)
 	local is_work = os.getenv("USER") == "arthur.eggert"
 	local tabline_x = {}
@@ -80,39 +60,39 @@ local function get_config(c)
 	return {
 		options = {
 			icons_enabled = true,
-			theme = c.colors,
 			tabs_enabled = true,
+			colors = c.colors,
 			theme_overrides = {
 				normal_mode = {
-					a = { fg = colors.black, bg = colors.green },
-					b = { fg = colors.black, bg = colors.purple },
-					c = { fg = colors.black, bg = colors.bg },
+					a = { fg = "#0B0D0F", bg = "#A2FF99" },
+					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				copy_mode = {
-					a = { fg = colors.black, bg = colors.green },
-					b = { fg = colors.black, bg = colors.purple },
-					c = { fg = colors.black, bg = colors.bg },
+					a = { fg = "#0B0D0F", bg = "#FFFF99" },
+					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				search_mode = {
-					a = { fg = colors.mantle, bg = colors.yellow },
-					b = { fg = colors.yellow, bg = colors.surface0 },
-					c = { fg = colors.text, bg = colors.mantle },
+					a = { fg = "#0B0D0F", bg = "#FF99CC" },
+					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				window_mode = {
-					a = { fg = colors.mantle, bg = colors.green },
-					b = { fg = colors.green, bg = colors.surface0 },
-					c = { fg = colors.text, bg = colors.mantle },
+					a = { fg = "#0B0D0F", bg = "#99FFEE" },
+					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				-- Default tab colors
 				tab = {
-					active = { fg = colors.black, bg = colors.pink },
-					inactive = { fg = colors.white, bg = colors.bg },
-					inactive_hover = { fg = colors.white, bg = colors.light_black },
+					active = { fg = "#0B0D0F", bg = "#FF80BF" },
+					inactive = { fg = "#F8F8F2", bg = "#0B0D0F" },
+					inactive_hover = { fg = "#F8F8F2", bg = "#FF80BF" },
 				},
 			},
 			section_separators = {
-				-- left = wezterm.nerdfonts.pl_left_hard_divider,
-				-- right = wezterm.nerdfonts.pl_right_hard_divider,
+				left = wezterm.nerdfonts.pl_left_hard_divider,
+				right = wezterm.nerdfonts.pl_right_hard_divider,
 			},
 			component_separators = {
 				left = wezterm.nerdfonts.pl_left_soft_divider,
