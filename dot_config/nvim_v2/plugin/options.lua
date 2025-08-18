@@ -1,6 +1,6 @@
 -- ~/.config/nvim-new/plugin/configs.lua
 local opt = vim.opt
-local global = vim.g
+
 local homedir = os.getenv("HOME")
 
 opt.guicursor = {
@@ -35,7 +35,5 @@ opt.winborder = "rounded"
 opt.hlsearch = false
 opt.winbar = "%=%m %f" 
 
-global.mapleader = ","
-global.maplocalleader = ","
 
 vim.cmd.filetype("plugin indent on")
