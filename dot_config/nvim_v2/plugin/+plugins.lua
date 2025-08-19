@@ -1,5 +1,8 @@
 vim.pack.add({
     { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+    { src = "https://github.com/nvim-lualine/lualine.nvim" },
+    { src = "https://github.com/akinsho/bufferline.nvim" },
     { src = "https://github.com/dracula-pro/vim" },
     { src = "https://github.com/folke/snacks.nvim" },
     {
@@ -19,7 +22,7 @@ require('blink.cmp').setup({
         preset = "default",
         ["<C-space>"] = {},
         ["<C-p>"] = {},
-        ["<Tab>"] = {},
+        ["<Tab>"] = { "select_and_accept" },
         ["<S-Tab>"] = {},
         ["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-n>"] = { "select_and_accept" },
@@ -131,4 +134,36 @@ require("snacks").setup({
     win = { enabled = false },
     words = { enabled = false },
     zen = { enabled = false },
+})
+
+require('lualine').setup({
+    options = {
+        theme = 'dracula',
+        globalstatus = true,
+        always_show_tabline = true,
+        tabline = {
+            lualine_a = { 'buffers' },
+            lualine_b = {},
+            lualine_c = { 'filename' },
+            lualine_x = {},
+            lualine_y = {},
+            lualine_z = { 'tabs' }
+        }
+    }
+})
+require("bufferline").setup({
+    options = {
+        close_command = function(n)
+            local Snacks = require("snacks")
+            Snacks.bufdelete(n)
+        end,
+        right_mouse_command = function(n)
+            local Snacks = require("snacks")
+            Snacks.bufdelete(n)
+        end,
+        diagnostics = "nvim_lsp",
+        indicator = {
+            style = 'underline',
+        },
+    }
 })
