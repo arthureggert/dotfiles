@@ -13,6 +13,24 @@ local open_link_action = wezterm.action.QuickSelectArgs({
 	end),
 })
 
+wezterm.on("nvim_save", function(window, pane)
+	window:perform_action(wezterm.action.SendKey({ key = "," }), pane) -- Leader key
+	window:perform_action(wezterm.action.SendKey({ key = "w" }), pane) -- 'b' key
+	window:perform_action(wezterm.action.SendKey({ key = "r" }), pane) -- 'd' key
+end)
+
+wezterm.on("nvim_close_tab", function(window, pane)
+	window:perform_action(wezterm.action.SendKey({ key = "," }), pane) -- Leader key
+	window:perform_action(wezterm.action.SendKey({ key = "b" }), pane) -- Leader key
+	window:perform_action(wezterm.action.SendKey({ key = "d" }), pane) -- 'q' key
+end)
+
+wezterm.on("nvim_close", function(window, pane)
+	window:perform_action(wezterm.action.SendKey({ key = "," }), pane) -- Leader key
+	window:perform_action(wezterm.action.SendKey({ key = "q" }), pane) -- Leader key
+	window:perform_action(wezterm.action.SendKey({ key = "q" }), pane) -- 'q' key
+end)
+
 local M = {}
 
 local keys = {
@@ -37,10 +55,14 @@ local keys = {
 			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
 		}),
 	},
-	neovim.bind("w", "CMD", { SendString = "\x1b:bd\n" }, wezterm.action.CloseCurrentPane({ confirm = false })),
-	neovim.bind("q", "CMD", { SendString = "\x1b:qa\n" }, wezterm.action.CloseCurrentTab({ confirm = true })),
-	neovim.bind("s", "CMD", { SendString = "\x1b:w\n" }),
-	neovim.bind("r", "CMD", { SendString = "\x1b:source %\n" }),
+	neovim.bind("q", "CMD", wezterm.action.EmitEvent("nvim_close"), wezterm.action.CloseCurrentTab({ confirm = true })),
+	neovim.bind(
+		"w",
+		"CMD",
+		wezterm.action.EmitEvent("nvim_close_tab"),
+		wezterm.action.CloseCurrentPane({ confirm = false })
+	),
+	neovim.bind("s", "CMD", wezterm.action.EmitEvent("nvim_save")),
 }
 
 local mouse_keys = {
