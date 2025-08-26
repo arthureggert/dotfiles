@@ -29,7 +29,6 @@ function dev() {
 
 function cd(){
   z "$@"
-  check_node_version
 }
 
 function update() {

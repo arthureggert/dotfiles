@@ -1,6 +1,6 @@
 [user]
 	name = Arthur Eggert
 	email = opa.roa@gmail.com
-	signingkey = 3CC93FE073FAA048
+	signingkey = 7F0516E580AD3333
 [commit]
 	gpgsign = true
