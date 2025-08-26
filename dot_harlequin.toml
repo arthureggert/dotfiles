@@ -1,6 +1,0 @@
-[profiles.localhost]
-adapter = "postgres"
-theme = "catppuccin-mocha"
-limit = 100000
-keymap_name = ["vscode"]
-conn_str = ["postgres://zenjob:zenjob@localhost:5432/zenjob"]
