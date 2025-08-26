@@ -1,5 +1,3 @@
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-
 # Load Antidote
 antidote load
 
@@ -10,14 +8,11 @@ check_and_source "$HOME/.dotenv/alias.zsh"
 check_and_source "$HOME/.dotenv/idea.zsh"
 check_and_source "$HOME/.dotenv/env.zsh"
 
-# Enable Virtualenvs with Pyenv
-pyenv virtualenvwrapper
-
 # Load Starship
 eval "$(starship init zsh)"
+
 # Load Zoxide
 eval "$(zoxide init zsh)"
+
 # Load Atuin
 eval "$(atuin init zsh --disable-up-arrow)"
-
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
