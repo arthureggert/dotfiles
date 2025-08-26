@@ -1,24 +1,9 @@
 # FOLDERS
-export NVM_DIR="$HOME/.nvm"
-export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-export SDKMAN_DIR="/opt/homebrew/opt/sdkman-cli/libexec"
-export PYENV_ROOT="$HOME/.pyenv"
-export GOPATH="$HOME/.go"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # VARIABLES
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export GPG_TTY=$(tty)
-export XDG_CONFIG_HOME="$HOME/.config"
 
 # CONFIG
 export EDITOR="nvim"
 export ZSH_TMUX_AUTOSTART=false
 
 # PATH
-export PYENV_PATH="$PYENV_ROOT/bin"
-export GO_PATH="$GOPATH/bin"
-export ANDROID_EMULATOR="$ANDROID_HOME/emulator"
-export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME/platform-tools"
-
-export PATH="$PATH:$PYENV_PATH:$GO_PATH:$ANDROID_EMULATOR:$ANDROID_PLATFORM_TOOLS"
