@@ -1,5 +1,3 @@
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh"
-
 check_and_source() {
   if [ -s $1 ]; then
     source $1
@@ -9,16 +7,7 @@ check_and_source() {
 autoload -Uz compinit
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(pyenv init --path)"
 
 check_and_source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
-check_and_source "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
-check_and_source "$HOMEBREW_PREFIX/bin/virtualenvwrapper.sh"
-check_and_source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 compinit
-
-source <(fzf --zsh)
-source <(zenpie completion zsh)
-
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh"
