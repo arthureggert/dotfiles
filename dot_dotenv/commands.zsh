@@ -19,28 +19,12 @@ function renew_tokens() {
   zenpie credentials generate --account $1 && zenpie codeartifact token
 }
 
-function gpg-no-tty() {
-  echo passphrase | gpg --passphrase-fd 0 --batch --no-tty --yes "$@"
-}
-
 function live() {
   renew_tokens live > /dev/null 2>&1
 }
 
 function dev() {
   renew_tokens dev > /dev/null 2>&1
-}
-
-function check_node_version() {
-  if [ -f .nvmrc ]; then
-    nvm install
-    local version=$(node --version)
-    local major=${version#v}      
-    major=${major%%.*}
-    if [ $major -ge 18 ]; then 
-      corepack enable
-    fi
-  fi
 }
 
 function cd(){
