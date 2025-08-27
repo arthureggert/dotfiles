@@ -4,7 +4,8 @@ check_and_source() {
   fi
 }
 
-autoload -Uz compinit
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -12,4 +13,17 @@ check_and_source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
 check_and_source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 check_and_source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-compinit
+# if type brew &>/dev/null
+# then
+#   HOMEBREW_PREFIX="$(brew --prefix)"
+#   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+#   then
+#     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+#   else
+#     for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+#     do
+#       [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+#     done
+#   fi
+# fi
+
