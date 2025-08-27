@@ -34,5 +34,7 @@ style = "Bold Italic"
 bindings = [
   { key = "w", mods = "Command", chars = ",bd" },
   { key = "s", mods = "Command", chars = ",wr" },
-  { key = "t", mods = "Command", chars = '\x02t' }
+  { key = "t", mods = "Command", chars = "\u0002t" },
+  { key = "e", mods = "Command", chars = "\u0002e" },
+  { key = "e", mods = "Command|Shift", chars = "\u0002E" }
 ]
