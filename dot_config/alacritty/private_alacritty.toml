@@ -36,5 +36,6 @@ bindings = [
   { key = "s", mods = "Command", chars = ",wr" },
   { key = "t", mods = "Command", chars = "\u0002t" },
   { key = "e", mods = "Command", chars = "\u0002e" },
-  { key = "e", mods = "Command|Shift", chars = "\u0002E" }
+  { key = "e", mods = "Command|Shift", chars = "\u0002E" },
+  { key = "o", mods = "Command", chars = "\u0002o" }
 ]
