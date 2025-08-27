@@ -1,3 +1,6 @@
 [tools]
 java = "temurin-21"
 node = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
