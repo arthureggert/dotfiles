@@ -28,3 +28,11 @@ style = "Italic"
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
+
+[keyboard]
+
+bindings = [
+  { key = "w", mods = "Command", chars = ",bd" },
+  { key = "s", mods = "Command", chars = ",wr" },
+  { key = "t", mods = "Command", chars = '\x02t' }
+]
