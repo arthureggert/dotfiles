@@ -16,3 +16,6 @@ eval "$(zoxide init zsh)"
 
 # Load Atuin
 eval "$(atuin init zsh --disable-up-arrow)"
+
+# Load Mise
+eval "$(mise activate zsh)"

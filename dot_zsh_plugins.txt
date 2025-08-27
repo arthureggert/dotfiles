@@ -8,3 +8,4 @@ ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/colorize
 ohmyzsh/ohmyzsh path:plugins/tmux
 
+3v1n0/zsh-bash-completions-fallback
