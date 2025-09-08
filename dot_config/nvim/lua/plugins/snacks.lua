@@ -6,7 +6,7 @@ return {
         hidden = true,
         ignored = true,
         sources = {
-          files = { ignored = true, hidden = true },
+          files = { ignored = false, hidden = true },
         },
         win = {
           input = {
