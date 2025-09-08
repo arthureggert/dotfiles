@@ -1,6 +1,11 @@
 export HOMEBREW_GITHUB_API_TOKEN=$(gh auth token)
 export DEVOPS_GITHUB_PACKAGES_TOKEN=$(gh auth token)
 export GITHUB_NPM_TOKEN=$(gh auth token)
+
+export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
+
 export export EZA_COLORS="\
 uu=36:\
 uR=31:\
