@@ -6,3 +6,4 @@
 	gpgsign = true
 [alias]
 	cleanup = git fetch -p && git branch -vv | grep ': gone' | awk '{print }' | xargs git branch -D
+	pr = gh pr create -f
