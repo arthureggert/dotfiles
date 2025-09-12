@@ -1,12 +1,8 @@
-[includeIf "gitdir:**/work/**/.git"]
+[includeIf "gitdir:**/arthur.eggert/**/.git"]
   path = .gitconfig.work
 
-[includeIf "gitdir:**/personal/**/.git"]
+[includeIf "gitdir:**/aheggert/**/.git"]
   path = .gitconfig.personal
-
-[includeIf "gitdir:**/**/chezmoi/.git"]
-  path = .gitconfig.personal
-
 
 [commit]
   gpgsign = true
