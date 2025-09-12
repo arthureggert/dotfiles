@@ -1,9 +1,16 @@
-[user]
-	name = Arthur Eggert
-	email = opa.roa@gmail.com
-	signingkey = 913E399198ADB138
+[includeIf "gitdir:**/work/**/.git"]
+  path = .gitconfig.work
+
+[includeIf "gitdir:**/personal/**/.git"]
+  path = .gitconfig.personal
+
+[includeIf "gitdir:**/**/chezmoi/.git"]
+  path = .gitconfig.personal
+
+
 [commit]
-	gpgsign = true
+  gpgsign = true
+
 [alias]
 	cleanup = git fetch -p && git branch -vv | grep ': gone' | awk '{print }' | xargs git branch -D
 	pr = gh pr create -f
