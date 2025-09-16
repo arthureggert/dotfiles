@@ -4,10 +4,6 @@ palette = "dracula"
 
 add_newline = true
 
-[aws]
-disabled = true
-style = "bold orange"
-
 [character]
 error_symbol = "[➜](bold red)"
 success_symbol = "[➜](bold green)"
@@ -30,9 +26,6 @@ style = "bold purple"
 [username]
 format = "[$user]($style) on "
 style_user = "bold cyan"
-
-[ruby]
-disabled = true
 
 # Define Dracula color palette
 [palettes.dracula]
