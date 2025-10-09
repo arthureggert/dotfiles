@@ -1,6 +1,6 @@
 alias lg='lazygit'
 alias ldo='lazydocker'
-alias neovim='NVIM_APPNAME=nvim_v2 ~/Applications/nvim-macos-arm64/bin/nvim'
-alias vim='nvim'
-alias nv='nvim'
+alias vim='bob run nightly'
+alias nv='bob run nightly'
+alias nvim='bob run nightly'
 alias ls="eza --icons=always"
