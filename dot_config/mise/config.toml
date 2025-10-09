@@ -1,6 +1,11 @@
 [tools]
+"cargo:bob-nvim" = "latest"
+go = "latest"
 java = "temurin-21"
 node = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@github/copilot" = "latest"
+rust = "latest"
 terraform = "1.13.2"
 tflint = "latest"
 
