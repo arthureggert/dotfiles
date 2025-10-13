@@ -10,3 +10,4 @@ ohmyzsh/ohmyzsh path:plugins/tmux
 
 3v1n0/zsh-bash-completions-fallback
 chrisands/zsh-yarn-completions
+Aloxaf/fzf-tab
