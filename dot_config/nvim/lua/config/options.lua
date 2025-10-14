@@ -31,3 +31,5 @@ vim.opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T"
 if vim.g.neovide then
   vim.o.guifont = "JetBrainsMono Nerd Font:h20"
 end
+
+vim.o.shell = "zsh --interactive --login"
