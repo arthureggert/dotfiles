@@ -1,3 +1,5 @@
+[[ -z "$VIM_MODE" ]] && source ~/.zprofile
+
 # Load Antidote
 antidote load
 
