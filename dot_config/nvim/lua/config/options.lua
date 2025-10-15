@@ -30,4 +30,6 @@ vim.opt.statuscolumn = "%@SignCb@%s%=%T%@NumCb@%l %r│%T"
 
 if vim.g.neovide then
   vim.o.guifont = "JetBrainsMono Nerd Font:h20"
+  vim.g.neovide_opacity = 0.9
+  vim.g.neovide_show_border = true
 end
