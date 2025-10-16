@@ -1,6 +1,7 @@
 [tools]
 "cargo:bob-nvim" = "latest"
 go = "latest"
+gradle = "8.10.1"
 java = "temurin-21"
 node = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
