@@ -7,6 +7,10 @@ export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 export export EZA_COLORS="\
 uu=36:\
 uR=31:\
