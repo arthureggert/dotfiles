@@ -12,4 +12,4 @@ terraform = "1.13.2"
 tflint = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["node"]
+idiomatic_version_file_enable_tools = ["node", "java"]
