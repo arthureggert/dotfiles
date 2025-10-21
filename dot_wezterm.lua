@@ -5,7 +5,7 @@ local tab_bar = require("tab_bar")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold", italic = false })
+config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", italic = false })
 config.disable_default_key_bindings = true
 config.font_size = 20.0
 config.window_background_opacity = 0.85

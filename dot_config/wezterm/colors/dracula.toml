@@ -1,3 +1,9 @@
+#  Dracula 
+#  ┬ ┬┌─┐┌─┐┌┬┐┌─┐┬─┐┌┬┐
+#  │││├┤ ┌─┘ │ ├┤ ├┬┘│││
+#  └┴┘└─┘└─┘ ┴ └─┘┴└─┴ ┴
+#  urrick hunt
+
 [colors]
 ansi = [
   '#0B0D0F',
@@ -31,3 +37,51 @@ selection_fg = 'none'
 split = '#708CA9'
 
 [colors.indexed]
+
+[colors.tab_bar]
+background = '#0B0D0F'
+
+[colors.tab_bar.active_tab]
+bg_color = '#708CA9'
+fg_color = '#0B0D0F'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab]
+bg_color = '#0B0D0F'
+fg_color = '#F8F8F2'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = '#708CA9'
+fg_color = '#F8F8F2'
+intensity = 'Normal'
+italic = true
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab]
+bg_color = '#0B0D0F'
+fg_color = '#F8F8F2'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab_hover]
+bg_color = '#FF80BF'
+fg_color = '#F8F8F2'
+intensity = 'Normal'
+italic = true
+strikethrough = false
+underline = 'None'
+
+[metadata]
+aliases = []
+author = 'urrick hunt'
+name = 'Dracula Pro Van Helsing'

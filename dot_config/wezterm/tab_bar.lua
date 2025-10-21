@@ -53,7 +53,7 @@ local function get_config(c)
 	local is_work = os.getenv("USER") == "arthur.eggert"
 	local tabline_x = {}
 
-	if is_work then
+	if is_work == true then
 		table.insert(tabline_x, "battery")
 	end
 
@@ -64,30 +64,30 @@ local function get_config(c)
 			colors = c.colors,
 			theme_overrides = {
 				normal_mode = {
-					a = { fg = "#0B0D0F", bg = "#A2FF99" },
-					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					a = { fg = "#0B0D0F", bg = "#8AFF80" },
+					b = { fg = "#0B0D0F", bg = "#9580FF" },
 					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				copy_mode = {
 					a = { fg = "#0B0D0F", bg = "#FFFF99" },
-					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					b = { fg = "#0B0D0F", bg = "#9580FF" },
 					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				search_mode = {
 					a = { fg = "#0B0D0F", bg = "#FF99CC" },
-					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					b = { fg = "#0B0D0F", bg = "#9580FF" },
 					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				window_mode = {
 					a = { fg = "#0B0D0F", bg = "#99FFEE" },
-					b = { fg = "#0B0D0F", bg = "#AA99FF" },
+					b = { fg = "#0B0D0F", bg = "#9580FF" },
 					c = { fg = "#0B0D0F", bg = "#0B0D0F" },
 				},
 				-- Default tab colors
 				tab = {
-					active = { fg = "#0B0D0F", bg = "#FF80BF" },
+					active = { fg = "#0B0D0F", bg = "#708CA9" },
 					inactive = { fg = "#F8F8F2", bg = "#0B0D0F" },
-					inactive_hover = { fg = "#F8F8F2", bg = "#FF80BF" },
+					inactive_hover = { fg = "#F8F8F2", bg = "#708CA9" },
 				},
 			},
 			section_separators = {
