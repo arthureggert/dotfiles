@@ -1,15 +1,10 @@
+# NEEDS TO BE HERE COLIMA AND GH ARE NOT AVALIABLE IN .zshenv
 export HOMEBREW_GITHUB_API_TOKEN=$(gh auth token)
 export DEVOPS_GITHUB_PACKAGES_TOKEN=$(gh auth token)
 export GITHUB_NPM_TOKEN=$(gh auth token)
 export GH_TOKEN=$(gh auth token)
 
-export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
-export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export export EZA_COLORS="\
 uu=36:\

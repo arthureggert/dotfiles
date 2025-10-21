@@ -1,9 +1,14 @@
 # FOLDERS
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # VARIABLES
+export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 
 # CONFIG
 export EDITOR="nvim"
-export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART=false
 
 # PATH
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
