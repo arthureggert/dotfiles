@@ -39,10 +39,3 @@ function update() {
   brew dump
 }
 
-function git() {
-  if [ "$1" = "cleanup" ]; then
-    git fetch -p && git branch -vv | grep ': gone' | awk '{print $1}' | xargs git branch -D
-  else
-    command git "$@"
-  fi
-}
