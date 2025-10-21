@@ -1,0 +1,33 @@
+[colors]
+ansi = [
+  '#0B0D0F',
+  '#FF9580',
+  '#8AFF80',
+  '#FFFF80',
+  '#9580FF',
+  '#FF80BF',
+  '#80FFEA',
+  '#F8F8F2',
+]
+background = '#0B0D0F'
+brights = [
+  '#364049',
+  '#FFAA99',
+  '#A2FF99',
+  '#FFFF99',
+  '#AA99FF',
+  '#FF99CC',
+  '#99FFEE',
+  '#FFFFFF',
+]
+compose_cursor = '#FFCA80'
+cursor_bg = '#708CA9'
+cursor_border = '#F8F8F2'
+cursor_fg = '#0B0D0F'
+foreground = '#F8F8F2'
+scrollbar_thumb = '#414D58'
+selection_bg = '#414D58'
+selection_fg = 'none'
+split = '#708CA9'
+
+[colors.indexed]
