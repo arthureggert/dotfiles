@@ -46,11 +46,24 @@ local function process_name(tab)
 end
 
 local function tab_active(tab)
-	return tab_title(tab) .. " " .. process_name(tab)
+	return " " .. tab_title(tab) .. " " .. process_name(tab) .. " "
+end
+
+local function tab_inactive(tab)
+	return " " .. tab_title(tab) .. " "
+end
+
+local is_work = os.getenv("USER") == "arthur.eggert"
+
+local function hostname()
+	if is_work == true then
+		return "  "
+	else
+		return "  "
+	end
 end
 
 local function get_config(c)
-	local is_work = os.getenv("USER") == "arthur.eggert"
 	local tabline_x = {}
 
 	if is_work == true then
@@ -94,21 +107,22 @@ local function get_config(c)
 				left = wezterm.nerdfonts.pl_left_hard_divider,
 				right = wezterm.nerdfonts.pl_right_hard_divider,
 			},
-			component_separators = {
-				left = wezterm.nerdfonts.pl_left_soft_divider,
-				right = wezterm.nerdfonts.pl_right_soft_divider,
-			},
+			-- component_separators = {
+			-- 	left = wezterm.nerdfonts.pl_left_soft_divider,
+			-- 	right = wezterm.nerdfonts.pl_right_soft_divider,
+			-- },
 			tab_separators = {
 				left = wezterm.nerdfonts.pl_left_hard_divider,
-				right = wezterm.nerdfonts.pl_right_hard_divider,
+				right = "",
 			},
+			component_separators = "",
 		},
 		sections = {
-			tabline_a = { "mode" },
+			tabline_a = { hostname },
 			tabline_b = {},
 			tabline_c = {},
 			tab_active = { tab_active },
-			tab_inactive = { tab_active },
+			tab_inactive = { tab_inactive },
 			tabline_x = tabline_x,
 			tabline_y = { "datetime" },
 			tabline_z = {},

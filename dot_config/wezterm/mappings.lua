@@ -40,21 +40,11 @@ local keys = {
 	{ key = "t", mods = "CMD", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 	{ key = "e", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "e", mods = "CMD|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "LeftArrow", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "RightArrow", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Right") },
-	{ key = "UpArrow", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ key = "DownArrow", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "o", mods = "CTRL", action = wezterm.action.ActivatePaneDirection("Next") },
+	{ key = "o", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Prev") },
 	{ key = "v", mods = "CMD", action = wezterm.action({ PasteFrom = "Clipboard" }) },
 	{ key = "c", mods = "CMD", action = wezterm.action({ CopyTo = "Clipboard" }) },
 	{ key = "o", mods = "CMD", action = open_link_action },
-	{
-		key = "k",
-		mods = "CMD",
-		action = wezterm.action.Multiple({
-			wezterm.action.ClearScrollback("ScrollbackAndViewport"),
-			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
-		}),
-	},
 	neovim.bind("q", "CMD", wezterm.action.EmitEvent("nvim_close"), wezterm.action.CloseCurrentTab({ confirm = true })),
 	neovim.bind(
 		"w",
