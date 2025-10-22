@@ -62,6 +62,15 @@ local mouse_keys = {
 		mods = "CMD",
 		action = wezterm.action.OpenLinkAtMouseCursor,
 	},
+	-- Change the default click behavior so that it only selects
+	-- text and doesn't open hyperlinks, and that it populates
+	-- the Clipboard rather the PrimarySelection which is part
+	-- of the default assignment for a left mouse click.
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "NONE",
+		action = wezterm.action.CompleteSelection("Clipboard"),
+	},
 }
 
 local function apply_to_config(c)
